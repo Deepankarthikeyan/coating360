@@ -1,5 +1,9 @@
 /* All New Style Here Start  */
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* AGH Coating360 logo sizing */
 .header-layout1 .header-logo img,
 .header-layout1 .header-navbar-logo img,

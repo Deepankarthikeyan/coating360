@@ -2,13 +2,13 @@
 import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import CountUp from "react-countup";
-import { Link } from "react-router-dom";
 import siteContent from "../../../data/siteContent";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [totalSlides, setTotalSlides] = useState(0);
   const sliderRef = useRef<any>(null);
+  const { images } = siteContent;
 
   useEffect(() => {
     if (sliderRef.current) {
@@ -16,17 +16,8 @@ const Hero = () => {
     }
   }, []);
 
-  const goToPrev = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickPrev();
-    }
-  };
-
-  const goToNext = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickNext();
-    }
-  };
+  const goToPrev = () => sliderRef.current?.slickPrev();
+  const goToNext = () => sliderRef.current?.slickNext();
 
   const settings = {
     dots: false,
@@ -37,7 +28,7 @@ const Hero = () => {
     autoplay: true,
     autoplaySpeed: 5000,
     arrows: false,
-    fade: true, 
+    fade: true,
     beforeChange: (_current: number, next: number) => setCurrentSlide(next),
   };
 
@@ -45,7 +36,7 @@ const Hero = () => {
     <div
       className="hero-wrapper hero-1 shape-mockup-wrap background-image"
       id="hero"
-      style={{ backgroundImage: "url('/assets/img/hero/hero_bg_1_1.png')" }}
+      style={{ backgroundImage: `url('${images.heroBackground}')` }}
     >
       <Slider {...settings} ref={sliderRef} className="hero-slider1">
         {siteContent.heroSlides.map((slide, index) => (
@@ -57,16 +48,20 @@ const Hero = () => {
                     <h1 className="hero-title text-white">{slide.title}</h1>
                     <p className="hero-text text-white">{slide.text}</p>
                     <div className="btn-group">
-                      <Link to="/about" className="btn style2">
+                      <a href="#about-sec" className="btn style2">
                         Discover More <i className="ri-arrow-right-up-line"></i>
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="hero-thumb text-center">
-              <img src={slide.thumb} alt={siteContent.brand.name} loading={index === 0 ? "eager" : "lazy"} />
+              <img
+                src={images.heroSlides[index]}
+                alt={siteContent.brand.name}
+                loading={index === 0 ? "eager" : "lazy"}
+              />
             </div>
           </div>
         ))}
@@ -91,14 +86,14 @@ const Hero = () => {
 
       <div className="hero-bg-shape1-1"></div>
       <div className="hero-bg-shape1-2"></div>
-      <div className="section-animation-shape1-1 shape-mockup animation-infinite background-image" style={{ backgroundImage: "url('/assets/img/shape/global-line-shape1.png')" }}>
-      </div>
-      <div className="section-animation-shape1-2 shape-mockup animation-infinite background-image" style={{ backgroundImage: "url('/assets/img/shape/global-line-shape1.png')" }}>
-      </div>
-
-      <div className="hero-shape1-1 shape-mockup movingX">
-        <img src="/assets/img/hero/hero_shape_1_1.png" alt="" loading="lazy" />
-      </div>
+      <div
+        className="section-animation-shape1-1 shape-mockup animation-infinite background-image"
+        style={{ backgroundImage: "url('/assets/img/shape/global-line-shape1.png')" }}
+      ></div>
+      <div
+        className="section-animation-shape1-2 shape-mockup animation-infinite background-image"
+        style={{ backgroundImage: "url('/assets/img/shape/global-line-shape1.png')" }}
+      ></div>
 
       <div
         className="hero-experience-wrap"
@@ -107,9 +102,6 @@ const Hero = () => {
         }}
       >
         <span className="shadow-text">Complete Solutions</span>
-        <div className="hero-experience-icon">
-          <img src="/assets/img/hero/hero_experience_wrap_icon_1_1.png" alt="" loading="lazy" />
-        </div>
         <h2 className="hero-experience-counter">
           <span className="counter-number">
             <CountUp start={0} end={8} />
@@ -118,12 +110,10 @@ const Hero = () => {
         </h2>
         <p className="hero-experience-text">Core service categories under one roof</p>
         <div className="media">
-          <div className="icon">
-            <img src="/assets/img/hero/hero_experience_wrap_icon_1_2.png" alt="" loading="lazy" />
-          </div>
-          <Link className="link-btn link-text" to="/contact">
-            Let's protect what you build{" "}<img src="/assets/img/icon/long-arrow-right.png" alt="" loading="lazy" />
-          </Link>
+          <a className="link-btn link-text" href="#contact-sec">
+            Let's protect what you build{" "}
+            <img src="/assets/img/icon/long-arrow-right.png" alt="" loading="lazy" />
+          </a>
         </div>
       </div>
     </div>

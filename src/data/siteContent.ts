@@ -1,3 +1,11 @@
+export const navItems = [
+  { label: "HOME", href: "#hero" },
+  { label: "ABOUT", href: "#about-sec" },
+  { label: "SERVICES", href: "#service-sec" },
+  { label: "NEWS", href: "#blog-sec" },
+  { label: "CONTACT", href: "#contact-sec" },
+];
+
 export const siteContent = {
   brand: {
     name: "AGH Coating360",
@@ -8,6 +16,31 @@ export const siteContent = {
     logo: "/assets/img/logo.png",
     logoWhite: "/assets/img/logo-white.png",
     website: "www.aghcoating360.com",
+  },
+  images: {
+    heroBackground: "/assets/img/agh/page01_img1.jpeg",
+    heroSlides: [
+      "/assets/img/agh/page01_img1.jpeg",
+      "/assets/img/agh/page02_img1.jpeg",
+      "/assets/img/agh/page03_img1.jpeg",
+    ],
+    about: "/assets/img/agh/page03_img1.jpeg",
+    whyChoose: "/assets/img/agh/page12_img1.jpeg",
+    processBackground: "/assets/img/agh/page12_img2.jpeg",
+    cta: "/assets/img/agh/page06_img1.jpeg",
+    contact: "/assets/img/agh/page14_img1.jpeg",
+    serviceCards: [
+      "/assets/img/agh/page04_img1.jpeg",
+      "/assets/img/agh/page04_img2.jpeg",
+      "/assets/img/agh/page06_img1.jpeg",
+      "/assets/img/agh/page07_img1.jpeg",
+      "/assets/img/agh/page09_img1.jpeg",
+    ],
+    news: [
+      "/assets/img/agh/page12_img3.jpeg",
+      "/assets/img/agh/page12_img4.jpeg",
+      "/assets/img/agh/page11_img1.jpeg",
+    ],
   },
   contact: {
     phones: ["9894586563", "9095067767"],
@@ -26,17 +59,14 @@ export const siteContent = {
     {
       title: "AGH COATING360 — Protecting What You Build",
       text: "Complete Solutions for Industrial and Marine Paints, Intumescent Fireproof Coatings, Industrial Flooring, Spray Equipment, Abrasives, Blasting Equipment, Industrial Application Services & Coating Inspection.",
-      thumb: "/assets/img/hero/hero_thumb_1_1.png",
     },
     {
       title: "From Surface Preparation to Long-Term Protection",
       text: "AGH COATING360 is an industrial coating and surface protection solutions company providing comprehensive products and professional services to the Industrial, Marine, Energy, Infrastructure and Construction sectors.",
-      thumb: "/assets/img/hero/hero_thumb_1_2.png",
     },
     {
       title: "Your Complete Partner for Industrial Surface Protection",
       text: "From surface preparation to final coating inspection, our experienced team delivers reliable, technically driven solutions designed to protect steel, concrete, equipment and critical infrastructure.",
-      thumb: "/assets/img/hero/hero_thumb_1_3.png",
     },
   ],
   about: {
@@ -158,22 +188,25 @@ export const siteContent = {
       },
     ],
   },
-  industries: [
-    "Infrastructure",
-    "Industrial Construction",
-    "Structural Steel",
-    "Manufacturing",
-    "Oil & Gas",
-    "Power Plants",
-    "Chemical Industries",
-    "Marine & Offshore",
-    "Warehouses",
-    "Commercial Buildings",
-    "Factories",
-    "Pipelines",
-    "Storage Tanks",
-    "Engineering Industries",
-    "Airports & Infrastructure Projects",
+  news: [
+    {
+      title: "Complete Industrial Surface Protection Under One Roof",
+      category: "Coating Solutions",
+      text: "AGH Coating360 supports projects with industrial paints, marine coatings, fireproofing, flooring, blasting equipment and coating inspection.",
+      date: "27 AUG 2026",
+    },
+    {
+      title: "From Surface Preparation to Final Inspection",
+      category: "Turnkey Services",
+      text: "Our turnkey coating cycle covers abrasive blasting, primer, intermediate coat, finish coat, specialised coatings and quality inspection.",
+      date: "20 AUG 2026",
+    },
+    {
+      title: "Protecting What You Build Across Key Industries",
+      category: "Industries",
+      text: "We serve infrastructure, oil & gas, marine, manufacturing, power plants, pipelines, storage tanks and commercial industrial projects.",
+      date: "12 AUG 2026",
+    },
   ],
   cta: {
     subtitle: "GET FREE QUOTE",

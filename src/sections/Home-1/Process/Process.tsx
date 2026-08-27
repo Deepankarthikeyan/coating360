@@ -22,18 +22,8 @@ const Process = () => {
         className="process-area-1 space-top bg-attachment process-bg-half shape-mockup-wrap background-image"
         data-overlay="title"
         data-opacity="8"
-        style={{ backgroundImage: "url('/assets/img/bg/process-bg1-1.png')" }}
+        style={{ backgroundImage: `url('${siteContent.images.processBackground}')` }}
       >
-        <div className="process_shape_1-1 movingX shape-mockup d-lg-block d-none"></div>
-        <div className="process_shape_1-2 moving shape-mockup d-lg-block d-none"></div>
-        <div
-          className="process_shape_1-3 shape-mockup jump-reverse d-xl-block d-none"
-          data-bottom="-50%"
-          data-right="0"
-          style={{ right: "0px", bottom: "-50%" }}
-        >
-          <img src="/assets/img/shape/sec-bg-shape1.png" alt="" loading="lazy" />
-        </div>
         <div className="container">
           <div className="row justify-content-between align-items-center">
             <div className="col-lg-4 col-md-6">

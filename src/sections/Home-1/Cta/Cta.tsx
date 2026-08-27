@@ -17,7 +17,7 @@ const Cta = () => {
                                 <h3 className="sec-title">{siteContent.cta.title}</h3>
                                 <p>{siteContent.cta.text}</p>
                             </div>
-                            <form action="mail.php" method="POST" className="cta-contact-form ajax-contact">
+                            <form onSubmit={(e) => e.preventDefault()} className="cta-contact-form ajax-contact">
                                 <div className="row gy-15">
                                     <div className="col-12">
                                         <div className="form-group">
@@ -39,7 +39,7 @@ const Cta = () => {
                     </div>
                     <div className="col-lg-5">
                         <div className="cta-thumb1-1">
-                            <img src="/assets/img/normal/cta-thumb1-1.png" alt={siteContent.brand.name} loading="lazy" />
+                            <img src={siteContent.images.cta} alt={siteContent.brand.name} loading="lazy" />
                         </div>
                     </div>
                 </div>

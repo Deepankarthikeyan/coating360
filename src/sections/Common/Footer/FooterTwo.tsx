@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
-import siteContent from "../../../data/siteContent";
+import siteContent, { navItems } from "../../../data/siteContent";
 
- 
 const FooterTwo = () => {
     const { brand, contact } = siteContent;
 
@@ -14,25 +12,14 @@ const FooterTwo = () => {
                 <div className="container">
                     <div className="footer-top-1">
                         <div className="footer-logo">
-                            <Link to="/">
+                            <a href="#hero">
                                 <img src={brand.logoWhite} alt={brand.name} />
-                            </Link>
+                            </a>
                         </div>
                         <div className="subscribe-box">
                             <p className="subscribe-box_text">
                                 {brand.tagline} — Products | Equipment | Application | Inspection | Complete Coating Solutions
                             </p>
-                            <form className="newsletter-form">
-                                <input
-                                    className="form-control"
-                                    type="email"
-                                    placeholder="Enter your email..."
-                                    required
-                                />
-                                <button type="submit" className="btn style2">
-                                    SUBSCRIBE<i className="ri-arrow-right-up-line"></i>
-                                </button>
-                            </form>
                         </div>
                     </div>
                     <div className="widget-area">
@@ -40,9 +27,7 @@ const FooterTwo = () => {
                             <div className="col-md-6 col-xl-3">
                                 <div className="widget widget-about footer-widget">
                                     <h3 className="widget_title">About Company</h3>
-                                    <p className="about-text">
-                                        {brand.description}
-                                    </p>
+                                    <p className="about-text">{brand.description}</p>
                                     <h4 className="about-year">{brand.shortName}</h4>
                                     <h5 className="about-subtitle">WE ARE AVAILABLE</h5>
                                     <p className="about-text">
@@ -53,41 +38,14 @@ const FooterTwo = () => {
                             </div>
                             <div className="col-md-6 col-xl-auto">
                                 <div className="widget widget_nav_menu footer-widget">
-                                    <h3 className="widget_title">Useful Links</h3>
-                                    <div className="menu-all-pages-container grid-style">
+                                    <h3 className="widget_title">Quick Links</h3>
+                                    <div className="menu-all-pages-container">
                                         <ul className="menu">
-                                            <li>
-                                                <Link to="/about">About Us</Link>
-                                            </li>
-                                            <li>
-                                                <Link to="/service">Our Services</Link>
-                                            </li>
-                                            <li>
-                                                <Link to="/project">Projects</Link>
-                                            </li>
-                                            <li>
-                                                <Link to="/blog">News & Articles</Link>
-                                            </li>
-                                            <li>
-                                                <Link to="/contact">Contact</Link>
-                                            </li>
-                                        </ul>
-                                        <ul className="menu">
-                                            <li>
-                                                <Link to="/service">Industrial Paints</Link>
-                                            </li>
-                                            <li>
-                                                <Link to="/service">Marine Coatings</Link>
-                                            </li>
-                                            <li>
-                                                <Link to="/service">Fireproof Coatings</Link>
-                                            </li>
-                                            <li>
-                                                <Link to="/service">Blasting & Abrasives</Link>
-                                            </li>
-                                            <li>
-                                                <Link to="/service">Coating Inspection</Link>
-                                            </li>
+                                            {navItems.map((item) => (
+                                                <li key={item.href}>
+                                                    <a href={item.href}>{item.label}</a>
+                                                </li>
+                                            ))}
                                         </ul>
                                     </div>
                                 </div>
@@ -95,16 +53,13 @@ const FooterTwo = () => {
                             <div className="col-md-6 col-xl-auto">
                                 <div className="widget footer-widget widget-contact">
                                     <h3 className="widget_title">Office Address</h3>
-                                    <p className="contact-text">
-                                        {contact.address.full}
-                                    </p>
+                                    <p className="contact-text">{contact.address.full}</p>
                                     <h3 className="widget_title">Email Address</h3>
-                                    <p className="text-white footer-text">Get in Touch!</p>
                                     <p className="footer-text">
-                                        <Link to={`mailto:${contact.salesEmail}`}>{contact.salesEmail}</Link>
+                                        <a href={`mailto:${contact.salesEmail}`}>{contact.salesEmail}</a>
                                     </p>
                                     <p className="footer-text">
-                                        <Link to={`mailto:${contact.serviceEmail}`}>{contact.serviceEmail}</Link>
+                                        <a href={`mailto:${contact.serviceEmail}`}>{contact.serviceEmail}</a>
                                     </p>
                                 </div>
                             </div>
@@ -113,23 +68,15 @@ const FooterTwo = () => {
                                     <h3 className="widget_title">Phone Number</h3>
                                     {contact.phones.map((phone) => (
                                         <p className="footer-text" key={phone}>
-                                            <Link to={`tel:${phone}`}>{phone}</Link>
+                                            <a href={`tel:${phone}`}>{phone}</a>
                                         </p>
                                     ))}
                                     <h3 className="widget_title">Follow Us</h3>
                                     <div className="social-btn style2">
-                                        <Link to="https://www.twitter.com/">
-                                            <i className="ri-twitter-x-line"></i>
-                                        </Link>
-                                        <Link to="https://instagram.com/">
-                                            <i className="ri-instagram-line"></i>
-                                        </Link>
-                                        <Link to="https://facebook.com/">
-                                            <i className="ri-facebook-fill"></i>
-                                        </Link>
-                                        <Link to="https://linkedin.com/">
-                                            <i className="ri-linkedin-fill"></i>
-                                        </Link>
+                                        <a href="https://www.twitter.com/" aria-label="Twitter"><i className="ri-twitter-x-line"></i></a>
+                                        <a href="https://instagram.com/" aria-label="Instagram"><i className="ri-instagram-line"></i></a>
+                                        <a href="https://facebook.com/" aria-label="Facebook"><i className="ri-facebook-fill"></i></a>
+                                        <a href="https://linkedin.com/" aria-label="LinkedIn"><i className="ri-linkedin-fill"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -141,14 +88,14 @@ const FooterTwo = () => {
                         <div className="row gy-3 justify-content-md-between justify-content-center">
                             <div className="col-auto align-self-center">
                                 <p className="copyright-text text-center">
-                                    © {new Date().getFullYear()} <Link to="/">{brand.name}</Link> | All rights reserved
+                                    © {new Date().getFullYear()} <a href="#hero">{brand.name}</a> | All rights reserved
                                 </p>
                             </div>
                             <div className="col-auto">
                                 <div className="footer-links">
-                                    <Link to="/contact">Terms & Condition</Link>
-                                    <Link to="/contact">Privacy Policy</Link>
-                                    <Link to="/contact">Contact Us</Link>
+                                    {navItems.map((item) => (
+                                        <a key={item.href} href={item.href}>{item.label}</a>
+                                    ))}
                                 </div>
                             </div>
                         </div>

@@ -57,7 +57,7 @@ const WhyChoose = () => {
                     </div>
                     <div className="col-xl-4">
                         <div className="wcu-thumb1-1">
-                            <img src="/assets/img/normal/why_1-1.png" alt={siteContent.brand.name} loading="lazy" />
+                            <img src={siteContent.images.whyChoose} alt={siteContent.brand.name} loading="lazy" />
                         </div>
                     </div>
 

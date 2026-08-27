@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import siteContent from "../../../data/siteContent";
 
 const serviceIcons = [
@@ -10,7 +9,7 @@ const serviceIcons = [
 ];
 
 const Service = () => {
-    const homeServices = siteContent.services.slice(0, 5);
+    const homeServices = siteContent.services.slice(0, 8);
 
     return (
         <div className="service-area-1 space-top overflow-hidden" style={{ backgroundImage: "url('/assets/img/bg/service-bg1-1.png')" }} id="service-sec">
@@ -30,15 +29,21 @@ const Service = () => {
                                     SERVICES - {service.id}
                                 </div>
                                 <div className="service-card_content">
+                                    {siteContent.images.serviceCards[index] && (
+                                        <div className="service-card-thumb mb-20">
+                                            <img
+                                                src={siteContent.images.serviceCards[index % siteContent.images.serviceCards.length]}
+                                                alt={service.title}
+                                                loading="lazy"
+                                                style={{ width: "100%", height: "160px", objectFit: "cover", borderRadius: "8px" }}
+                                            />
+                                        </div>
+                                    )}
                                     <div className="service-card_icon">
-                                        <img src={serviceIcons[index]} alt="" loading="lazy" />
+                                        <img src={serviceIcons[index % serviceIcons.length]} alt="" loading="lazy" />
                                     </div>
-                                    <h4 className="service-card_title"><Link to="/service-details">{service.title}</Link></h4>
+                                    <h4 className="service-card_title">{service.title}</h4>
                                     <p className="service-card_text">{service.text}</p>
-                                    <div className="btn-wrap">
-                                        <div className="icon-btn"><i className="ri-arrow-right-up-line"></i></div>
-                                        <Link to="/service-details" className="btn">Explore Service <i className="ri-arrow-right-up-line"></i></Link>
-                                    </div>
                                 </div>
                             </div>
                         </div>

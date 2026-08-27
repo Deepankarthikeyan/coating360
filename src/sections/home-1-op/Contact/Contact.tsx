@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-
- 
+import siteContent from "../../../data/siteContent";
 
 const Contact = () => {
+  const { contact, brand, cta, images } = siteContent;
+
   return (
     <section
       className="contact-area-1 space bg-title overflow-hidden shape-mockup-wrap background-image"
@@ -17,66 +17,57 @@ const Contact = () => {
         <div className="row gy-60 flex-row-reverse justify-content-lg-between justify-content-center align-items-center">
           <div className="col-xl-5">
             <div className="contact-thumb1-1">
-              <img src="/assets/img/normal/contact_1-1.png" alt="imh" />
+              <img src={images.contact} alt={brand.name} loading="lazy" />
             </div>
           </div>
           <div className="col-xl-7">
             <div className="title-area">
               <span className="sub-title">
-                <img src="/assets/img/icon/section-subtitle-icon.svg" alt="img" />
+                <img src="/assets/img/icon/section-subtitle-icon.svg" alt="" />
                 <span className="text-white">Contact Us</span>
               </span>
-              <h2 className="sec-title text-white">
-                HAVE A PROJECT IN MIND? CONTACT WITH US TODAY
-              </h2>
-              <p className="text-white">
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form by
-                injected humour.
-              </p>
+              <h2 className="sec-title text-white">{cta.title.toUpperCase()}</h2>
+              <p className="text-white">{cta.text}</p>
             </div>
             <div className="row gy-60">
               <div className="col-lg-6">
                 <div className="contact-grid-wrap">
                   <div className="contact-grid-icon">
-                    <img src="/assets/img/icon/contact-icon1-1.svg" alt="img" />
+                    <img src="/assets/img/icon/contact-icon1-1.svg" alt="" />
                   </div>
                   <div className="contact-grid-details">
-                    <h4 className="contact-grid-title">New York</h4>
-                    <p className="contact-grid-text">
-                      92 los Angle Street, Saba Carpet Antiques Store, USA
-                    </p>
+                    <h4 className="contact-grid-title">Head Office</h4>
+                    <p className="contact-grid-text">{contact.address.full}</p>
                   </div>
                 </div>
               </div>
               <div className="col-lg-6">
                 <div className="contact-grid-wrap">
                   <div className="contact-grid-icon">
-                    <img src="/assets/img/icon/contact-icon1-2.svg" alt="img" />
+                    <img src="/assets/img/icon/contact-icon1-2.svg" alt="" />
                   </div>
                   <div className="contact-grid-details">
                     <h4 className="contact-grid-title">Phone Number</h4>
-                    <p className="contact-grid-text">
-                      <Link to="tel:225515792670">(+22) 551-579-2670</Link>
-                    </p>
-                    <p className="contact-grid-text">
-                      <Link to="tel:002345672569">+ (00) 234-567-2569</Link>
-                    </p>
+                    {contact.phones.map((phone) => (
+                      <p className="contact-grid-text" key={phone}>
+                        <a href={`tel:${phone}`}>{phone}</a>
+                      </p>
+                    ))}
                   </div>
                 </div>
               </div>
               <div className="col-lg-6">
                 <div className="contact-grid-wrap">
                   <div className="contact-grid-icon">
-                    <img src="/assets/img/icon/contact-icon1-3.svg" alt="img" />
+                    <img src="/assets/img/icon/contact-icon1-3.svg" alt="" />
                   </div>
                   <div className="contact-grid-details">
                     <h4 className="contact-grid-title">Email Address</h4>
-                    <p className="contact-grid-text">Response within 2 hour</p>
                     <p className="contact-grid-text">
-                      <Link to="mailto:support@construz.com">
-                        support@construz.com
-                      </Link>
+                      <a href={`mailto:${contact.salesEmail}`}>{contact.salesEmail}</a>
+                    </p>
+                    <p className="contact-grid-text">
+                      <a href={`mailto:${contact.serviceEmail}`}>{contact.serviceEmail}</a>
                     </p>
                   </div>
                 </div>
@@ -84,24 +75,12 @@ const Contact = () => {
               <div className="col-lg-6">
                 <div className="contact-grid-wrap">
                   <div className="contact-grid-icon">
-                    <img src="/assets/img/icon/contact-icon1-4.svg" alt="img" />
+                    <img src="/assets/img/icon/contact-icon1-4.svg" alt="" />
                   </div>
                   <div className="contact-grid-details">
-                    <h4 className="contact-grid-title">Get Connected</h4>
-                    <div className="social-btn style5 mt-10">
-                      <Link to="https://www.twitter.com/">
-                        <i className="ri-twitter-x-line"></i>
-                      </Link>
-                      <Link to="https://instagram.com/">
-                        <i className="ri-instagram-line"></i>
-                      </Link>
-                      <Link to="https://facebook.com/">
-                        <i className="ri-facebook-fill"></i>
-                      </Link>
-                      <Link to="https://linkedin.com/">
-                        <i className="ri-linkedin-fill"></i>
-                      </Link>
-                    </div>
+                    <h4 className="contact-grid-title">Business Hours</h4>
+                    <p className="contact-grid-text">{contact.hours}</p>
+                    <p className="contact-grid-text">{brand.website}</p>
                   </div>
                 </div>
               </div>
