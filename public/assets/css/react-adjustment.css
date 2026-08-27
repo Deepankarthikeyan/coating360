@@ -6,10 +6,18 @@ html {
 
 /* AGH Coating360 logo sizing */
 .header-layout1 .header-logo img,
-.header-layout1 .header-navbar-logo img,
+.header-layout1 .header-navbar-logo img {
+  max-height: 92px;
+  width: auto;
+  max-width: 480px;
+  object-fit: contain;
+  display: block;
+}
+
 .footer-layout1 .footer-logo img,
+.mobile-menu-wrapper .mobile-logo img,
 .sidemenu-content .footer-logo img {
-  max-height: 56px;
+  max-height: 72px;
   width: auto;
   object-fit: contain;
 }
@@ -26,7 +34,7 @@ html {
   align-items: center;
   justify-content: center;
   flex: 1 1 auto;
-  padding-left: 220px;
+  padding-left: 260px;
   padding-right: 280px;
 }
 
@@ -61,10 +69,24 @@ html {
   white-space: nowrap;
 }
 
+.header-layout1 .header-navbar-logo {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.header-layout1 .header-navbar-logo img {
+  max-height: 92px;
+}
+
 @media (max-width: 1399px) {
   .header-layout1 .site-header-row .menu-bar {
-    padding-left: 200px;
+    padding-left: 230px;
     padding-right: 240px;
+  }
+
+  .header-layout1 .header-logo img,
+  .header-layout1 .header-navbar-logo img {
+    max-height: 78px;
   }
 }
 
