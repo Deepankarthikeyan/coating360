@@ -64,17 +64,9 @@ const ServiceDetailsArea = () => {
 										alt="img"
 									/>
 								</div>
-								<h2 className="sec-title2 mb-25">General Construction</h2>
+								<h2 className="sec-title2 mb-25">Industrial Paints – Protective Coatings</h2>
 								<p className="mb-50">
-									Industry's standard dummy text ever since the 1500s, when an
-									unknown printer took a galley of type and scrambled it to make
-									a type specimen book. It has survived not only five centuries,
-									but also the leapinto electronic typesetting, remaining
-									essentially unchanged. It was popularised in the 1960s with
-									the release letraset sheets containing. Richard Clintock a
-									Latin professor at Hampden-Sydney College in Virginia, looked
-									up one of the more obscure latin words, consectetur, from a
-									Lorem Ipsum passage.
+									We supply a comprehensive range of industrial protective coating systems for new construction, maintenance, refurbishment and repair projects across demanding industrial environments. Our coating solutions are formulated and selected to provide reliable protection against atmospheric corrosion, chemical exposure, abrasion, marine environments and high-temperature service conditions.
 								</p>
 								<div className="row gy-4 justify-content-center">
 									<div className="col-xl-4 col-lg-6">

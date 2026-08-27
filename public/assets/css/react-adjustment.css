@@ -1,5 +1,15 @@
 /* All New Style Here Start  */
 
+/* AGH Coating360 logo sizing */
+.header-layout1 .header-logo img,
+.header-layout1 .header-navbar-logo img,
+.footer-layout1 .footer-logo img,
+.sidemenu-content .footer-logo img {
+  max-height: 56px;
+  width: auto;
+  object-fit: contain;
+}
+
 /* Header Two Css */
 .space-left {
   margin-left: auto !important;

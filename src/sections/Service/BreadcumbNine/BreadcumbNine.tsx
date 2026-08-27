@@ -13,7 +13,7 @@ const BreadcumbNine = () => {
                         <div className="breadcumb-content">
                             <h1 className="breadcumb-title">Our Services</h1>
                             <ul className="breadcumb-menu">
-                                <li><Link to="/home-1"><i className="ri-home-4-fill"></i> HOME</Link></li>
+                                <li><Link to="/"><i className="ri-home-4-fill"></i> HOME</Link></li>
                                 <li className="active">OUR SERVICES </li>
                             </ul>
                         </div>

@@ -1,6 +1,7 @@
  
 import { useState } from "react";
 import PopupVideo from "../../Common/PopupVideo/PopupVideo";
+import siteContent from "../../../data/siteContent";
 
 const Process = () => {
   const [popup, setPopup] = useState(false);
@@ -9,14 +10,11 @@ const Process = () => {
     setPopup(true);
     const iframe = document.getElementById("youtube-video") as HTMLIFrameElement;
     if (iframe) {
-      iframe.src =
-        "https://www.youtube.com/embed/Q5PG0rMXgvw";
+      iframe.src = "https://www.youtube.com/embed/Q5PG0rMXgvw";
     }
     setIsActive(true);
     document.body.style.overflow = 'hidden';
   };
- 
-
 
   return (
     <>
@@ -34,18 +32,18 @@ const Process = () => {
           data-right="0"
           style={{ right: "0px", bottom: "-50%" }}
         >
-          <img src="/assets/img/shape/sec-bg-shape1.png" alt="img" />
+          <img src="/assets/img/shape/sec-bg-shape1.png" alt="" loading="lazy" />
         </div>
         <div className="container">
           <div className="row justify-content-between align-items-center">
             <div className="col-lg-4 col-md-6">
               <div className="title-area content-text-extra-style">
                 <span className="sub-title text-white">
-                  <img src="/assets/img/icon/section-subtitle-icon.svg" alt="img" />
-                  Work Process
+                  <img src="/assets/img/icon/section-subtitle-icon.svg" alt="" />
+                  {siteContent.process.subtitle}
                 </span>
                 <h2 className="sec-title text-white">
-                  Our services that we provide
+                  {siteContent.process.title}
                 </h2>
               </div>
             </div>
@@ -63,63 +61,18 @@ const Process = () => {
 
           <div className="process-card-wrap">
             <div className="row gy-30 gx-30">
-              <div className="col-xl-3 col-md-6">
-                <div className="process-card process-fixed-height">
-                  <div className="process-card-number">
-                    <span>01</span>
-                    STEP
+              {siteContent.process.steps.map((step) => (
+                <div className="col-xl-3 col-md-6" key={step.number}>
+                  <div className="process-card process-fixed-height">
+                    <div className="process-card-number">
+                      <span>{step.number}</span>
+                      STEP
+                    </div>
+                    <h4 className="process-card-title">{step.title}</h4>
+                    <p className="process-card-text">{step.text}</p>
                   </div>
-                  <h4 className="process-card-title">
-                    Meet and consultant about project
-                  </h4>
-                  <p className="process-card-text">
-                    Industry standard dummy text took since the when an unknown
-                  </p>
                 </div>
-              </div>
-              <div className="col-xl-3 col-md-6">
-                <div className="process-card process-fixed-height">
-                  <div className="process-card-number">
-                    <span>02</span>
-                    STEP
-                  </div>
-                  <h4 className="process-card-title">
-                    Product design and planning
-                  </h4>
-                  <p className="process-card-text">
-                    Known printer took a galley of type and scrambled it to make
-                  </p>
-                </div>
-              </div>
-              <div className="col-xl-3 col-md-6">
-                <div className="process-card process-fixed-height">
-                  <div className="process-card-number">
-                    <span>03</span>
-                    STEP
-                  </div>
-                  <h4 className="process-card-title">
-                    Testing and quality control
-                  </h4>
-                  <p className="process-card-text">
-                    It has survived not only centuries also the leap into
-                    electronic
-                  </p>
-                </div>
-              </div>
-              <div className="col-xl-3 col-md-6">
-                <div className="process-card process-fixed-height">
-                  <div className="process-card-number">
-                    <span>04</span>
-                    STEP
-                  </div>
-                  <h4 className="process-card-title">
-                    Final assembly and project handover
-                  </h4>
-                  <p className="process-card-text">
-                    Electronic typesetting conta the popularised in the 1960s
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

@@ -20,7 +20,7 @@ const Breadcumb = () => {
               <h1 className="breadcumb-title">About Us</h1>
               <ul className="breadcumb-menu">
                 <li>
-                  <Link to="/home-1">
+                  <Link to="/">
                     <i className="ri-home-4-fill"></i> HOME
                   </Link>
                 </li>

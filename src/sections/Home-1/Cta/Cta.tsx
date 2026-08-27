@@ -1,6 +1,7 @@
  
 
 import ContactDropdownTwo from "../../Common/ContactDropdown/ContactDropdownTwo";
+import siteContent from "../../../data/siteContent";
 
 const Cta = () => {
     return (
@@ -12,8 +13,9 @@ const Cta = () => {
                             <div className="section-animation-shape1-1 shape-mockup animation-infinite background-image" data-top="0" data-left="0" style={{ backgroundImage: "url('/assets/img/shape/global-line-shape1.png')", top: '0px', left: '0px' }}>
                             </div>
                             <div className="title-area mb-40 cta-text-align">
-                                <span className="sub-title"><img src="/assets/img/icon/section-subtitle-icon.svg" alt="img" />GET FREE QUOTE</span>
-                                <h3 className="sec-title">Have a project in mind?</h3>
+                                <span className="sub-title"><img src="/assets/img/icon/section-subtitle-icon.svg" alt="" />{siteContent.cta.subtitle}</span>
+                                <h3 className="sec-title">{siteContent.cta.title}</h3>
+                                <p>{siteContent.cta.text}</p>
                             </div>
                             <form action="mail.php" method="POST" className="cta-contact-form ajax-contact">
                                 <div className="row gy-15">
@@ -37,7 +39,7 @@ const Cta = () => {
                     </div>
                     <div className="col-lg-5">
                         <div className="cta-thumb1-1">
-                            <img src="/assets/img/normal/cta-thumb1-1.png" alt="img" />
+                            <img src="/assets/img/normal/cta-thumb1-1.png" alt={siteContent.brand.name} loading="lazy" />
                         </div>
                     </div>
                 </div>

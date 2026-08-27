@@ -9,9 +9,6 @@ const HeaderOne = () => {
     const [isSideBarOpen, setIsSideBarOpen] = useState(false); 
     const sidebarRef = useRef<HTMLDivElement>(null);
 
-    console.log(isMenuOpen);
-
-
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 500) {
@@ -75,27 +72,25 @@ const HeaderOne = () => {
                     </button>
                     <div className="widget widget-about footer-widget">
                         <div className="footer-logo footer-img">
-                            <Link to="/home-1">
-                                <img src="/assets/img/logo.svg" alt="logo" width={100} height={50} />
+                            <Link to="/">
+                                <img src="/assets/img/logo.png" alt="AGH Coating360" width={180} height={50} />
                             </Link>
                         </div>
                         <p className="about-text mb-4">
-                            A small business can be better than a big business because of agility and
-                            adaptability due to their size and scale.
+                            AGH COATING360 — Protecting What You Build. Complete solutions for industrial and marine paints, fireproof coatings, flooring, spray equipment, abrasives, blasting equipment, application services and coating inspection.
                         </p>
 
                         <p className="footer-text">
-                            <Link to="tel:851555961658">
-                                <i className="ri-phone-line space-right-sidebar-icon"></i>+85 155 596 1658
+                            <Link to="tel:9894586563">
+                                <i className="ri-phone-line space-right-sidebar-icon"></i>9894586563
                             </Link>
                         </p>
                         <p className="contact-text">
-                            <i className="ri-map-pin-line space-right-sidebar-icon"></i> Losangle, Street Road 24, New
-                            York, USA - 67452
+                            <i className="ri-map-pin-line space-right-sidebar-icon"></i> Door No: 1A, ST-14, Anaimalaiamman Kovil Street, L&T Bypass Road, Vellalore Post, Coimbatore-641111
                         </p>
                         <p className="footer-text">
-                            <Link to="mailto:support@gmail.com">
-                                <i className="ri-mail-line space-right-sidebar-icon"></i>support@gmail.com
+                            <Link to="mailto:sales@aghcoating360.com">
+                                <i className="ri-mail-line space-right-sidebar-icon"></i>sales@aghcoating360.com
                             </Link>
                         </p>
                         <div className="social-btn style3 mt-30">
@@ -185,8 +180,8 @@ const HeaderOne = () => {
                                 <div className="header-top-right">
                                     <div className="header-links ps-0">
                                         <ul>
-                                            <li><i className="ri-time-line"></i>Mon - Sat / 8am : 12pm</li>
-                                            <li><i className="ri-map-pin-line"></i><Link to="https://www.google.com/maps">96 Jones Street, New York, USA</Link></li>
+                                            <li><i className="ri-time-line"></i>Mon - Sat: 10:00am to 07:30pm</li>
+                                            <li><i className="ri-map-pin-line"></i><Link to="https://www.google.com/maps">Coimbatore-641111, Tamil Nadu</Link></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -197,14 +192,14 @@ const HeaderOne = () => {
                 <div className={`sticky-wrapper ${isSticky ? 'sticky' : ''}`}>
                     <div className="menu-area">
                         <div className="header-navbar-logo">
-                            <Link to="/home-1"><img src="/assets/img/logo.svg" alt="logo" /></Link>
+                            <Link to="/"><img src="/assets/img/logo.png" alt="AGH Coating360" /></Link>
                         </div>
                         <div className="logo-bg"></div>
                         <div className="container">
                             <div className="row align-items-center justify-content-lg-start justify-content-between">
                                 <div className="col-auto d-xxl-none d-block">
                                     <div className="header-logo">
-                                        <Link to="/home-1"><img src="/assets/img/logo.svg" alt="logo" /></Link>
+                                        <Link to="/"><img src="/assets/img/logo.png" alt="AGH Coating360" /></Link>
                                     </div>
                                 </div>
                                 <div className="col-auto menu-bar ms-xxl-0">
@@ -315,7 +310,7 @@ const HeaderOne = () => {
                             </div>
                             <div className="navbar-right-desc-details">
                                 <h6 className="title">Call us any time</h6>
-                                <Link className="link" to="tel:+2590256215">+123 556 8824</Link>
+                                <Link className="link" to="tel:9894586563">9894586563</Link>
                             </div>
                         </div>
                     </div>

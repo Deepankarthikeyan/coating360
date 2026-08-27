@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import siteContent from "../../../data/siteContent";
 
  
 const FooterTwo = () => {
+    const { brand, contact } = siteContent;
+
     return (
         <div>
             <footer
@@ -11,13 +14,13 @@ const FooterTwo = () => {
                 <div className="container">
                     <div className="footer-top-1">
                         <div className="footer-logo">
-                            <Link to="/home-1">
-                                <img src="/assets/img/logo-white.svg" alt="Construz" />
+                            <Link to="/">
+                                <img src={brand.logoWhite} alt={brand.name} />
                             </Link>
                         </div>
                         <div className="subscribe-box">
                             <p className="subscribe-box_text">
-                                Subscribe for the latest news. Stay updated on the latest trends.
+                                {brand.tagline} — Products | Equipment | Application | Inspection | Complete Coating Solutions
                             </p>
                             <form className="newsletter-form">
                                 <input
@@ -38,14 +41,13 @@ const FooterTwo = () => {
                                 <div className="widget widget-about footer-widget">
                                     <h3 className="widget_title">About Company</h3>
                                     <p className="about-text">
-                                        A small business can be better than a big business because of
-                                        agility and adaptability due to their size and scale.
+                                        {brand.description}
                                     </p>
-                                    <h4 className="about-year">Since 2000</h4>
+                                    <h4 className="about-year">{brand.shortName}</h4>
                                     <h5 className="about-subtitle">WE ARE AVAILABLE</h5>
                                     <p className="about-text">
-                                        <span className="text-theme">Mon-Sat:</span> 10:00am to
-                                        07:30pm
+                                        <span className="text-theme">{contact.hours.split(":")[0]}:</span>
+                                        {contact.hours.split(":").slice(1).join(":")}
                                     </p>
                                 </div>
                             </div>
@@ -58,33 +60,33 @@ const FooterTwo = () => {
                                                 <Link to="/about">About Us</Link>
                                             </li>
                                             <li>
-                                                <Link to="/service">What We Do</Link>
+                                                <Link to="/service">Our Services</Link>
                                             </li>
                                             <li>
-                                                <Link to="/service">News & Article</Link>
+                                                <Link to="/project">Projects</Link>
                                             </li>
                                             <li>
-                                                <Link to="/service">Success Story</Link>
+                                                <Link to="/blog">News & Articles</Link>
                                             </li>
                                             <li>
-                                                <Link to="/service">FAQ’s</Link>
+                                                <Link to="/contact">Contact</Link>
                                             </li>
                                         </ul>
                                         <ul className="menu">
                                             <li>
-                                                <Link to="/team">Our Team</Link>
+                                                <Link to="/service">Industrial Paints</Link>
                                             </li>
                                             <li>
-                                                <Link to="/service">Careers</Link>
+                                                <Link to="/service">Marine Coatings</Link>
                                             </li>
                                             <li>
-                                                <Link to="/service">Testimonials</Link>
+                                                <Link to="/service">Fireproof Coatings</Link>
                                             </li>
                                             <li>
-                                                <Link to="/contact">Privacy Policy</Link>
+                                                <Link to="/service">Blasting & Abrasives</Link>
                                             </li>
                                             <li>
-                                                <Link to="/contact">Terms of use</Link>
+                                                <Link to="/service">Coating Inspection</Link>
                                             </li>
                                         </ul>
                                     </div>
@@ -94,24 +96,26 @@ const FooterTwo = () => {
                                 <div className="widget footer-widget widget-contact">
                                     <h3 className="widget_title">Office Address</h3>
                                     <p className="contact-text">
-                                        Losangle, Street Road 24, New York, USA - 67452
+                                        {contact.address.full}
                                     </p>
                                     <h3 className="widget_title">Email Address</h3>
                                     <p className="text-white footer-text">Get in Touch!</p>
                                     <p className="footer-text">
-                                        <Link to="mailto:support@gmail.com">support@gmail.com</Link>
+                                        <Link to={`mailto:${contact.salesEmail}`}>{contact.salesEmail}</Link>
+                                    </p>
+                                    <p className="footer-text">
+                                        <Link to={`mailto:${contact.serviceEmail}`}>{contact.serviceEmail}</Link>
                                     </p>
                                 </div>
                             </div>
                             <div className="col-md-6 col-xl-auto">
                                 <div className="widget footer-widget">
                                     <h3 className="widget_title">Phone Number</h3>
-                                    <p className="footer-text">
-                                        <Link to="tel:121551579266">+121 551 579 266</Link>
-                                    </p>
-                                    <p className="footer-text">
-                                        <Link to="tel:851555961658">+85 155 596 1658</Link>
-                                    </p>
+                                    {contact.phones.map((phone) => (
+                                        <p className="footer-text" key={phone}>
+                                            <Link to={`tel:${phone}`}>{phone}</Link>
+                                        </p>
+                                    ))}
                                     <h3 className="widget_title">Follow Us</h3>
                                     <div className="social-btn style2">
                                         <Link to="https://www.twitter.com/">
@@ -137,7 +141,7 @@ const FooterTwo = () => {
                         <div className="row gy-3 justify-content-md-between justify-content-center">
                             <div className="col-auto align-self-center">
                                 <p className="copyright-text text-center">
-                                    © {new Date().getFullYear()} <Link to="#">Construz</Link> | All rights reserved
+                                    © {new Date().getFullYear()} <Link to="/">{brand.name}</Link> | All rights reserved
                                 </p>
                             </div>
                             <div className="col-auto">
@@ -155,4 +159,4 @@ const FooterTwo = () => {
     );
 };
 
-export default FooterTwo; 
+export default FooterTwo;

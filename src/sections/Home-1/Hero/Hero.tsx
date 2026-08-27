@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import CountUp from "react-countup";
 import { Link } from "react-router-dom";
+import siteContent from "../../../data/siteContent";
+
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [totalSlides, setTotalSlides] = useState(0);
@@ -36,7 +38,7 @@ const Hero = () => {
     autoplaySpeed: 5000,
     arrows: false,
     fade: true, 
-    beforeChange: (next: number) => setCurrentSlide(next),
+    beforeChange: (_current: number, next: number) => setCurrentSlide(next),
   };
 
   return (
@@ -45,97 +47,38 @@ const Hero = () => {
       id="hero"
       style={{ backgroundImage: "url('/assets/img/hero/hero_bg_1_1.png')" }}
     >
-      {/* Slider */}
-       
       <Slider {...settings} ref={sliderRef} className="hero-slider1">
-        {/* Slides */}
-        <div className="hero-slide">
-          <div className="container larger-no-space">
-            <div className="row">
-              <div className="col-lg-6">
-                <div className="hero-style1">
-                  <h1 className="hero-title text-white">
-                    Build Your dream buildings for the future
-                  </h1>
-                  <p className="hero-text text-white">
-                    We craft unique digital experiences. With more than 7 years
-                    of expertise we design and code clean websites.
-                  </p>
-                  <div className="btn-group">
-                    <Link to="/about" className="btn style2">
-                      Discover More <i className="ri-arrow-right-up-line"></i>
-                    </Link>
+        {siteContent.heroSlides.map((slide, index) => (
+          <div className="hero-slide" key={slide.title}>
+            <div className={`container${index === 0 ? " larger-no-space" : ""}`}>
+              <div className="row">
+                <div className="col-lg-6">
+                  <div className="hero-style1">
+                    <h1 className="hero-title text-white">{slide.title}</h1>
+                    <p className="hero-text text-white">{slide.text}</p>
+                    <div className="btn-group">
+                      <Link to="/about" className="btn style2">
+                        Discover More <i className="ri-arrow-right-up-line"></i>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="hero-thumb text-center">
-            <img src="/assets/img/hero/hero_thumb_1_1.png" alt="img" />
-          </div>
-        </div>
-
-        <div className="hero-slide">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-6">
-                <div className="hero-style1">
-                  <h1 className="hero-title text-white">
-                    Quality Build Construction Service
-                  </h1>
-                  <p className="hero-text text-white">
-                    We craft unique digital experiences. With more than 7 years
-                    of expertise we design and code clean websites.
-                  </p>
-                  <div className="btn-group">
-                    <Link to="/about" className="btn style2">
-                      Discover More <i className="ri-arrow-right-up-line"></i>
-                    </Link>
-                  </div>
-                </div>
-              </div>
+            <div className="hero-thumb text-center">
+              <img src={slide.thumb} alt={siteContent.brand.name} loading={index === 0 ? "eager" : "lazy"} />
             </div>
           </div>
-          <div className="hero-thumb text-center">
-            <img src="/assets/img/hero/hero_thumb_1_2.png" alt="img" />
-          </div>
-        </div>
-
-        <div className="hero-slide">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-6">
-                <div className="hero-style1">
-                  <h1 className="hero-title text-white">
-                    Apex Architects Build Construction for future
-                  </h1>
-                  <p className="hero-text text-white">
-                    We craft unique digital experiences. With more than 7 years
-                    of expertise we design and code clean websites.
-                  </p>
-                  <div className="btn-group">
-                    <Link to="/about" className="btn style2">
-                      Discover More <i className="ri-arrow-right-up-line"></i>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="hero-thumb text-center">
-            <img src="/assets/img/hero/hero_thumb_1_3.png" alt="img" />
-          </div>
-        </div>
+        ))}
       </Slider>
 
-      {/* Custom navigation */}
       <div className="slider-controller-wrap">
         <div className="slider-btn-wrap">
           <div className="icon-box">
-            <button onClick={goToPrev} className="slick-arrow default">
+            <button onClick={goToPrev} className="slick-arrow default" aria-label="Previous slide">
               <i className="ri-arrow-left-down-line"></i>
             </button>
-            <button onClick={goToNext} className="slick-arrow default">
+            <button onClick={goToNext} className="slick-arrow default" aria-label="Next slide">
               <i className="ri-arrow-right-up-line"></i>
             </button>
           </div>
@@ -146,7 +89,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Other elements */}
       <div className="hero-bg-shape1-1"></div>
       <div className="hero-bg-shape1-2"></div>
       <div className="section-animation-shape1-1 shape-mockup animation-infinite background-image" style={{ backgroundImage: "url('/assets/img/shape/global-line-shape1.png')" }}>
@@ -155,33 +97,32 @@ const Hero = () => {
       </div>
 
       <div className="hero-shape1-1 shape-mockup movingX">
-        <img src="/assets/img/hero/hero_shape_1_1.png" alt="img" />
+        <img src="/assets/img/hero/hero_shape_1_1.png" alt="" loading="lazy" />
       </div>
 
-      {/* hero wrapper */}
       <div
         className="hero-experience-wrap"
         style={{
           backgroundImage: "url('/assets/img/hero/hero_experience_wrap_bg_1_1.png')",
         }}
       >
-        <span className="shadow-text">Business Experience</span>
+        <span className="shadow-text">Complete Solutions</span>
         <div className="hero-experience-icon">
-          <img src="/assets/img/hero/hero_experience_wrap_icon_1_1.png" alt="img" />
+          <img src="/assets/img/hero/hero_experience_wrap_icon_1_1.png" alt="" loading="lazy" />
         </div>
         <h2 className="hero-experience-counter">
           <span className="counter-number">
-            <CountUp start={0} end={40} />
+            <CountUp start={0} end={8} />
           </span>
           +
         </h2>
-        <p className="hero-experience-text">Years we have been doing this</p>
+        <p className="hero-experience-text">Core service categories under one roof</p>
         <div className="media">
           <div className="icon">
-            <img src="/assets/img/hero/hero_experience_wrap_icon_1_2.png" alt="img" />
+            <img src="/assets/img/hero/hero_experience_wrap_icon_1_2.png" alt="" loading="lazy" />
           </div>
-          <Link className="link-btn link-text" to="/about">
-            Let’s work together{" "}<img src="/assets/img/icon/long-arrow-right.png" alt="img" />
+          <Link className="link-btn link-text" to="/contact">
+            Let's protect what you build{" "}<img src="/assets/img/icon/long-arrow-right.png" alt="" loading="lazy" />
           </Link>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import ContactDropdown from "../../Common/ContactDropdown/ContactDropdown";
+import siteContent from "../../../data/siteContent";
 
  
 
@@ -25,10 +26,11 @@ const ContactAreaTwo = () => {
               <div className="contact-form-wrap">
                 <div className="title-area">
                   <span className="sub-title text-theme">
-                    <img src="/assets/img/icon/section-subtitle-icon.svg" alt="img" />
-                    Get Free Quote
+                    <img src="/assets/img/icon/section-subtitle-icon.svg" alt="" />
+                    {siteContent.cta.subtitle}
                   </span>
-                  <h2 className="sec-title">Have a project in mind?</h2>
+                  <h2 className="sec-title">{siteContent.cta.title}</h2>
+                  <p>{siteContent.cta.text}</p>
                 </div>
                 <form
                    onSubmit={e => e.preventDefault()}
@@ -78,7 +80,7 @@ const ContactAreaTwo = () => {
                           cols={30}
                           rows={3}
                           className="form-control"
-                          placeholder="Message..."
+                          placeholder="Tell us about your coating project..."
                         ></textarea>
                       </div>
                     </div>

@@ -1,19 +1,5 @@
- 
-
-// import { defineConfig } from 'vite';
-// import react from '@vitejs/plugin-react';
-
-// export default defineConfig({
-//   plugins: [react()],
-//   build: {
-//     outDir: 'dist',
-//   },
-//   server: {
-//     open: true,
-//   },
-// });
-
-// vite.config.js
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 import postcssImport from 'postcss-import';
 
 interface AtRule {
@@ -21,7 +7,22 @@ interface AtRule {
   remove: () => void;
 }
 
-export default {
+export default defineConfig({
+  plugins: [react()],
+  build: {
+    outDir: 'dist',
+    target: 'es2020',
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          carousel: ['react-slick', 'slick-carousel'],
+          animation: ['wow.js', 'react-countup', 'react-intersection-observer'],
+        },
+      },
+    },
+  },
   css: {
     postcss: {
       plugins: [
@@ -39,4 +40,7 @@ export default {
       ],
     },
   },
-};
+  server: {
+    open: false,
+  },
+});
