@@ -35,7 +35,6 @@ const Service = () => {
                                                 src={siteContent.images.serviceCards[index % siteContent.images.serviceCards.length]}
                                                 alt={service.title}
                                                 loading="lazy"
-                                                style={{ width: "100%", height: "160px", objectFit: "cover", borderRadius: "8px" }}
                                             />
                                         </div>
                                     )}

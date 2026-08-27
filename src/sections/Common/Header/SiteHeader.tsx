@@ -13,13 +13,18 @@ const SiteHeader = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.classList.toggle("disable-scroll", isMenuOpen);
+    return () => document.body.classList.remove("disable-scroll");
+  }, [isMenuOpen]);
+
   return (
     <div className="header-decoration">
       <OnePageMobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <header className="nav-header header-layout1 header-decoration">
         <div className="header-top">
           <div className="container">
-            <div className="row justify-content-center justify-content-lg-between align-items-center gy-2 ">
+            <div className="row justify-content-center justify-content-lg-between align-items-center gy-2">
               <div className="col-auto d-none d-lg-block">
                 <div className="header-top-left">
                   <div className="header-links">
@@ -40,8 +45,8 @@ const SiteHeader = () => {
                 <div className="header-top-right">
                   <div className="header-links ps-0">
                     <ul>
-                      <li><i className="ri-time-line"></i>{contact.hours}</li>
-                      <li><i className="ri-map-pin-line"></i>{contact.address.city}, Tamil Nadu</li>
+                      <li><i className="ri-time-line"></i> {contact.hours}</li>
+                      <li><i className="ri-map-pin-line"></i> {contact.address.city}, Tamil Nadu</li>
                     </ul>
                   </div>
                 </div>
@@ -56,14 +61,14 @@ const SiteHeader = () => {
             </div>
             <div className="logo-bg"></div>
             <div className="container">
-              <div className="row align-items-center justify-content-lg-start justify-content-between">
+              <div className="row site-header-row align-items-center justify-content-between flex-nowrap">
                 <div className="col-auto d-xxl-none d-block">
                   <div className="header-logo">
                     <a href="#hero"><img src={brand.logo} alt={brand.name} /></a>
                   </div>
                 </div>
-                <div className="col-auto menu-bar ms-xxl-0">
-                  <nav className="main-menu d-none d-lg-inline-block">
+                <div className="col menu-bar">
+                  <nav className="main-menu d-none d-lg-block">
                     <ul>
                       {navItems.map((item) => (
                         <li key={item.href}>
@@ -83,7 +88,7 @@ const SiteHeader = () => {
                     </button>
                   </div>
                 </div>
-                <div className="col-auto d-xl-block d-none space-left">
+                <div className="col-auto d-none d-xl-block">
                   <div className="header-button">
                     <a href="#contact-sec" className="btn header-one-extra-style">
                       GET IN TOUCH <i className="ri-arrow-right-up-line"></i>
