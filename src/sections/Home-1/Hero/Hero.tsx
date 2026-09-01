@@ -73,7 +73,7 @@ const Hero = () => {
               </div>
             </div>
             <div
-              className={`hero-thumb hero-thumb--loader text-center slideinright ${isActive(index) ? "slider-animated" : ""}`}
+              className={`hero-thumb text-center slideinright ${isActive(index) ? "slider-animated" : ""}`}
               style={{ animationDelay: "0.4s" }}
             >
               <img

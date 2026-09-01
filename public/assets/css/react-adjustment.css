@@ -79,16 +79,10 @@ html {
 }
 
 .hero-wrapper .hero-thumb img {
-  width: auto;
-  max-width: 100%;
+  width: 100%;
   height: 100%;
-  max-height: 720px;
-  object-fit: contain;
-  object-position: center bottom;
-}
-
-.hero-wrapper .hero-thumb--loader img {
-  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.45));
+  object-fit: cover;
+  object-position: center center;
 }
 
 /* Services flyer grid — ditto brand flyer layout */

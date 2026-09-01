@@ -20,9 +20,9 @@ export const siteContent = {
   images: {
     heroBackground: "/assets/img/agh/page01_img1.jpeg",
     heroSlides: [
-      "/assets/img/agh/hero-loader.png",
-      "/assets/img/agh/hero-loader.png",
-      "/assets/img/agh/hero-loader.png",
+      "/assets/img/agh/page03_img1.jpeg",
+      "/assets/img/agh/page06_img1.jpeg",
+      "/assets/img/agh/page12_img1.jpeg",
     ],
     about: "/assets/img/agh/page03_img1.jpeg",
     whyChoose: "/assets/img/agh/page12_img1.jpeg",
