@@ -114,6 +114,10 @@ const Hero = () => {
         style={{ backgroundImage: "url('/assets/img/shape/global-line-shape1.png')" }}
       ></div>
 
+      <div className="hero-shape1-1 shape-mockup movingX">
+        <img src="/assets/img/hero/hero_shape_1_1.png" alt="" loading="lazy" />
+      </div>
+
       <div
         className="hero-experience-wrap"
         style={{
@@ -121,6 +125,9 @@ const Hero = () => {
         }}
       >
         <span className="shadow-text">Coating Experience</span>
+        <div className="hero-experience-icon">
+          <img src="/assets/img/hero/hero_experience_wrap_icon_1_1.png" alt="" loading="lazy" />
+        </div>
         <h2 className="hero-experience-counter">
           <span className="counter-number">
             <CountUp start={0} end={8} duration={4} />
@@ -129,6 +136,9 @@ const Hero = () => {
         </h2>
         <p className="hero-experience-text">Core service categories under one roof</p>
         <div className="media">
+          <div className="icon">
+            <img src="/assets/img/hero/hero_experience_wrap_icon_1_2.png" alt="" loading="lazy" />
+          </div>
           <a className="link-btn link-text" href="#contact-sec">
             Let&apos;s protect what you build{" "}
             <img src="/assets/img/icon/long-arrow-right.png" alt="" loading="lazy" />

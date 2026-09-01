@@ -1,56 +1,58 @@
 import siteContent from "../../../data/siteContent";
 
-const serviceIcons = [
-    "/assets/img/icon/service-icon1-1.png",
-    "/assets/img/icon/service-icon1-2.png",
-    "/assets/img/icon/service-icon1-3.png",
-    "/assets/img/icon/service-icon1-4.png",
-    "/assets/img/icon/service-icon1-5.png",
-];
-
 const Service = () => {
-    const homeServices = siteContent.services.slice(0, 8);
+  const { services, images, brand } = siteContent;
 
-    return (
-        <div className="service-area-1 space-top overflow-hidden" style={{ backgroundImage: "url('/assets/img/bg/service-bg1-1.png')" }} id="service-sec">
-            <div className="container">
-                <div className="row gy-30 gx-30">
-                    <div className="col-xl-4 col-md-6">
-                        <div className="title-area mb-0 text-left content-text-extra-style">
-                            <span className="sub-title"><img src="/assets/img/icon/section-subtitle-icon.svg" alt="" /> Our Products & Services</span>
-                            <h2 className="sec-title">Complete coating solutions under one roof</h2>
-                            <p>{siteContent.brand.description}</p>
-                        </div>
-                    </div>
-                    {homeServices.map((service, index) => (
-                        <div className="col-xl-4 col-md-6" key={service.id}>
-                            <div className="service-card">
-                                <div className="service-card-shadow-text">
-                                    SERVICES - {service.id}
-                                </div>
-                                <div className="service-card_content">
-                                    {siteContent.images.serviceCards[index] && (
-                                        <div className="service-card-thumb mb-20">
-                                            <img
-                                                src={siteContent.images.serviceCards[index % siteContent.images.serviceCards.length]}
-                                                alt={service.title}
-                                                loading="lazy"
-                                            />
-                                        </div>
-                                    )}
-                                    <div className="service-card_icon">
-                                        <img src={serviceIcons[index % serviceIcons.length]} alt="" loading="lazy" />
-                                    </div>
-                                    <h4 className="service-card_title">{service.title}</h4>
-                                    <p className="service-card_text">{service.text}</p>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+  return (
+    <section className="coating-services-section space-top overflow-hidden" id="service-sec">
+      <div className="container">
+        <div className="title-area text-center mb-50">
+          <span className="sub-title">
+            <img src="/assets/img/icon/section-subtitle-icon.svg" alt="" />
+            What We Do
+          </span>
+          <h2 className="sec-title">Our services that we provide</h2>
+          <p className="sec-text mx-auto">{brand.description}</p>
         </div>
-    );
+
+        <div className="coating-service-grid">
+          {services.map((service, index) => (
+            <article
+              className={`coating-service-tile ${index % 2 === 1 ? "coating-service-tile--flip" : ""}`}
+              key={service.id}
+            >
+              <div className="coating-service-tile__media">
+                {"variant" in service && service.variant === "abrasives" ? (
+                  <div className="coating-service-tile__abrasives">
+                    {images.abrasiveSamples.map((sample) => (
+                      <div className="coating-service-tile__abrasive-item" key={sample.label}>
+                        <img src={sample.image} alt={sample.label} loading="lazy" />
+                        <span>{sample.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <img
+                    src={images.serviceCards[index]}
+                    alt={service.title}
+                    loading="lazy"
+                  />
+                )}
+              </div>
+              <div className="coating-service-tile__stripe" aria-hidden="true" />
+              <div className="coating-service-tile__content">
+                <div className="coating-service-tile__icon">
+                  <i className={service.icon} aria-hidden="true" />
+                </div>
+                <h3 className="coating-service-tile__title">{service.title}</h3>
+                <p className="coating-service-tile__text">{service.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Service;

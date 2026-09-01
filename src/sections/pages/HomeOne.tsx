@@ -20,9 +20,9 @@ const HomeOne = () => {
 				<Hero />
 				<About />
 				<Service />
+				<Cta />
 				<WhyChoose />
 				<Process />
-				<Cta />
 				<Blog />
 				<Contact />
 				<FooterTwo />
