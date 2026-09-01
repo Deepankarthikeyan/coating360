@@ -42,5 +42,7 @@ export default defineConfig({
   },
   server: {
     open: false,
+    host: true,
+    allowedHosts: ['.trycloudflare.com'],
   },
 });
