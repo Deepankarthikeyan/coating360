@@ -73,7 +73,7 @@ const Hero = () => {
               </div>
             </div>
             <div
-              className={`hero-thumb text-center slideinright ${isActive(index) ? "slider-animated" : ""}`}
+              className={`hero-thumb hero-thumb--loader text-center slideinright ${isActive(index) ? "slider-animated" : ""}`}
               style={{ animationDelay: "0.4s" }}
             >
               <img
@@ -119,14 +119,14 @@ const Hero = () => {
       </div>
 
       <div
-        className="hero-experience-wrap hero-experience-wrap--coating"
+        className="hero-experience-wrap"
         style={{
-          backgroundImage: `url('${images.heroExperience.background}')`,
+          backgroundImage: "url('/assets/img/hero/hero_experience_wrap_bg_1_1.png')",
         }}
       >
         <span className="shadow-text">Coating Experience</span>
-        <div className="hero-experience-icon hero-experience-icon--coating">
-          <img src={images.heroExperience.icon} alt="" loading="lazy" />
+        <div className="hero-experience-icon">
+          <img src="/assets/img/hero/hero_experience_wrap_icon_1_1.png" alt="" loading="lazy" />
         </div>
         <h2 className="hero-experience-counter">
           <span className="counter-number">
@@ -136,8 +136,8 @@ const Hero = () => {
         </h2>
         <p className="hero-experience-text">Core service categories under one roof</p>
         <div className="media">
-          <div className="icon hero-experience-media-icon">
-            <img src={images.heroExperience.accent} alt="" loading="lazy" />
+          <div className="icon">
+            <img src="/assets/img/hero/hero_experience_wrap_icon_1_2.png" alt="" loading="lazy" />
           </div>
           <a className="link-btn link-text" href="#contact-sec">
             Let&apos;s protect what you build{" "}

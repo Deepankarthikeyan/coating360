@@ -78,244 +78,193 @@ html {
   border-radius: 8px;
 }
 
-/* Coating360 service grid inside Construz service-area-1 */
-.coating-service-grid--full {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+.hero-wrapper .hero-thumb img {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  max-height: 720px;
+  object-fit: contain;
+  object-position: center bottom;
 }
 
-.coating-service-tile {
+.hero-wrapper .hero-thumb--loader img {
+  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.45));
+}
+
+/* Services flyer grid — ditto brand flyer layout */
+.coating-services-flyer {
+  padding-bottom: 120px;
+  background: #ffffff;
+}
+
+.coating-services-flyer .title-area {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.coating-flyer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border: 1px solid rgba(21, 22, 28, 0.1);
+}
+
+.coating-flyer-tile {
   position: relative;
   display: grid;
-  grid-template-columns: 42% 58%;
-  min-height: 240px;
+  grid-template-columns: 46% 54%;
+  min-height: 280px;
   background: #ffffff;
   overflow: hidden;
   border: 1px solid rgba(21, 22, 28, 0.08);
-  box-shadow: 0 8px 30px rgba(21, 22, 28, 0.08);
-  transition: box-shadow 0.35s ease, transform 0.35s ease;
 }
 
-.coating-service-tile:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 36px rgba(21, 22, 28, 0.14);
-}
-
-.coating-service-tile__number {
-  position: absolute;
-  transform: rotate(-90deg) translate(-50%, 0);
-  font-size: 22px;
-  font-weight: 600;
-  font-family: var(--title-font);
-  color: transparent;
-  -webkit-text-stroke: 1px var(--title-color);
-  transform-origin: left top;
-  top: 50%;
-  left: 8px;
-  opacity: 0.12;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.coating-service-tile__content {
+.coating-flyer-tile__body {
   position: relative;
-  z-index: 3;
-  padding: 18px 14px 16px 28px;
+  z-index: 2;
+  padding: 28px 20px 28px 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: #ffffff;
 }
 
-.coating-service-tile__icon {
-  width: 44px;
-  height: 44px;
+.coating-flyer-tile__icon {
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: var(--theme-color);
   color: #ffffff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  margin-bottom: 10px;
-  flex-shrink: 0;
+  font-size: 24px;
+  margin-bottom: 14px;
 }
 
-.coating-service-tile__title {
-  margin: 0 0 6px;
-  font-size: 13px;
-  line-height: 1.25;
+.coating-flyer-tile__title {
+  margin: 0 0 10px;
+  font-size: 18px;
+  line-height: 1.2;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--theme-color);
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--theme-color);
+  display: inline-block;
 }
 
-.coating-service-tile__text {
-  margin: 0 0 10px;
-  font-size: 12px;
-  line-height: 1.45;
+.coating-flyer-tile__text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
   color: var(--body-color);
 }
 
-.coating-service-tile__btn .btn {
-  padding: 8px 14px;
-  font-size: 11px;
-}
-
-.coating-service-tile__stripe {
+.coating-flyer-tile__divider {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 40%;
-  width: 12px;
+  top: -10%;
+  bottom: -10%;
+  left: 42%;
+  width: 16px;
   background: var(--theme-color);
-  transform: skewX(-14deg);
-  z-index: 4;
+  transform: skewX(-16deg);
+  z-index: 3;
 }
 
-.coating-service-tile__media {
+.coating-flyer-tile__photo {
   position: relative;
   overflow: hidden;
-  clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
-  margin-left: -10%;
+  clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%);
+  margin-left: -12%;
 }
 
-.coating-service-tile__media img {
+.coating-flyer-tile__photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.45s ease;
 }
 
-.coating-service-tile:hover .coating-service-tile__media img {
-  transform: scale(1.06);
+.coating-flyer-tile:hover .coating-flyer-tile__photo img {
+  transform: scale(1.05);
 }
 
-.coating-service-tile__abrasives {
+.coating-flyer-tile--abrasives .coating-flyer-tile__photo {
+  display: none;
+}
+
+.coating-flyer-tile__abrasives {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 4px;
+  gap: 10px;
+  padding: 18px 16px 18px 8%;
+  margin-left: -12%;
+  clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%);
+  background: #ffffff;
+}
+
+.coating-flyer-abrasive {
+  margin: 0;
+  text-align: center;
+}
+
+.coating-flyer-abrasive img {
   width: 100%;
-  height: 100%;
-  padding: 8px;
-  background: #ececec;
-}
-
-.coating-service-tile__abrasive-item {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(21, 22, 28, 0.08);
-}
-
-.coating-service-tile__abrasive-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.coating-service-tile__abrasive-item span {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 2px 4px;
-  font-size: 8px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #ffffff;
-  background: rgba(21, 22, 28, 0.75);
-}
-
-/* Hero experience with flyer images */
-.hero-experience-wrap--coating {
-  background-size: cover !important;
-  background-position: center !important;
-}
-
-.hero-experience-wrap--coating::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(21, 22, 28, 0.82) 0%, rgba(21, 22, 28, 0.55) 100%);
-  z-index: 0;
-}
-
-.hero-experience-wrap--coating > * {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-experience-icon--coating {
-  width: 72px;
   height: 72px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid var(--theme-color);
-  margin-bottom: 12px;
-}
-
-.hero-experience-icon--coating img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
+  border-radius: 4px;
 }
 
-.hero-experience-media-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid var(--theme-color);
-  flex-shrink: 0;
+.coating-flyer-abrasive figcaption {
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--title-color);
 }
 
-.hero-experience-media-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.coating-services-flyer + .coating-cta-area {
+  margin-top: 0;
+  padding-top: 20px;
 }
 
-/* CTA spacing after service-area-1 */
-.service-area-1 + .coating-cta-area {
-  margin-top: -200px;
-}
-
-@media (max-width: 1399px) {
-  .coating-service-grid--full {
+@media (max-width: 1199px) {
+  .coating-flyer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 991px) {
-  .service-area-1 + .coating-cta-area {
-    margin-top: 0;
-    padding-top: 40px;
+@media (max-width: 767px) {
+  .coating-services-flyer {
+    padding-bottom: 60px;
   }
 
-  .coating-service-grid--full {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 575px) {
-  .coating-service-grid--full {
+  .coating-flyer-grid {
     grid-template-columns: 1fr;
   }
 
-  .coating-service-tile {
+  .coating-flyer-tile {
     grid-template-columns: 1fr;
     min-height: auto;
   }
 
-  .coating-service-tile__media {
-    min-height: 160px;
+  .coating-flyer-tile__photo {
+    min-height: 200px;
     margin-left: 0;
     clip-path: none;
   }
 
-  .coating-service-tile__stripe {
+  .coating-flyer-tile__divider {
     display: none;
+  }
+
+  .coating-flyer-tile__abrasives {
+    margin-left: 0;
+    clip-path: none;
+    padding: 16px;
   }
 }
 
@@ -346,8 +295,7 @@ html {
 }
 
 .cta-area-1 .cta-thumb1-1 img,
-.contact-area-1 .contact-thumb1-1 img,
-.hero-wrapper .hero-thumb img {
+.contact-area-1 .contact-thumb1-1 img {
   width: 100%;
   height: 100%;
   object-fit: cover;

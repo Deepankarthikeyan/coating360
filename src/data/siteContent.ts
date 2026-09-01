@@ -20,15 +20,10 @@ export const siteContent = {
   images: {
     heroBackground: "/assets/img/agh/page01_img1.jpeg",
     heroSlides: [
-      "/assets/img/agh/services/industrial-paints.jpg",
-      "/assets/img/agh/services/marine-coatings.jpg",
-      "/assets/img/agh/services/painting-services.jpg",
+      "/assets/img/agh/hero-loader.png",
+      "/assets/img/agh/hero-loader.png",
+      "/assets/img/agh/hero-loader.png",
     ],
-    heroExperience: {
-      background: "/assets/img/agh/services/hero-experience-bg.jpg",
-      accent: "/assets/img/agh/services/hero-experience-accent.jpg",
-      icon: "/assets/img/agh/services/painting-services.jpg",
-    },
     about: "/assets/img/agh/page03_img1.jpeg",
     whyChoose: "/assets/img/agh/page12_img1.jpeg",
     processBackground: "/assets/img/agh/page12_img2.jpeg",
