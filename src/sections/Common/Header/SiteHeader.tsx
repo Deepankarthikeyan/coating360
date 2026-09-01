@@ -21,7 +21,7 @@ const SiteHeader = () => {
   return (
     <div className="header-decoration">
       <OnePageMobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <header className="nav-header header-layout1 header-decoration">
+      <header className="nav-header header-layout1">
         <div className="header-top">
           <div className="container">
             <div className="row justify-content-center justify-content-lg-between align-items-center gy-2">
@@ -61,14 +61,14 @@ const SiteHeader = () => {
             </div>
             <div className="logo-bg"></div>
             <div className="container">
-              <div className="row site-header-row align-items-center justify-content-between flex-nowrap">
+              <div className="row align-items-center justify-content-lg-start justify-content-between">
                 <div className="col-auto d-xxl-none d-block">
                   <div className="header-logo">
                     <a href="#hero"><img src={brand.logo} alt={brand.name} /></a>
                   </div>
                 </div>
-                <div className="col menu-bar">
-                  <nav className="main-menu d-none d-lg-block">
+                <div className="col-auto menu-bar ms-xxl-0">
+                  <nav className="main-menu d-none d-lg-inline-block">
                     <ul>
                       {navItems.map((item) => (
                         <li key={item.href}>
@@ -88,7 +88,7 @@ const SiteHeader = () => {
                     </button>
                   </div>
                 </div>
-                <div className="col-auto d-none d-xl-block">
+                <div className="col-auto d-xl-block d-none space-left">
                   <div className="header-button">
                     <a href="#contact-sec" className="btn header-one-extra-style">
                       GET IN TOUCH <i className="ri-arrow-right-up-line"></i>

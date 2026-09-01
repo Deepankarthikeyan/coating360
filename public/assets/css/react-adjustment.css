@@ -4,12 +4,12 @@ html {
   scroll-behavior: smooth;
 }
 
-/* AGH Coating360 logo sizing */
+/* AGH Coating360 logo sizing — fits header-layout1 logo box */
 .header-layout1 .header-logo img,
 .header-layout1 .header-navbar-logo img {
-  max-height: 92px;
+  max-height: 52px;
   width: auto;
-  max-width: 480px;
+  max-width: 240px;
   object-fit: contain;
   display: block;
 }
@@ -17,84 +17,16 @@ html {
 .footer-layout1 .footer-logo img,
 .mobile-menu-wrapper .mobile-logo img,
 .sidemenu-content .footer-logo img {
-  max-height: 72px;
+  max-height: 56px;
   width: auto;
   object-fit: contain;
 }
 
-/* Site header alignment */
-.header-layout1 .site-header-row {
-  width: 100%;
-  min-height: 100px;
-  align-items: center !important;
-}
-
-.header-layout1 .site-header-row .menu-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1 1 auto;
-  padding-left: 260px;
-  padding-right: 280px;
-}
-
-.header-layout1 .site-header-row .main-menu {
-  margin-left: 0 !important;
-  padding-left: 0 !important;
-  width: 100%;
-}
-
-.header-layout1 .site-header-row .main-menu:after {
-  display: none;
-}
-
-.header-layout1 .site-header-row .main-menu > ul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px 28px;
-  margin: 0;
-  padding: 0;
-}
-
-.header-layout1 .site-header-row .main-menu > ul > li {
-  margin: 0 !important;
-}
-
-.header-layout1 .site-header-row .header-button {
-  margin-top: 0 !important;
-  height: auto !important;
-  margin-right: 70px;
-  white-space: nowrap;
-}
-
-.header-layout1 .header-navbar-logo {
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-
-.header-layout1 .header-navbar-logo img {
-  max-height: 92px;
-}
-
 @media (max-width: 1399px) {
-  .header-layout1 .site-header-row .menu-bar {
-    padding-left: 230px;
-    padding-right: 240px;
-  }
-
   .header-layout1 .header-logo img,
   .header-layout1 .header-navbar-logo img {
-    max-height: 78px;
-  }
-}
-
-@media (max-width: 1199px) {
-  .header-layout1 .site-header-row .menu-bar {
-    padding-left: 0;
-    padding-right: 0;
-    justify-content: flex-end;
+    max-height: 48px;
+    max-width: 200px;
   }
 }
 
@@ -1498,11 +1430,10 @@ i.ri-star-fill {
 }
 
 
-.menu-bar {
-  display: flex;
-  justify-content: end;
-  justify-items: end;
-  max-width: 100%;
+/* Scoped menu-bar override — do not affect header-layout1 */
+.header-layout1 .menu-bar {
+  display: block;
+  max-width: none;
 }
 
 .common-about-number-style {

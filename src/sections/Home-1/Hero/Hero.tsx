@@ -22,21 +22,24 @@ const Hero = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 1500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 7000,
     arrows: false,
     fade: true,
-    beforeChange: (_current: number, next: number) => setCurrentSlide(next),
+    waitForAnimate: true,
+    afterChange: (current: number) => setCurrentSlide(current),
   };
+
+  const isActive = (index: number) => currentSlide === index;
 
   return (
     <div
       className="hero-wrapper hero-1 shape-mockup-wrap background-image"
       id="hero"
-      style={{ backgroundImage: `url('${images.heroBackground}')` }}
+      style={{ backgroundImage: "url('/assets/img/hero/hero_bg_1_1.png')" }}
     >
       <Slider {...settings} ref={sliderRef} className="hero-slider1">
         {siteContent.heroSlides.map((slide, index) => (
@@ -45,9 +48,22 @@ const Hero = () => {
               <div className="row">
                 <div className="col-lg-6">
                   <div className="hero-style1">
-                    <h1 className="hero-title text-white">{slide.title}</h1>
-                    <p className="hero-text text-white">{slide.text}</p>
-                    <div className="btn-group">
+                    <h1
+                      className={`hero-title text-white slider-custom-anim-left ${isActive(index) ? "slider-animated" : ""}`}
+                      style={{ animationDelay: "0.1s" }}
+                    >
+                      {slide.title}
+                    </h1>
+                    <p
+                      className={`hero-text text-white slider-custom-anim-left ${isActive(index) ? "slider-animated" : ""}`}
+                      style={{ animationDelay: "0.3s" }}
+                    >
+                      {slide.text}
+                    </p>
+                    <div
+                      className={`btn-group slider-custom-anim-left ${isActive(index) ? "slider-animated" : ""}`}
+                      style={{ animationDelay: "0.5s" }}
+                    >
                       <a href="#about-sec" className="btn style2">
                         Discover More <i className="ri-arrow-right-up-line"></i>
                       </a>
@@ -56,7 +72,10 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-            <div className="hero-thumb text-center">
+            <div
+              className={`hero-thumb text-center slideinright ${isActive(index) ? "slider-animated" : ""}`}
+              style={{ animationDelay: "0.4s" }}
+            >
               <img
                 src={images.heroSlides[index]}
                 alt={siteContent.brand.name}
@@ -101,17 +120,17 @@ const Hero = () => {
           backgroundImage: "url('/assets/img/hero/hero_experience_wrap_bg_1_1.png')",
         }}
       >
-        <span className="shadow-text">Complete Solutions</span>
+        <span className="shadow-text">Coating Experience</span>
         <h2 className="hero-experience-counter">
           <span className="counter-number">
-            <CountUp start={0} end={8} />
+            <CountUp start={0} end={8} duration={4} />
           </span>
           +
         </h2>
         <p className="hero-experience-text">Core service categories under one roof</p>
         <div className="media">
           <a className="link-btn link-text" href="#contact-sec">
-            Let's protect what you build{" "}
+            Let&apos;s protect what you build{" "}
             <img src="/assets/img/icon/long-arrow-right.png" alt="" loading="lazy" />
           </a>
         </div>

@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Raleway:wght@600;700&display=swap');
  
 
+@import "/landing-assets/css/animate.css";
 @import "/assets/css/bootstrap.min.css";
 @import "/assets/css/bootstrap.rtl.min.css";
 @import "/assets/css/fontawesome.min.css";
