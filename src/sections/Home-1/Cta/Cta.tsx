@@ -5,7 +5,7 @@ import siteContent from "../../../data/siteContent";
 
 const Cta = () => {
     return (
-        <div className="cta-area-1">
+        <section className="cta-area-1 coating-cta-area" id="quote-sec">
             <div className="container">
                 <div className="row gx-0 align-items-center">
                     <div className="col-lg-7">
@@ -44,7 +44,7 @@ const Cta = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -17,10 +17,15 @@ const Service = () => {
 
         <div className="coating-service-grid">
           {services.map((service, index) => (
-            <article
-              className={`coating-service-tile ${index % 2 === 1 ? "coating-service-tile--flip" : ""}`}
-              key={service.id}
-            >
+            <article className="coating-service-tile" key={service.id}>
+              <div className="coating-service-tile__content">
+                <div className="coating-service-tile__icon">
+                  <i className={service.icon} aria-hidden="true" />
+                </div>
+                <h3 className="coating-service-tile__title">{service.title}</h3>
+                <p className="coating-service-tile__text">{service.text}</p>
+              </div>
+              <div className="coating-service-tile__stripe" aria-hidden="true" />
               <div className="coating-service-tile__media">
                 {"variant" in service && service.variant === "abrasives" ? (
                   <div className="coating-service-tile__abrasives">
@@ -38,14 +43,6 @@ const Service = () => {
                     loading="lazy"
                   />
                 )}
-              </div>
-              <div className="coating-service-tile__stripe" aria-hidden="true" />
-              <div className="coating-service-tile__content">
-                <div className="coating-service-tile__icon">
-                  <i className={service.icon} aria-hidden="true" />
-                </div>
-                <h3 className="coating-service-tile__title">{service.title}</h3>
-                <p className="coating-service-tile__text">{service.text}</p>
               </div>
             </article>
           ))}

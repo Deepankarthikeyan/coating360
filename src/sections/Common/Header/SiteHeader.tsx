@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import siteContent, { navItems } from "../../../data/siteContent";
 import OnePageMobileMenu from "../MobileMenu/OnePageMobileMenu";
 
 const SiteHeader = () => {
   const [isSticky, setIsSticky] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { brand, contact } = siteContent;
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const sidebarRef = useRef<HTMLDivElement>(null);
+  const { brand, contact, news } = siteContent;
 
   useEffect(() => {
     const handleScroll = () => setIsSticky(window.scrollY > 500);
@@ -14,13 +17,89 @@ const SiteHeader = () => {
   }, []);
 
   useEffect(() => {
-    document.body.classList.toggle("disable-scroll", isMenuOpen);
+    document.body.classList.toggle("disable-scroll", isMenuOpen || isSideBarOpen);
     return () => document.body.classList.remove("disable-scroll");
-  }, [isMenuOpen]);
+  }, [isMenuOpen, isSideBarOpen]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node)) {
+        setIsSideBarOpen(false);
+      }
+    };
+
+    if (isSideBarOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isSideBarOpen]);
 
   return (
     <div className="header-decoration">
+      <div className={`popup-search-box ${isPopupOpen ? "show" : ""}`}>
+        <button onClick={() => setIsPopupOpen(false)} className="searchClose" type="button" aria-label="Close search">
+          <i className="ri-close-line"></i>
+        </button>
+        <form onSubmit={(e) => e.preventDefault()}>
+          <input type="text" placeholder="Search Here.." />
+          <button type="submit"><i className="ri-search-line"></i></button>
+        </form>
+      </div>
+
+      <div className={`sidemenu-wrapper ${isSideBarOpen ? "show" : ""}`}>
+        <div ref={sidebarRef} className="sidemenu-content">
+          <button onClick={() => setIsSideBarOpen(false)} className="closeButton sideMenuCls" type="button" aria-label="Close sidebar">
+            <i className="ri-close-line"></i>
+          </button>
+          <div className="widget widget-about footer-widget">
+            <div className="footer-logo footer-img">
+              <a href="#hero"><img src={brand.logo} alt={brand.name} /></a>
+            </div>
+            <p className="about-text mb-4">{brand.description}</p>
+            <p className="footer-text">
+              <a href={`tel:${contact.phones[0]}`}>
+                <i className="ri-phone-line space-right-sidebar-icon"></i>
+                {contact.phones[0]}
+              </a>
+            </p>
+            <p className="contact-text">
+              <i className="ri-map-pin-line space-right-sidebar-icon"></i>
+              {contact.address.full}
+            </p>
+            <p className="footer-text">
+              <a href={`mailto:${contact.salesEmail}`}>
+                <i className="ri-mail-line space-right-sidebar-icon"></i>
+                {contact.salesEmail}
+              </a>
+            </p>
+            <div className="social-btn style3 mt-30">
+              <a href="https://www.facebook.com/" aria-label="Facebook"><i className="ri-facebook-fill"></i></a>
+              <a href="https://www.twitter.com/" aria-label="Twitter"><i className="ri-twitter-x-line"></i></a>
+              <a href="https://www.instagram.com/" aria-label="Instagram"><i className="ri-instagram-line"></i></a>
+              <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i className="ri-linkedin-fill"></i></a>
+            </div>
+            <div className="recent-post-wrap mt-40">
+              {news.map((item) => (
+                <div className="recent-post" key={item.title}>
+                  <div className="media-body">
+                    <h4 className="post-title">
+                      <a className="text-inherit" href="#blog-sec">{item.title}</a>
+                    </h4>
+                    <div className="recent-post-meta">
+                      <a href="#blog-sec">{item.category}</a>
+                      <a href="#blog-sec">{item.date}</a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
       <OnePageMobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+
       <header className="nav-header header-layout1">
         <div className="header-top">
           <div className="container">
@@ -54,6 +133,7 @@ const SiteHeader = () => {
             </div>
           </div>
         </div>
+
         <div className={`sticky-wrapper ${isSticky ? "sticky" : ""}`}>
           <div className="menu-area">
             <div className="header-navbar-logo">
@@ -78,21 +158,22 @@ const SiteHeader = () => {
                     </ul>
                   </nav>
                   <div className="navbar-right d-inline-flex d-lg-none">
-                    <button
-                      onClick={() => setIsMenuOpen(true)}
-                      type="button"
-                      className="menu-toggle icon-btn"
-                      aria-label="Open menu"
-                    >
+                    <button onClick={() => setIsMenuOpen(true)} type="button" className="menu-toggle icon-btn" aria-label="Open menu">
                       <i className="ri-menu-line"></i>
                     </button>
                   </div>
                 </div>
                 <div className="col-auto d-xl-block d-none space-left">
                   <div className="header-button">
-                    <a href="#contact-sec" className="btn header-one-extra-style">
+                    <a href="#contact-sec" className="btn">
                       GET IN TOUCH <i className="ri-arrow-right-up-line"></i>
                     </a>
+                    <button onClick={() => setIsPopupOpen(true)} type="button" className="search-btn searchBoxToggler simple-icon" aria-label="Open search">
+                      <i className="ri-search-line"></i>
+                    </button>
+                    <button onClick={() => setIsSideBarOpen(true)} type="button" className="sidebar-btn sideMenuToggler simple-icon" aria-label="Open sidebar">
+                      <i className="ri-grid-fill"></i>
+                    </button>
                   </div>
                 </div>
               </div>
