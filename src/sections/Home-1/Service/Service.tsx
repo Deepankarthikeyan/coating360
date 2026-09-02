@@ -1,53 +1,48 @@
 import siteContent from "../../../data/siteContent";
 
 const Service = () => {
-  const { services, images, brand } = siteContent;
+  const { services, brand } = siteContent;
 
   return (
-    <section className="coating-services-flyer space-top overflow-hidden" id="service-sec">
+    <div className="service-area-1 space-top overflow-hidden" id="service-sec">
       <div className="container">
-        <div className="title-area text-center mb-50">
-          <span className="sub-title">
-            <img src="/assets/img/icon/section-subtitle-icon.svg" alt="" />
-            What We Do
-          </span>
-          <h2 className="sec-title">Our services that we provide</h2>
-          <p className="sec-text mx-auto">{brand.description}</p>
-        </div>
+        <div className="row gy-30 gx-30">
+          <div className="col-xl-4 col-md-6">
+            <div className="title-area mb-0 text-left content-text-extra-style">
+              <span className="sub-title">
+                <img src="/assets/img/icon/section-subtitle-icon.svg" alt="" />
+                What We Do
+              </span>
+              <h2 className="sec-title">Our services that we provide</h2>
+              <p>{brand.description}</p>
+            </div>
+          </div>
 
-        <div className="coating-flyer-grid">
-          {services.map((service, index) => (
-            <article
-              className={`coating-flyer-tile${service.variant === "abrasives" ? " coating-flyer-tile--abrasives" : ""}`}
-              key={service.id}
-            >
-              <div className="coating-flyer-tile__body">
-                <div className="coating-flyer-tile__icon">
-                  <i className={service.icon} aria-hidden="true" />
+          {services.map((service) => (
+            <div className="col-xl-4 col-md-6" key={service.id}>
+              <div className="service-card">
+                <div className="service-card-shadow-text">SERVICES - {service.id}</div>
+                <div className="service-card_content">
+                  <div className="service-card_icon service-card_icon--remix">
+                    <i className={service.icon} aria-hidden="true" />
+                  </div>
+                  <h4 className="service-card_title">{service.title}</h4>
+                  <p className="service-card_text">{service.text}</p>
+                  <div className="btn-wrap">
+                    <div className="icon-btn">
+                      <i className="ri-arrow-right-up-line" />
+                    </div>
+                    <a href="#contact-sec" className="btn">
+                      Explore Service <i className="ri-arrow-right-up-line" />
+                    </a>
+                  </div>
                 </div>
-                <h3 className="coating-flyer-tile__title">{service.title}</h3>
-                <p className="coating-flyer-tile__text">{service.text}</p>
               </div>
-              <div className="coating-flyer-tile__divider" aria-hidden="true" />
-              {service.variant === "abrasives" ? (
-                <div className="coating-flyer-tile__abrasives">
-                  {images.abrasiveSamples.map((sample) => (
-                    <figure className="coating-flyer-abrasive" key={sample.label}>
-                      <img src={sample.image} alt={sample.label} loading="lazy" />
-                      <figcaption>{sample.label}</figcaption>
-                    </figure>
-                  ))}
-                </div>
-              ) : (
-                <div className="coating-flyer-tile__photo">
-                  <img src={images.serviceCards[index]} alt={service.title} loading="lazy" />
-                </div>
-              )}
-            </article>
+            </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

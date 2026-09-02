@@ -27,7 +27,7 @@ export const siteContent = {
     about: "/assets/img/agh/page03_img1.jpeg",
     whyChoose: "/assets/img/agh/page12_img1.jpeg",
     processBackground: "/assets/img/agh/page12_img2.jpeg",
-    cta: "/assets/img/agh/page06_img1.jpeg",
+    cta: "/assets/img/agh/cta-painting.png",
     contact: "/assets/img/agh/page14_img1.jpeg",
     serviceCards: [
       "/assets/img/agh/services/industrial-paints.jpg",
