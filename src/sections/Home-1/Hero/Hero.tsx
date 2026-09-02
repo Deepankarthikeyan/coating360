@@ -36,14 +36,29 @@ const Hero = () => {
   const isActive = (index: number) => currentSlide === index;
 
   return (
-    <div
-      className="hero-wrapper hero-1 shape-mockup-wrap background-image"
-      id="hero"
-      style={{ backgroundImage: "url('/assets/img/hero/hero_bg_1_1.png')" }}
-    >
+    <div className="hero-wrapper hero-1 shape-mockup-wrap hero-split-layout" id="hero">
       <Slider {...settings} ref={sliderRef} className="hero-slider1">
         {siteContent.heroSlides.map((slide, index) => (
           <div className="hero-slide" key={slide.title}>
+            <div className="hero-images-split">
+              <div className="hero-left-thumb">
+                <img
+                  src={images.heroBackground}
+                  alt={siteContent.brand.name}
+                  loading={index === 0 ? "eager" : "lazy"}
+                />
+              </div>
+              <div
+                className={`hero-thumb text-center slideinright ${isActive(index) ? "slider-animated" : ""}`}
+                style={{ animationDelay: "0.4s" }}
+              >
+                <img
+                  src={images.heroSlides[index]}
+                  alt={siteContent.brand.name}
+                  loading={index === 0 ? "eager" : "lazy"}
+                />
+              </div>
+            </div>
             <div className={`container${index === 0 ? " larger-no-space" : ""}`}>
               <div className="row">
                 <div className="col-lg-6">
@@ -71,16 +86,6 @@ const Hero = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              className={`hero-thumb text-center slideinright ${isActive(index) ? "slider-animated" : ""}`}
-              style={{ animationDelay: "0.4s" }}
-            >
-              <img
-                src={images.heroSlides[index]}
-                alt={siteContent.brand.name}
-                loading={index === 0 ? "eager" : "lazy"}
-              />
             </div>
           </div>
         ))}

@@ -143,6 +143,80 @@ html {
   object-position: center center;
 }
 
+/* Hero split layout: left and right images side by side, no overlap */
+.hero-1.hero-split-layout {
+  background-image: none !important;
+  background-color: #2a2a2a;
+}
+
+.hero-1.hero-split-layout .hero-slider1 .hero-slide {
+  position: relative;
+  min-height: 620px;
+}
+
+.hero-1 .hero-images-split {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  z-index: 0;
+}
+
+.hero-1 .hero-left-thumb,
+.hero-1.hero-split-layout .hero-slider1 .hero-thumb {
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  left: auto !important;
+  bottom: auto !important;
+  width: 50% !important;
+  max-width: 50% !important;
+  flex: 0 0 50% !important;
+  height: 100% !important;
+  overflow: hidden;
+  display: block !important;
+}
+
+.hero-1 .hero-left-thumb img,
+.hero-1.hero-split-layout .hero-slider1 .hero-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.hero-1.hero-split-layout .hero-slider1 .hero-thumb {
+  border-left: 5px solid var(--theme-color);
+}
+
+.hero-1 .hero-slider1 .hero-slide .container {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-1 .hero-slider1 .hero-slide .container a,
+.hero-1 .hero-slider1 .hero-slide .container button {
+  pointer-events: auto;
+}
+
+@media (max-width: 991px) {
+  .hero-1 .hero-images-split {
+    position: relative;
+    height: 280px;
+  }
+
+  .hero-1 .hero-left-thumb {
+    display: none;
+  }
+
+  .hero-1 .hero-slider1 .hero-thumb {
+    width: 100%;
+    flex: 0 0 100%;
+    display: block !important;
+  }
+}
+
 .hero-wrapper .hero-shape1-1 img {
   width: 100%;
   max-width: 620px;
