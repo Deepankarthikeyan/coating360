@@ -85,6 +85,14 @@ html {
   object-position: center center;
 }
 
+.hero-wrapper .hero-shape1-1 img {
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+  object-fit: contain;
+  object-position: left bottom;
+}
+
 /* Services flyer grid — ditto brand flyer layout */
 .coating-services-flyer {
   padding-bottom: 120px;
