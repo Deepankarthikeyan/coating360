@@ -50,6 +50,14 @@ html {
   display: flex;
 }
 
+.service-area-1 .row.gy-20 {
+  --bs-gutter-y: 20px;
+}
+
+.service-area-1 .row.gx-20 {
+  --bs-gutter-x: 20px;
+}
+
 .service-area-1 .service-card {
   width: 100%;
   height: 100%;
