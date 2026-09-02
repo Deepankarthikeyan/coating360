@@ -1,121 +1,77 @@
- 
-import { useEffect, useRef, useState } from "react";
-import Slider from "react-slick";
+import { useEffect, useState } from "react";
 import CountUp from "react-countup";
-import siteContent from "../../../data/siteContent";
 
 const Hero = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [totalSlides, setTotalSlides] = useState(0);
-  const sliderRef = useRef<any>(null);
-  const { images } = siteContent;
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    if (sliderRef.current) {
-      setTotalSlides(sliderRef.current.props.children.length);
-    }
+    const timer = window.setTimeout(() => setIsLoaded(true), 80);
+    return () => window.clearTimeout(timer);
   }, []);
 
-  const goToPrev = () => sliderRef.current?.slickPrev();
-  const goToNext = () => sliderRef.current?.slickNext();
-
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 1500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 7000,
-    arrows: false,
-    fade: true,
-    waitForAnimate: true,
-    afterChange: (current: number) => setCurrentSlide(current),
-  };
-
-  const isActive = (index: number) => currentSlide === index;
-
   return (
-    <div
-      className="hero-wrapper hero-1 shape-mockup-wrap background-image"
+    <section
+      className={`hero-wrapper hero-1 coating-hero-ship${isLoaded ? " is-loaded" : ""}`}
       id="hero"
-      style={{ backgroundImage: "url('/assets/img/hero/hero_bg_1_1.png')" }}
     >
-      <Slider {...settings} ref={sliderRef} className="hero-slider1">
-        {siteContent.heroSlides.map((slide, index) => (
-          <div className="hero-slide" key={slide.title}>
-            <div className={`container${index === 0 ? " larger-no-space" : ""}`}>
-              <div className="row">
-                <div className="col-lg-6">
-                  <div className="hero-style1">
-                    <h1
-                      className={`hero-title text-white slider-custom-anim-left ${isActive(index) ? "slider-animated" : ""}`}
-                      style={{ animationDelay: "0.1s" }}
-                    >
-                      {slide.title}
-                    </h1>
-                    <p
-                      className={`hero-text text-white slider-custom-anim-left ${isActive(index) ? "slider-animated" : ""}`}
-                      style={{ animationDelay: "0.3s" }}
-                    >
-                      {slide.text}
-                    </p>
-                    <div
-                      className={`btn-group slider-custom-anim-left ${isActive(index) ? "slider-animated" : ""}`}
-                      style={{ animationDelay: "0.5s" }}
-                    >
-                      <a href="#about-sec" className="btn style2">
-                        Discover More <i className="ri-arrow-right-up-line"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <div className="coating-hero-ship__bg-shape coating-hero-ship__bg-shape--1" aria-hidden="true" />
+      <div className="coating-hero-ship__bg-shape coating-hero-ship__bg-shape--2" aria-hidden="true" />
+      <div
+        className="coating-hero-ship__line-shape coating-hero-ship__line-shape--1 background-image"
+        style={{ backgroundImage: "url('/assets/img/shape/global-line-shape1.png')" }}
+        aria-hidden="true"
+      />
+      <div
+        className="coating-hero-ship__line-shape coating-hero-ship__line-shape--2 background-image"
+        style={{ backgroundImage: "url('/assets/img/shape/global-line-shape1.png')" }}
+        aria-hidden="true"
+      />
+
+      <div className="container coating-hero-ship__container">
+        <div className="coating-hero-ship__grid">
+          <div className="coating-hero-ship__content">
+            <span className="coating-hero-ship__eyebrow coating-hero-ship__animate" style={{ animationDelay: "0.1s" }}>
+              MARINE &amp; INDUSTRIAL SOLUTIONS
+            </span>
+
+            <h1 className="coating-hero-ship__title coating-hero-ship__animate" style={{ animationDelay: "0.25s" }}>
+              Advanced Marine &amp; Industrial
+              <br />
+              <span className="text-theme">Surface Solutions</span>
+            </h1>
+
+            <p className="coating-hero-ship__text coating-hero-ship__animate" style={{ animationDelay: "0.4s" }}>
+              Professional surface preparation, marine coating, blasting and industrial maintenance solutions
+              designed for demanding environments.
+            </p>
+
+            <div className="coating-hero-ship__actions coating-hero-ship__animate" style={{ animationDelay: "0.55s" }}>
+              <a href="#service-sec" className="btn style2 coating-hero-ship__btn">
+                OUR SERVICES <i className="ri-arrow-right-up-line" />
+              </a>
+              <a href="#contact-sec" className="btn style4 coating-hero-ship__btn">
+                GET IN TOUCH <i className="ri-arrow-right-up-line" />
+              </a>
             </div>
-            <div
-              className={`hero-thumb text-center slideinright ${isActive(index) ? "slider-animated" : ""}`}
-              style={{ animationDelay: "0.4s" }}
-            >
+
+            <div className="coating-hero-ship__trust coating-hero-ship__animate" style={{ animationDelay: "0.7s" }}>
+              <span className="coating-hero-ship__trust-value">8+</span>
+              <span className="coating-hero-ship__trust-text">Core service categories under one roof</span>
+            </div>
+          </div>
+
+          <div className="coating-hero-ship__visual">
+            <div className="coating-hero-ship__visual-glow" aria-hidden="true" />
+            <div className="coating-hero-ship__image-wrap">
               <img
-                src={images.heroSlides[index]}
-                alt={siteContent.brand.name}
-                loading={index === 0 ? "eager" : "lazy"}
+                src="/assets/img/hero/hero_shape_1_1.png"
+                alt="Marine vessel"
+                className="coating-hero-ship__image"
+                loading="eager"
               />
             </div>
           </div>
-        ))}
-      </Slider>
-
-      <div className="slider-controller-wrap">
-        <div className="slider-btn-wrap">
-          <div className="icon-box">
-            <button onClick={goToPrev} className="slick-arrow default" aria-label="Previous slide">
-              <i className="ri-arrow-left-down-line"></i>
-            </button>
-            <button onClick={goToNext} className="slick-arrow default" aria-label="Next slide">
-              <i className="ri-arrow-right-up-line"></i>
-            </button>
-          </div>
-          <div className="slides-numbers">
-            <span className="active">0{currentSlide + 1}</span> /
-            <span className="total">0{totalSlides}</span>
-          </div>
         </div>
-      </div>
-
-      <div className="hero-bg-shape1-1"></div>
-      <div className="hero-bg-shape1-2"></div>
-      <div
-        className="section-animation-shape1-1 shape-mockup animation-infinite background-image"
-        style={{ backgroundImage: "url('/assets/img/shape/global-line-shape1.png')" }}
-      ></div>
-      <div
-        className="section-animation-shape1-2 shape-mockup animation-infinite background-image"
-        style={{ backgroundImage: "url('/assets/img/shape/global-line-shape1.png')" }}
-      ></div>
-
-      <div className="hero-shape1-1 shape-mockup movingX">
-        <img src="/assets/img/hero/hero_shape_1_1.png" alt="" loading="lazy" />
       </div>
 
       <div
@@ -145,7 +101,7 @@ const Hero = () => {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

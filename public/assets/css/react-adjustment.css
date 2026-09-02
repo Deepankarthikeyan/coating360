@@ -85,12 +85,320 @@ html {
   object-position: center center;
 }
 
-.hero-wrapper .hero-shape1-1 img {
-  width: 100%;
+/* AGH ship hero — Construz Home-1 structure */
+.coating-hero-ship {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 0 260px;
+  background: linear-gradient(135deg, #f7f8fa 0%, #ffffff 48%, #f1f3f6 100%);
+  overflow: hidden;
+}
+
+.coating-hero-ship.hero-1::after {
+  display: none;
+}
+
+.coating-hero-ship__container {
+  position: relative;
+  z-index: 3;
+}
+
+.coating-hero-ship__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: 40px;
+}
+
+.coating-hero-ship__content {
   max-width: 620px;
+}
+
+.coating-hero-ship__eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--theme-color);
+}
+
+.coating-hero-ship__title {
+  margin: 0 0 22px;
+  font-size: clamp(2.2rem, 4.2vw, 3.75rem);
+  line-height: 1.12;
+  font-weight: 700;
+  color: var(--title-color);
+}
+
+.coating-hero-ship__text {
+  margin: 0 0 32px;
+  max-width: 540px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--body-color);
+}
+
+.coating-hero-ship__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.coating-hero-ship__btn {
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.coating-hero-ship__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(244, 30, 30, 0.16);
+}
+
+.coating-hero-ship__trust {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  border-left: 3px solid var(--theme-color);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.coating-hero-ship__trust-value {
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--theme-color);
+}
+
+.coating-hero-ship__trust-text {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--title-color);
+}
+
+.coating-hero-ship__visual {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 420px;
+  padding-right: 0;
+}
+
+.coating-hero-ship__visual-glow {
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  width: min(52vw, 520px);
+  height: min(52vw, 520px);
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 30, 30, 0.08) 0%, rgba(244, 30, 30, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.coating-hero-ship__image-wrap {
+  position: relative;
+  z-index: 2;
+  width: min(720px, 52vw);
+  max-width: 100%;
+  margin-right: -2vw;
+  opacity: 0;
+  transform: translateX(48px);
+}
+
+.coating-hero-ship.is-loaded .coating-hero-ship__image-wrap {
+  animation: coatingHeroShipIn 1s ease-out forwards;
+}
+
+.coating-hero-ship__image {
+  display: block;
+  width: 100%;
   height: auto;
+  max-height: min(72vh, 680px);
   object-fit: contain;
-  object-position: left bottom;
+  object-position: center right;
+}
+
+.coating-hero-ship.is-loaded .coating-hero-ship__image {
+  animation: coatingHeroShipFloat 5s ease-in-out 1s infinite;
+}
+
+.coating-hero-ship__bg-shape {
+  position: absolute;
+  width: 220px;
+  height: 640px;
+  background: linear-gradient(180deg, rgba(244, 30, 30, 0) 0%, rgba(244, 30, 30, 0.14) 100%);
+  opacity: 0.35;
+  transform: matrix(0.75, -0.66, -0.66, -0.75, 0, 0);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.coating-hero-ship__bg-shape--1 {
+  top: 80px;
+  right: 12%;
+}
+
+.coating-hero-ship__bg-shape--2 {
+  top: 220px;
+  right: 24%;
+  opacity: 0.22;
+}
+
+.coating-hero-ship__line-shape {
+  position: absolute;
+  opacity: 0.08;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.coating-hero-ship__line-shape--1 {
+  top: 8%;
+  right: 0;
+  width: 280px;
+  height: 280px;
+}
+
+.coating-hero-ship__line-shape--2 {
+  bottom: 18%;
+  left: 4%;
+  width: 220px;
+  height: 220px;
+}
+
+.coating-hero-ship__animate {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.coating-hero-ship.is-loaded .coating-hero-ship__animate {
+  animation: coatingHeroFadeUp 0.75s ease-out forwards;
+}
+
+.coating-hero-ship .hero-experience-wrap {
+  z-index: 4;
+}
+
+@keyframes coatingHeroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes coatingHeroShipIn {
+  from {
+    opacity: 0;
+    transform: translateX(48px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes coatingHeroShipFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 1199px) {
+  .coating-hero-ship {
+    min-height: auto;
+    padding: 110px 0 220px;
+  }
+
+  .coating-hero-ship__grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .coating-hero-ship__content {
+    max-width: none;
+  }
+
+  .coating-hero-ship__visual {
+    justify-content: center;
+    min-height: auto;
+    padding-right: 0;
+  }
+
+  .coating-hero-ship__image-wrap {
+    width: min(620px, 92vw);
+    margin-right: 0;
+  }
+
+  .coating-hero-ship__image {
+    object-position: center center;
+    max-height: 52vh;
+  }
+
+  .coating-hero-ship__bg-shape--1,
+  .coating-hero-ship__bg-shape--2 {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .coating-hero-ship {
+    padding: 96px 0 200px;
+  }
+
+  .coating-hero-ship__title {
+    font-size: clamp(1.9rem, 8vw, 2.5rem);
+  }
+
+  .coating-hero-ship__text {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .coating-hero-ship__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .coating-hero-ship__actions .btn {
+    justify-content: center;
+  }
+
+  .coating-hero-ship__image-wrap {
+    width: min(100%, 520px);
+  }
+
+  .coating-hero-ship__image {
+    max-height: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .coating-hero-ship .hero-experience-wrap {
+    position: initial;
+    transform: none;
+    margin: 0 15px;
+    padding: 30px;
+    display: block;
+  }
 }
 
 /* Services flyer grid — ditto brand flyer layout */
