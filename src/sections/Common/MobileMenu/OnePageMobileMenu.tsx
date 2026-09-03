@@ -1,4 +1,6 @@
+import type { MouseEvent } from "react";
 import siteContent, { navItems } from "../../../data/siteContent";
+import { handleAnchorClick } from "../../../utils/smoothScroll";
 
 type OnePageMobileMenuProps = {
   isMenuOpen: boolean;
@@ -8,15 +10,15 @@ type OnePageMobileMenuProps = {
 const OnePageMobileMenu = ({ isMenuOpen, setIsMenuOpen }: OnePageMobileMenuProps) => {
   const closeMenu = () => setIsMenuOpen(false);
 
-  if (!isMenuOpen) {
-    return null;
-  }
+  const onNavClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+    handleAnchorClick(event, href, closeMenu);
+  };
 
   return (
-    <div className="mobile-menu-wrapper body-visible">
+    <div className={`mobile-menu-wrapper ${isMenuOpen ? "body-visible" : ""}`}>
       <div className="mobile-menu-area">
         <div className="mobile-logo">
-          <a href="#hero" onClick={closeMenu}>
+          <a href="#hero" onClick={(event) => onNavClick(event, "#hero")}>
             <img src={siteContent.brand.logo} alt={siteContent.brand.name} />
           </a>
           <button onClick={closeMenu} className="menu-toggle" aria-label="Close menu">
@@ -27,7 +29,9 @@ const OnePageMobileMenu = ({ isMenuOpen, setIsMenuOpen }: OnePageMobileMenuProps
           <ul>
             {navItems.map((item) => (
               <li key={item.href}>
-                <a href={item.href} onClick={closeMenu}>{item.label}</a>
+                <a href={item.href} onClick={(event) => onNavClick(event, item.href)}>
+                  {item.label}
+                </a>
               </li>
             ))}
           </ul>

@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from "react";
 import siteContent, { navItems } from "../../../data/siteContent";
 import OnePageMobileMenu from "../MobileMenu/OnePageMobileMenu";
+import { handleAnchorClick } from "../../../utils/smoothScroll";
 
 const SiteHeader = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -35,6 +36,14 @@ const SiteHeader = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isSideBarOpen]);
 
+  const onAnchorClick = (
+    event: ReactMouseEvent<HTMLAnchorElement>,
+    href: string,
+    onAfterClick?: () => void,
+  ) => {
+    handleAnchorClick(event, href, onAfterClick);
+  };
+
   return (
     <div className="header-decoration">
       <div className={`popup-search-box ${isPopupOpen ? "show" : ""}`}>
@@ -54,7 +63,9 @@ const SiteHeader = () => {
           </button>
           <div className="widget widget-about footer-widget">
             <div className="footer-logo footer-img">
-              <a href="#hero"><img src={brand.logo} alt={brand.name} /></a>
+              <a href="#hero" onClick={(event) => onAnchorClick(event, "#hero", () => setIsSideBarOpen(false))}>
+                <img src={brand.logo} alt={brand.name} />
+              </a>
             </div>
             <p className="about-text mb-4">{brand.description}</p>
             <p className="footer-text">
@@ -84,11 +95,21 @@ const SiteHeader = () => {
                 <div className="recent-post" key={item.title}>
                   <div className="media-body">
                     <h4 className="post-title">
-                      <a className="text-inherit" href="#blog-sec">{item.title}</a>
+                      <a
+                        className="text-inherit"
+                        href="#blog-sec"
+                        onClick={(event) => onAnchorClick(event, "#blog-sec", () => setIsSideBarOpen(false))}
+                      >
+                        {item.title}
+                      </a>
                     </h4>
                     <div className="recent-post-meta">
-                      <a href="#blog-sec">{item.category}</a>
-                      <a href="#blog-sec">{item.date}</a>
+                      <a href="#blog-sec" onClick={(event) => onAnchorClick(event, "#blog-sec", () => setIsSideBarOpen(false))}>
+                        {item.category}
+                      </a>
+                      <a href="#blog-sec" onClick={(event) => onAnchorClick(event, "#blog-sec", () => setIsSideBarOpen(false))}>
+                        {item.date}
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -137,14 +158,18 @@ const SiteHeader = () => {
         <div className={`sticky-wrapper ${isSticky ? "sticky" : ""}`}>
           <div className="menu-area">
             <div className="header-navbar-logo">
-              <a href="#hero"><img src={brand.logo} alt={brand.name} /></a>
+              <a href="#hero" onClick={(event) => onAnchorClick(event, "#hero")}>
+                <img src={brand.logo} alt={brand.name} />
+              </a>
             </div>
             <div className="logo-bg"></div>
             <div className="container">
               <div className="row align-items-center justify-content-lg-start justify-content-between">
                 <div className="col-auto d-xxl-none d-block">
                   <div className="header-logo">
-                    <a href="#hero"><img src={brand.logo} alt={brand.name} /></a>
+                    <a href="#hero" onClick={(event) => onAnchorClick(event, "#hero")}>
+                      <img src={brand.logo} alt={brand.name} />
+                    </a>
                   </div>
                 </div>
                 <div className="col-auto menu-bar ms-xxl-0">
@@ -152,7 +177,9 @@ const SiteHeader = () => {
                     <ul>
                       {navItems.map((item) => (
                         <li key={item.href}>
-                          <a href={item.href}>{item.label}</a>
+                          <a href={item.href} onClick={(event) => onAnchorClick(event, item.href)}>
+                            {item.label}
+                          </a>
                         </li>
                       ))}
                     </ul>
@@ -165,7 +192,7 @@ const SiteHeader = () => {
                 </div>
                 <div className="col-auto d-xl-block d-none space-left">
                   <div className="header-button">
-                    <a href="#contact-sec" className="btn">
+                    <a href="#contact-sec" className="btn" onClick={(event) => onAnchorClick(event, "#contact-sec")}>
                       GET IN TOUCH <i className="ri-arrow-right-up-line"></i>
                     </a>
                     <button onClick={() => setIsPopupOpen(true)} type="button" className="search-btn searchBoxToggler simple-icon" aria-label="Open search">

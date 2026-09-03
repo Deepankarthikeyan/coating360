@@ -4,6 +4,14 @@ html {
   scroll-behavior: smooth;
 }
 
+.mobile-menu-wrapper:not(.body-visible) {
+  pointer-events: none;
+}
+
+.mobile-menu ul li a {
+  transition: color 0.25s ease, padding-left 0.25s ease;
+}
+
 /* AGH Coating360 logo sizing — fits header-layout1 logo box */
 .header-layout1 .header-logo img,
 .header-layout1 .header-navbar-logo img {

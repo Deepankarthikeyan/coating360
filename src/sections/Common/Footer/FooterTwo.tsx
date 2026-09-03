@@ -1,7 +1,13 @@
 import siteContent, { navItems } from "../../../data/siteContent";
+import { handleAnchorClick } from "../../../utils/smoothScroll";
+import type { MouseEvent } from "react";
 
 const FooterTwo = () => {
     const { brand, contact } = siteContent;
+
+    const onAnchorClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+        handleAnchorClick(event, href);
+    };
 
     return (
         <div>
@@ -12,7 +18,7 @@ const FooterTwo = () => {
                 <div className="container">
                     <div className="footer-top-1">
                         <div className="footer-logo">
-                            <a href="#hero">
+                            <a href="#hero" onClick={(event) => onAnchorClick(event, "#hero")}>
                                 <img src={brand.logoWhite} alt={brand.name} />
                             </a>
                         </div>
@@ -43,7 +49,9 @@ const FooterTwo = () => {
                                         <ul className="menu">
                                             {navItems.map((item) => (
                                                 <li key={item.href}>
-                                                    <a href={item.href}>{item.label}</a>
+                                                    <a href={item.href} onClick={(event) => onAnchorClick(event, item.href)}>
+                                                        {item.label}
+                                                    </a>
                                                 </li>
                                             ))}
                                         </ul>
@@ -88,13 +96,23 @@ const FooterTwo = () => {
                         <div className="row gy-3 justify-content-md-between justify-content-center">
                             <div className="col-auto align-self-center">
                                 <p className="copyright-text text-center">
-                                    © {new Date().getFullYear()} <a href="#hero">{brand.name}</a> | All rights reserved
+                                    © {new Date().getFullYear()}{" "}
+                                    <a href="#hero" onClick={(event) => onAnchorClick(event, "#hero")}>
+                                        {brand.name}
+                                    </a>{" "}
+                                    | All rights reserved
                                 </p>
                             </div>
                             <div className="col-auto">
                                 <div className="footer-links">
                                     {navItems.map((item) => (
-                                        <a key={item.href} href={item.href}>{item.label}</a>
+                                        <a
+                                            key={item.href}
+                                            href={item.href}
+                                            onClick={(event) => onAnchorClick(event, item.href)}
+                                        >
+                                            {item.label}
+                                        </a>
                                     ))}
                                 </div>
                             </div>
