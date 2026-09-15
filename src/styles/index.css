@@ -1,0 +1,288 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Raleway:wght@600;700&display=swap');
+ 
+
+@import "/landing-assets/css/animate.css";
+@import "/assets/css/bootstrap.min.css";
+@import "/assets/css/bootstrap.rtl.min.css";
+@import "/assets/css/fontawesome.min.css";
+@import "/assets/css/nice-select.min.css";
+@import "/assets/css/remixicon.css";
+@import "/assets/css/slick.min.css";
+@import "/assets/css/style.css";
+@import "/assets/css/react-adjustment.css";
+
+:root {
+	--theme-color: #c8102e;
+	--title-color: #111111;
+	--body-color: #4a4a4a;
+	--smoke-color: #f5f5f5;
+	--smoke-color2: #eeeeee;
+	--smoke-color3: #ffffff;
+	--smoke-color4: #f7f7f7;
+	--smoke-color5: #e8e8e8;
+	--black-color: #000000;
+	--gray-color: #1d1d1d;
+	--white-color: #ffffff;
+	--border-color: #d7d7d7;
+}
+
+.header-layout1 .sticky-wrapper {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 50;
+	background-color: var(--white-color);
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.07);
+}
+
+.service-area-1 .service-card_icon img,
+.wcu-card-icon img,
+.sub-title img,
+.contact-grid-icon img {
+	object-fit: contain;
+}
+
+.contact-area-1 {
+	position: relative;
+	background-image: none !important;
+}
+
+.contact-background-blur {
+	position: absolute;
+	inset: -18px;
+	z-index: 0;
+	background-position: right center;
+	background-size: cover;
+	filter: blur(7px);
+	transform: scale(1.03);
+}
+
+.contact-area-1::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.48);
+}
+
+.contact-area-1 > *:not(.contact-background-blur) {
+	position: relative;
+	z-index: 2;
+}
+
+/* Responsive alignment for the one-page home layout. */
+@media (max-width: 1199px) {
+	.header-layout1 .sticky-wrapper {
+		position: fixed;
+	}
+
+	.header-layout1 .header-navbar-logo {
+		display: none;
+	}
+
+	.hero-wrapper .hero-thumb {
+		max-width: 58%;
+		margin-left: auto;
+	}
+
+	.hero-wrapper .hero-experience-wrap {
+		transform: scale(0.86);
+		transform-origin: bottom right;
+	}
+
+	.about-area-1 .row,
+	.contact-area-1 .row {
+		--bs-gutter-x: 32px;
+	}
+
+	.service-area-1 .service-card {
+		padding-left: 56px;
+		padding-right: 24px;
+	}
+}
+
+@media (max-width: 991px) {
+	.header-layout1 .header-top {
+		display: none;
+	}
+
+	.header-layout1 .sticky-wrapper {
+		min-height: 74px;
+	}
+
+	.header-layout1 .menu-area {
+		min-height: 74px;
+	}
+
+	.hero-wrapper {
+		padding-top: 74px;
+	}
+
+	.hero-wrapper .hero-thumb {
+		position: relative;
+		max-width: 72%;
+		margin: 24px auto 0;
+	}
+
+	.hero-wrapper .hero-experience-wrap {
+		right: 2%;
+		bottom: 3%;
+		transform: scale(0.72);
+	}
+
+	.about-area-1 .about-content-wrap1,
+	.contact-area-1 .title-area {
+		margin-top: 24px;
+	}
+
+	.service-area-1 .row > [class*="col-"] {
+		display: block;
+	}
+
+	.service-area-1 .service-card {
+		min-height: 100%;
+	}
+
+	.cta-area-1 .cta-wrap-1 {
+		padding: 48px 28px;
+	}
+
+	.contact-area-1 .contact-thumb1-1 {
+		max-width: 620px;
+		margin: 0 auto;
+	}
+
+	.footer-layout1 .footer-top-1 {
+		gap: 24px;
+		flex-wrap: wrap;
+	}
+}
+
+@media (max-width: 767px) {
+	.header-layout1 .header-logo img {
+		width: 230px;
+		height: 58px;
+		max-width: 100%;
+		max-height: none;
+	}
+
+	.hero-wrapper {
+		min-height: 760px;
+		padding-bottom: 90px;
+	}
+
+	.hero-wrapper .hero-thumb {
+		max-width: 100%;
+		padding: 0 16px;
+	}
+
+	.hero-wrapper .hero-experience-wrap {
+		position: relative;
+		inset: auto;
+		width: min(100%, 340px);
+		margin: 20px auto 0;
+		transform: none;
+	}
+
+	.hero-wrapper .hero-shape1-1,
+	.hero-wrapper .section-animation-shape1-1,
+	.hero-wrapper .section-animation-shape1-2,
+	.about-area-1 .section-animation-shape1-1 {
+		display: none;
+	}
+
+	.about-area-1 .about-counter-wrap {
+		max-width: calc(100% - 12px);
+	}
+
+	.service-area-1 .service-card {
+		padding: 22px 24px 0 52px;
+	}
+
+	.cta-area-1 .row,
+	.contact-area-1 .row {
+		--bs-gutter-y: 32px;
+	}
+
+	.cta-area-1 .cta-thumb1-1 img,
+	.contact-area-1 .contact-thumb1-1 img {
+		width: 100%;
+		height: auto;
+		max-height: 360px;
+		object-fit: cover;
+	}
+
+	.contact-background-blur {
+		background-position: center;
+	}
+
+	.contact-area-1 .contact-grid-wrap {
+		min-height: 0;
+	}
+
+	.footer-layout1 .footer-top-1,
+	.footer-layout1 .copyright-wrap .row {
+		text-align: center;
+		justify-content: center;
+	}
+
+	.footer-layout1 .footer-links {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 10px 18px;
+	}
+}
+
+@media (max-width: 575px) {
+	.container {
+		--bs-gutter-x: 28px;
+	}
+
+	.hero-wrapper {
+		min-height: 820px;
+	}
+
+	.hero-wrapper .hero-style1 {
+		padding-top: 18px;
+	}
+
+	.hero-wrapper .hero-title {
+		font-size: 38px;
+		line-height: 1.05;
+	}
+
+	.hero-wrapper .hero-text {
+		font-size: 14px;
+		line-height: 1.55;
+	}
+
+	.service-area-1 .service-card {
+		padding-left: 42px;
+	}
+
+	.service-area-1 .service-card-shadow-text {
+		font-size: 22px;
+		left: 14px;
+	}
+
+	.cta-area-1 .cta-wrap-1 {
+		padding: 36px 20px;
+	}
+
+	.contact-area-1 .contact-grid-wrap {
+		align-items: flex-start;
+	}
+
+	.contact-area-1 .contact-grid-text {
+		font-size: 14px;
+		line-height: 1.5;
+		word-break: break-word;
+	}
+
+	.footer-layout1 .widget-area {
+		text-align: center;
+	}
+}
