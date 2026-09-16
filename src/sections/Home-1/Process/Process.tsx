@@ -20,9 +20,9 @@ const Process = () => {
     <>
       <section
         className="process-area-1 space-top bg-attachment process-bg-half shape-mockup-wrap background-image"
+        style={{ marginTop: '20px', backgroundImage: `url('${siteContent.images.processBackground}')` }}
         data-overlay="title"
         data-opacity="8"
-        style={{ backgroundImage: `url('${siteContent.images.processBackground}')` }}
       >
         <div className="container">
           <div className="row justify-content-between align-items-center">
