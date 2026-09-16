@@ -3,7 +3,7 @@ import { handleAnchorClick } from "../../../utils/smoothScroll";
 import type { MouseEvent } from "react";
 
 const FooterTwo = () => {
-    const { brand, contact, images } = siteContent;
+    const { brand, contact } = siteContent;
 
     const onAnchorClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
         handleAnchorClick(event, href);

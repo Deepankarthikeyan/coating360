@@ -9,7 +9,7 @@ const SiteHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
-  const { brand, contact, news, images } = siteContent;
+  const { brand, contact, news } = siteContent;
 
   useEffect(() => {
     const handleScroll = () => setIsSticky(window.scrollY > 500);

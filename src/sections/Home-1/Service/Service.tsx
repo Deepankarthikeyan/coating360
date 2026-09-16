@@ -1,7 +1,7 @@
 import siteContent from "../../../data/siteContent";
 
 const Service = () => {
-  const { services, brand, images } = siteContent;
+  const { services, brand } = siteContent;
 
   const serviceIcons = [
     "/assets/img/icon/service-icon1-1.png",
