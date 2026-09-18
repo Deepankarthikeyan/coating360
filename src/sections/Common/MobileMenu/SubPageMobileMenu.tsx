@@ -24,7 +24,7 @@ const SubPageMobileMenu = ({ isMenuOpen, setIsMenuOpen }: SubPageMobileMenuProps
           <ul>
             {navItems.map((item) => (
               <li key={item.href}>
-                <Link to={`/${item.href}`} onClick={closeMenu}>
+                <Link to={item.isRoute ? item.href : `/${item.href}`} onClick={closeMenu}>
                   {item.label}
                 </Link>
               </li>

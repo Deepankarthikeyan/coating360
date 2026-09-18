@@ -3,7 +3,7 @@ export const navItems = [
   { label: "ABOUT", href: "#about-sec" },
   { label: "SERVICES", href: "#service-sec" },
   { label: "NEWS", href: "#blog-sec" },
-  { label: "CONTACT", href: "#contact-sec" },
+  { label: "CONTACT", href: "/contact", isRoute: true },
 ];
 
 export const siteIcons = {

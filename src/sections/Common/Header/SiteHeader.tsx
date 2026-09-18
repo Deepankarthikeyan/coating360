@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from "react";
+import { Link } from "react-router-dom";
 import siteContent, { navItems } from "../../../data/siteContent";
 import OnePageMobileMenu from "../MobileMenu/OnePageMobileMenu";
 import { handleAnchorClick } from "../../../utils/smoothScroll";
@@ -177,9 +178,13 @@ const SiteHeader = () => {
                     <ul>
                       {navItems.map((item) => (
                         <li key={item.href}>
-                          <a href={item.href} onClick={(event) => onAnchorClick(event, item.href)}>
-                            {item.label}
-                          </a>
+                          {item.isRoute ? (
+                            <Link to={item.href}>{item.label}</Link>
+                          ) : (
+                            <a href={item.href} onClick={(event) => onAnchorClick(event, item.href)}>
+                              {item.label}
+                            </a>
+                          )}
                         </li>
                       ))}
                     </ul>
@@ -192,9 +197,9 @@ const SiteHeader = () => {
                 </div>
                 <div className="col-auto d-xl-block d-none space-left">
                   <div className="header-button">
-                    <a href="#contact-sec" className="btn" onClick={(event) => onAnchorClick(event, "#contact-sec")}>
+                    <Link to="/contact" className="btn">
                       GET IN TOUCH <i className="ri-arrow-right-up-line"></i>
-                    </a>
+                    </Link>
                     <button onClick={() => setIsPopupOpen(true)} type="button" className="search-btn searchBoxToggler simple-icon" aria-label="Open search">
                       <i className="ri-search-line"></i>
                     </button>

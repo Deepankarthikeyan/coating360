@@ -10,7 +10,6 @@ import Hero from "../Home-1/Hero/Hero";
 import Process from "../Home-1/Process/Process";
 import Service from "../Home-1/Service/Service";
 import WhyChoose from "../Home-1/WhyChoose/WhyChoose";
-import Contact from "../home-1-op/Contact/Contact";
 
 const HomeOne = () => {
 	return (
@@ -24,7 +23,6 @@ const HomeOne = () => {
 				<WhyChoose />
 				<Process />
 				<Blog />
-				<Contact />
 				<FooterTwo />
 				<ScrollTopButton />
 			</div>

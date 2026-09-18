@@ -1,0 +1,117 @@
+import { useSearchParams } from "react-router-dom";
+import siteContent, { siteIcons } from "../../data/siteContent";
+import FooterTwo from "../Common/Footer/FooterTwo";
+import SubPageHeader from "../Common/Header/SubPageHeader";
+import QuoteContactForm from "../Common/QuoteContactForm/QuoteContactForm";
+import ScrollTopButton from "../Common/Scroll/Scroll";
+import Wrapper from "../Common/Wrapper";
+import BreadcumbTen from "../Service-Details/BreadcumbTen/BreadcumbTen";
+
+const ContactPage = () => {
+  const [searchParams] = useSearchParams();
+  const serviceSlug = searchParams.get("service") ?? undefined;
+  const { contact, brand, images } = siteContent;
+
+  return (
+    <Wrapper>
+      <div style={{ overflow: "hidden" }}>
+        <SubPageHeader />
+        <BreadcumbTen title="Contact Us" />
+        <section
+          className="contact-area-1 space bg-title overflow-hidden shape-mockup-wrap background-image"
+          id="contact-sec"
+        >
+          <div
+            className="contact-background-blur contact-page-background"
+            style={{ backgroundImage: `url('${images.contactBackground}')` }}
+            aria-hidden="true"
+          ></div>
+          <div
+            className="section-animation-shape1-1 shape-mockup animation-infinite style-gray background-image"
+            style={{ backgroundImage: "url('/assets/img/shape/global-line-shape1.png')", top: "0px" }}
+          ></div>
+          <div className="container">
+            <div className="row gy-60 flex-row-reverse justify-content-lg-between justify-content-center align-items-center">
+              <div className="col-xl-5">
+                <div className="contact-thumb1-1">
+                  <img src={images.contact} alt={brand.name} loading="lazy" />
+                </div>
+              </div>
+              <div className="col-xl-7">
+                <div className="title-area">
+                  <span className="sub-title">
+                    <img src="/assets/img/icon/section-subtitle-icon.svg" alt="" />
+                    <span className="text-white">Contact Us</span>
+                  </span>
+                  <h2 className="sec-title text-white">Get In Touch With {brand.name}</h2>
+                  <p className="text-white">{brand.description}</p>
+                </div>
+                <div className="row gy-60">
+                  <div className="col-lg-6">
+                    <div className="contact-grid-wrap">
+                      <div className="contact-grid-icon">
+                        <img src={siteIcons.contact.location} alt="Location" />
+                      </div>
+                      <div className="contact-grid-details">
+                        <h4 className="contact-grid-title">Head Office</h4>
+                        <p className="contact-grid-text">{contact.address.full}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-lg-6">
+                    <div className="contact-grid-wrap">
+                      <div className="contact-grid-icon">
+                        <img src={siteIcons.contact.phone} alt="Phone" />
+                      </div>
+                      <div className="contact-grid-details">
+                        <h4 className="contact-grid-title">Phone Number</h4>
+                        {contact.phones.map((phone) => (
+                          <p className="contact-grid-text" key={phone}>
+                            <a href={`tel:${phone}`}>{phone}</a>
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-lg-6">
+                    <div className="contact-grid-wrap">
+                      <div className="contact-grid-icon">
+                        <img src={siteIcons.contact.email} alt="Email" />
+                      </div>
+                      <div className="contact-grid-details">
+                        <h4 className="contact-grid-title">Email Address</h4>
+                        <p className="contact-grid-text">
+                          <a href={`mailto:${contact.salesEmail}`}>{contact.salesEmail}</a>
+                        </p>
+                        <p className="contact-grid-text">
+                          <a href={`mailto:${contact.serviceEmail}`}>{contact.serviceEmail}</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-lg-6">
+                    <div className="contact-grid-wrap">
+                      <div className="contact-grid-icon">
+                        <img src={siteIcons.contact.website} alt="Website" />
+                      </div>
+                      <div className="contact-grid-details">
+                        <h4 className="contact-grid-title">Business Hours</h4>
+                        <p className="contact-grid-text">{contact.hours}</p>
+                        <p className="contact-grid-text">{brand.website}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <QuoteContactForm serviceSlug={serviceSlug} />
+        <FooterTwo />
+        <ScrollTopButton />
+      </div>
+    </Wrapper>
+  );
+};
+
+export default ContactPage;

@@ -139,7 +139,7 @@ const Hero = () => {
           <div className="icon">
             <img src="/assets/img/hero/hero_experience_wrap_icon_1_2.png" alt="" loading="lazy" />
           </div>
-          <a className="link-btn link-text" href="#contact-sec">
+          <a className="link-btn link-text" href="/contact">
             Let&apos;s protect what you build{" "}
             <img src="/assets/img/icon/long-arrow-right.png" alt="" loading="lazy" />
           </a>

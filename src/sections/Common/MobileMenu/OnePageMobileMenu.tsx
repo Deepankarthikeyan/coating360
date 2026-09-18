@@ -1,4 +1,5 @@
 import type { MouseEvent } from "react";
+import { Link } from "react-router-dom";
 import siteContent, { navItems } from "../../../data/siteContent";
 import { handleAnchorClick } from "../../../utils/smoothScroll";
 
@@ -29,9 +30,13 @@ const OnePageMobileMenu = ({ isMenuOpen, setIsMenuOpen }: OnePageMobileMenuProps
           <ul>
             {navItems.map((item) => (
               <li key={item.href}>
-                <a href={item.href} onClick={(event) => onNavClick(event, item.href)}>
-                  {item.label}
-                </a>
+                {item.isRoute ? (
+                  <Link to={item.href} onClick={closeMenu}>{item.label}</Link>
+                ) : (
+                  <a href={item.href} onClick={(event) => onNavClick(event, item.href)}>
+                    {item.label}
+                  </a>
+                )}
               </li>
             ))}
           </ul>

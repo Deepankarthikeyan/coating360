@@ -101,6 +101,93 @@
 	background-color: var(--white-color);
 }
 
+.contact-page-background {
+	inset: 0;
+}
+
+.service-card-link {
+	background: none;
+	border: 0;
+	padding: 0;
+	color: inherit;
+	font: inherit;
+	text-align: left;
+	cursor: pointer;
+}
+
+.service-card-link:hover {
+	color: var(--theme-color);
+}
+
+.service-popup-overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	background: rgba(0, 0, 0, 0.75);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+}
+
+.service-popup-content {
+	position: relative;
+	width: min(920px, 100%);
+	max-height: 90vh;
+	overflow-y: auto;
+	background: var(--white-color);
+	border-radius: 4px;
+}
+
+.service-popup-close {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	z-index: 2;
+	width: 42px;
+	height: 42px;
+	border: 0;
+	border-radius: 50%;
+	background: var(--theme-color);
+	color: var(--white-color);
+	font-size: 22px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.service-popup-banner img,
+.service-popup-image img {
+	width: 100%;
+	display: block;
+	object-fit: cover;
+}
+
+.service-popup-banner img {
+	max-height: 320px;
+}
+
+.service-popup-body {
+	padding: 32px;
+}
+
+.service-popup-title {
+	font-size: 28px;
+	margin-bottom: 16px;
+}
+
+.service-popup-text {
+	margin-bottom: 24px;
+}
+
+.service-popup-image {
+	margin-bottom: 28px;
+}
+
+.service-popup-contact-btn {
+	width: 100%;
+	justify-content: center;
+}
+
 .header-layout1 .sticky-wrapper {
 	position: fixed;
 	top: 0;

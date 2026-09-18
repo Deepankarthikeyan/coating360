@@ -37,6 +37,7 @@ const SubPageHeader = () => {
   }, [isSideBarOpen]);
 
   const homeHref = (hash: string) => `/${hash}`;
+  const navHref = (item: (typeof navItems)[number]) => (item.isRoute ? item.href : homeHref(item.href));
 
   return (
     <div className="header-decoration">
@@ -163,7 +164,7 @@ const SubPageHeader = () => {
                     <ul>
                       {navItems.map((item) => (
                         <li key={item.href}>
-                          <Link to={homeHref(item.href)}>{item.label}</Link>
+                          <Link to={navHref(item)}>{item.label}</Link>
                         </li>
                       ))}
                     </ul>
@@ -176,7 +177,7 @@ const SubPageHeader = () => {
                 </div>
                 <div className="col-auto d-xl-block d-none space-left">
                   <div className="header-button">
-                    <Link to={homeHref("#contact-sec")} className="btn">
+                    <Link to="/contact" className="btn">
                       GET IN TOUCH <i className="ri-arrow-right-up-line"></i>
                     </Link>
                     <button onClick={() => setIsPopupOpen(true)} type="button" className="search-btn searchBoxToggler simple-icon" aria-label="Open search">

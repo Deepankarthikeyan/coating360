@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import siteContent, { navItems } from "../../../data/siteContent";
 import { handleAnchorClick } from "../../../utils/smoothScroll";
 import type { MouseEvent } from "react";
@@ -49,9 +50,13 @@ const FooterTwo = () => {
                                         <ul className="menu">
                                             {navItems.map((item) => (
                                                 <li key={item.href}>
-                                                    <a href={item.href} onClick={(event) => onAnchorClick(event, item.href)}>
-                                                        {item.label}
-                                                    </a>
+                                                    {item.isRoute ? (
+                                                        <Link to={item.href}>{item.label}</Link>
+                                                    ) : (
+                                                        <a href={item.href} onClick={(event) => onAnchorClick(event, item.href)}>
+                                                            {item.label}
+                                                        </a>
+                                                    )}
                                                 </li>
                                             ))}
                                         </ul>
@@ -106,13 +111,17 @@ const FooterTwo = () => {
                             <div className="col-auto">
                                 <div className="footer-links">
                                     {navItems.map((item) => (
-                                        <a
-                                            key={item.href}
-                                            href={item.href}
-                                            onClick={(event) => onAnchorClick(event, item.href)}
-                                        >
-                                            {item.label}
-                                        </a>
+                                        item.isRoute ? (
+                                            <Link key={item.href} to={item.href}>{item.label}</Link>
+                                        ) : (
+                                            <a
+                                                key={item.href}
+                                                href={item.href}
+                                                onClick={(event) => onAnchorClick(event, item.href)}
+                                            >
+                                                {item.label}
+                                            </a>
+                                        )
                                     ))}
                                 </div>
                             </div>
