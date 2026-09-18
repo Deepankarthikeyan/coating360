@@ -180,7 +180,7 @@
 }
 
 .quote-service-banner-section {
-	padding: 0;
+	padding: 30px 0 0;
 	background: var(--white-color);
 }
 
@@ -189,13 +189,23 @@
 	max-width: 1320px;
 	margin: 0 auto;
 	padding: 0 12px;
+	height: 280px;
+	overflow: hidden;
+	border-radius: 4px;
 }
 
 .quote-service-banner-inner img {
 	width: 100%;
-	height: auto;
+	height: 100%;
 	display: block;
-	object-fit: contain;
+	object-fit: cover;
+	object-position: center;
+}
+
+@media (max-width: 767px) {
+	.quote-service-banner-inner {
+		height: 200px;
+	}
 }
 
 .header-layout1 .sticky-wrapper {
