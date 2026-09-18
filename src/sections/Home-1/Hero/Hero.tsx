@@ -70,17 +70,17 @@ const Hero = () => {
                     </div>
                   </div>
                 </div>
-                <div
-                  className={`hero-thumb text-center slideinright ${isActive(index) ? "slider-animated" : ""}`}
-                  style={{ animationDelay: "0.4s" }}
-                >
-                  <img
-                    src={images.heroSlides[index]}
-                    alt={siteContent.brand.name}
-                    loading={index === 0 ? "eager" : "lazy"}
-                  />
-                </div>
               </div>
+            </div>
+            <div
+              className={`hero-thumb text-center slideinright ${isActive(index) ? "slider-animated" : ""}`}
+              style={{ animationDelay: "0.4s" }}
+            >
+              <img
+                src={images.heroSlides[index]}
+                alt={siteContent.brand.name}
+                loading={index === 0 ? "eager" : "lazy"}
+              />
             </div>
           </div>
         ))}
