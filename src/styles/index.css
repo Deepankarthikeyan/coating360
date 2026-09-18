@@ -101,9 +101,9 @@
 }
 
 .mobile-menu-wrapper .mobile-logo img {
-	height: calc(var(--brand-logo-height) - 4px);
-	max-height: calc(var(--brand-logo-height) - 4px);
-	max-width: 100%;
+	height: var(--brand-logo-height);
+	max-height: var(--brand-logo-height);
+	max-width: min(var(--brand-logo-max-width), 100%);
 }
 
 .mobile-menu-wrapper .mobile-logo .menu-toggle {
@@ -987,9 +987,9 @@
 
 @media (max-width: 991px) {
 	:root {
-		--brand-logo-height: 38px;
-		--brand-logo-max-width: min(calc(100vw - 88px), 210px);
-		--header-mobile-height: 72px;
+		--brand-logo-height: 48px;
+		--brand-logo-max-width: min(calc(100vw - 80px), 260px);
+		--header-mobile-height: 80px;
 		--service-card-image-height: 200px;
 	}
 
@@ -1147,8 +1147,8 @@
 
 @media (max-width: 767px) {
 	:root {
-		--brand-logo-height: 36px;
-		--brand-logo-max-width: min(calc(100vw - 88px), 200px);
+		--brand-logo-height: 46px;
+		--brand-logo-max-width: min(calc(100vw - 80px), 250px);
 		--service-card-image-height: 190px;
 	}
 
@@ -1578,9 +1578,9 @@
 
 @media (max-width: 575px) {
 	:root {
-		--brand-logo-height: 30px;
-		--brand-logo-max-width: min(calc(100vw - 72px), 180px);
-		--header-mobile-height: 68px;
+		--brand-logo-height: 44px;
+		--brand-logo-max-width: min(calc(100vw - 72px), 240px);
+		--header-mobile-height: 76px;
 		--service-card-image-height: 180px;
 	}
 
