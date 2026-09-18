@@ -63,10 +63,27 @@
 	height: calc(var(--brand-logo-height) - 4px);
 	max-height: calc(var(--brand-logo-height) - 4px);
 	max-width: min(calc(var(--brand-logo-max-width) - 20px), 100%);
+	background: transparent;
+}
+
+.footer-layout1 .footer-brand-logo-png a {
+	display: inline-flex;
+	align-items: center;
+	max-width: 100%;
 	background: var(--white-color);
 	padding: 8px 12px;
 	border-radius: 4px;
-	box-sizing: content-box;
+	line-height: 0;
+}
+
+.footer-layout1 .footer-brand-logo-png img {
+	width: auto;
+	height: calc(var(--brand-logo-height) - 4px);
+	max-height: calc(var(--brand-logo-height) - 4px);
+	max-width: min(calc(var(--brand-logo-max-width) - 20px), 100%);
+	object-fit: contain;
+	object-position: center center;
+	background: transparent;
 }
 
 .mobile-menu-wrapper .mobile-logo {
@@ -108,7 +125,7 @@
 	background: transparent;
 }
 
-.footer-layout1 .footer-logo img {
+.footer-layout1 .footer-logo:not(.footer-brand-logo-png) img {
 	background: var(--white-color);
 }
 

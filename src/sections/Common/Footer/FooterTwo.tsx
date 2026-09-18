@@ -18,9 +18,15 @@ const FooterTwo = () => {
             >
                 <div className="container">
                     <div className="footer-top-1">
-                        <div className="footer-logo site-brand-logo">
+                        <div className="footer-logo site-brand-logo footer-brand-logo-png">
                             <a href="#hero" onClick={(event) => onAnchorClick(event, "#hero")}>
-                                <img src={brand.logo} alt={brand.name} width={281} height={60} />
+                                <img
+                                    src={brand.footerLogo}
+                                    alt={brand.name}
+                                    width={281}
+                                    height={60}
+                                    decoding="async"
+                                />
                             </a>
                         </div>
                         <div className="subscribe-box">
