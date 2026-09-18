@@ -70,19 +70,19 @@
 	display: inline-flex;
 	align-items: center;
 	max-width: 100%;
-	background: var(--white-color);
-	padding: 8px 12px;
-	border-radius: 4px;
+	background: transparent;
+	padding: 0;
+	border-radius: 0;
 	line-height: 0;
 }
 
 .footer-layout1 .footer-brand-logo-png img {
 	width: auto;
-	height: calc(var(--brand-logo-height) - 4px);
-	max-height: calc(var(--brand-logo-height) - 4px);
-	max-width: min(calc(var(--brand-logo-max-width) - 20px), 100%);
+	height: var(--brand-logo-height);
+	max-height: var(--brand-logo-height);
+	max-width: min(var(--brand-logo-max-width), 100%);
 	object-fit: contain;
-	object-position: center center;
+	object-position: left center;
 	background: transparent;
 }
 
