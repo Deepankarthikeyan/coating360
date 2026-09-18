@@ -395,7 +395,7 @@ export const servicesDetails: ServiceDetail[] = [
     shortTitle: "Coating Inspection",
     text: "Comprehensive inspection services to ensure coating quality, compliance and long-term performance.",
     iconImage: siteIcons.services["coating-inspection"],
-    heroImage: "/assets/coating-images/8.png",
+    heroImage: "/assets/coating-images/9.png",
     secondaryImage: "/assets/coating-images/machine service 2.png",
     intro:
       "Quality inspection is an essential part of any protective coating project. AGH Coating360 provides coating inspection and quality control services to help ensure that coating work complies with project specifications and applicable standards.",
