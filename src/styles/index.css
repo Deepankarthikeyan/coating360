@@ -212,30 +212,40 @@
 }
 
 .service-area-1 .service-card.service-card--image-top .btn-wrap {
-	position: static;
-	transform: none;
-	margin-top: auto;
-	margin-right: 0;
+	justify-content: flex-end;
+	position: relative;
+	transform: translate(0, 16px);
+	margin-top: -16px;
+	margin-right: -10px;
 }
 
-/* Service cards: show Explore button only, no separate arrow box */
-.service-area-1 .service-card .btn-wrap {
-	justify-content: flex-start;
-	position: static;
-	transform: none;
-	margin-top: 12px;
-	margin-right: 0;
+.service-area-1 .service-card.service-card--image-top .btn-wrap .icon-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--smoke-color2);
+	color: var(--theme-color);
 }
 
-.service-area-1 .service-card .btn-wrap .icon-btn {
-	display: none !important;
-}
-
-.service-area-1 .service-card .btn-wrap .btn {
-	position: static;
-	opacity: 1;
+.service-area-1 .service-card.service-card--image-top .btn-wrap .btn {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
 	padding: 12px 18px;
 	font-size: 13px;
+	transition: opacity 0.4s ease;
+}
+
+.service-area-1 .service-card.service-card--image-top:hover .btn-wrap .btn {
+	opacity: 1;
+}
+
+/* Block animated line/dot shapes bleeding into the services section */
+.service-area-1 {
+	position: relative;
+	z-index: 3;
+	background: var(--white-color);
 }
 
 .service-popup-overlay {
