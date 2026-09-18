@@ -1,6 +1,7 @@
 import { useEffect } from "react"; 
 import WOW from "wow.js";  
 import BackToTop from "./BackToTop";
+import WhatsAppFloat from "./WhatsAppFloat/WhatsAppFloat";
 
 
 const Wrapper = ({ children }: any) => {
@@ -15,7 +16,8 @@ const Wrapper = ({ children }: any) => {
   return (
     <>  
       {children}
-      <BackToTop /> 
+      <WhatsAppFloat />
+      <BackToTop />
     </>
   );
 };
