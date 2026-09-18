@@ -195,7 +195,7 @@ const SiteHeader = () => {
                     </button>
                   </div>
                 </div>
-                <div className="col-auto d-xl-block d-none space-left">
+                <div className="col-auto d-lg-block d-none space-left">
                   <div className="header-button">
                     <Link to="/contact" className="btn">
                       GET IN TOUCH <i className="ri-arrow-right-up-line"></i>
@@ -211,7 +211,7 @@ const SiteHeader = () => {
               </div>
             </div>
             <div
-              className="navbar-right-desc d-xxl-flex d-none"
+              className="navbar-right-desc d-lg-flex d-none"
               style={{ backgroundImage: "url('/assets/img/bg/header-1-bg.png')" }}
             >
               <div className="icon-btn">
