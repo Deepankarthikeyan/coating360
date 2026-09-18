@@ -18,7 +18,7 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
   }, [serviceSlug]);
 
   return (
-    <section className="contact-area-2 space-bottom overflow-hidden" id="quote">
+    <section className="contact-area-2 space-top space-bottom overflow-hidden" id="quote">
       <div className="container" ref={formRef}>
         <div
           className="contact-wrap2 space overflow-hidden shape-mockup-wrap background-image"

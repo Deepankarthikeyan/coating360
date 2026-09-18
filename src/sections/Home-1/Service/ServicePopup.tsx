@@ -27,23 +27,18 @@ const ServicePopup = ({ service, isOpen, onClose }: ServicePopupProps) => {
         onClick={(event) => event.stopPropagation()}
         role="dialog"
         aria-modal="true"
-        aria-labelledby="service-popup-title"
+        aria-label={service.title}
       >
         <button type="button" className="service-popup-close" onClick={onClose} aria-label="Close">
           <i className="ri-close-line"></i>
         </button>
-        <div className="service-popup-banner">
+        <div className="service-popup-image-wrap">
           <img src={service.heroImage} alt={service.title} loading="lazy" />
         </div>
-        <div className="service-popup-body">
-          <h2 className="service-popup-title" id="service-popup-title">{service.title}</h2>
-          <p className="service-popup-text">{service.intro}</p>
-          <div className="service-popup-image">
-            <img src={service.secondaryImage} alt={service.shortTitle} loading="lazy" />
-          </div>
+        <div className="service-popup-actions">
           <Link
             to={`/contact?service=${service.slug}#quote`}
-            className="btn service-popup-contact-btn"
+            className="btn btn-sm service-popup-contact-btn"
             onClick={onClose}
           >
             Get Free Quote <i className="ri-arrow-right-up-line"></i>
