@@ -70,6 +70,20 @@
 	height: 12px;
 }
 
+.service-contact-form .form-control.style-border,
+.service-contact-form .form-select.style-border,
+.service-contact-form textarea.form-control.style-border {
+	border: 1px solid var(--border-color);
+	background-color: var(--white-color);
+}
+
+.service-contact-form .form-control.style-border:focus,
+.service-contact-form .form-select.style-border:focus,
+.service-contact-form textarea.form-control.style-border:focus {
+	border-color: var(--theme-color);
+	background-color: var(--white-color);
+}
+
 .header-layout1 .sticky-wrapper {
 	position: fixed;
 	top: 0;
