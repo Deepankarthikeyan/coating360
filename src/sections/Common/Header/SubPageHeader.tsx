@@ -59,7 +59,7 @@ const SubPageHeader = () => {
           <div className="widget widget-about footer-widget">
             <div className="footer-logo footer-img site-brand-logo">
               <Link to="/" onClick={() => setIsSideBarOpen(false)}>
-                <img src={brand.logo} alt={brand.name} />
+                <img src={brand.footerLogo} alt={brand.name} />
               </Link>
             </div>
             <p className="about-text mb-4">{brand.description}</p>
@@ -146,7 +146,7 @@ const SubPageHeader = () => {
           <div className="menu-area">
             <div className="header-navbar-logo site-brand-logo">
               <Link to="/">
-                <img src={brand.logo} alt={brand.name} />
+                <img src={brand.footerLogo} alt={brand.name} />
               </Link>
             </div>
             <div className="logo-bg"></div>
@@ -155,7 +155,7 @@ const SubPageHeader = () => {
                 <div className="col-auto d-xxl-none d-block">
                   <div className="header-logo site-brand-logo">
                     <Link to="/">
-                      <img src={brand.logo} alt={brand.name} />
+                      <img src={brand.footerLogo} alt={brand.name} />
                     </Link>
                   </div>
                 </div>
