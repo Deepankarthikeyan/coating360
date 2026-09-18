@@ -928,14 +928,10 @@
 	z-index: 2;
 }
 
-/* Keep Get in Touch visible on desktop like the Construz demo */
+/* Keep header top bar visible on desktop */
 @media (min-width: 992px) {
 	.header-layout1 .header-top {
 		display: block;
-	}
-
-	.header-layout1 .header-button .btn {
-		display: inline-flex !important;
 	}
 }
 
