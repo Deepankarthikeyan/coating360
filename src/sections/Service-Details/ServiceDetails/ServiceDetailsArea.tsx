@@ -1,12 +1,6 @@
 import { Link } from "react-router-dom";
 import type { ServiceDetail, ServiceSection } from "../../../data/servicesDetailsData";
 
-const serviceIcons = [
-  "/assets/img/icon/service-icon1-1.png",
-  "/assets/img/icon/service-icon1-2.png",
-  "/assets/img/icon/service-icon1-3.png",
-];
-
 interface ServiceDetailsAreaProps {
   service: ServiceDetail;
 }
@@ -57,11 +51,11 @@ const ServiceDetailsArea = ({ service }: ServiceDetailsAreaProps) => {
               <p className="mb-50">{service.intro}</p>
 
               <div className="row gy-4 justify-content-center">
-                {service.highlights.map((highlight, index) => (
+                {service.highlights.map((highlight) => (
                   <div className="col-xl-4 col-lg-6" key={highlight.title}>
                     <div className="service-card style4">
                       <div className="service-card_icon">
-                        <img src={serviceIcons[index]} alt="" loading="lazy" />
+                        <img src={service.iconImage} alt={highlight.title} loading="lazy" />
                       </div>
                       <div className="service-card_content item-decoration">
                         <h4 className="service-card_title">{highlight.title}</h4>

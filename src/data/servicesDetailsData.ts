@@ -1,3 +1,5 @@
+import { siteIcons } from "./siteContent";
+
 export interface ServiceHighlight {
   title: string;
   text: string;
@@ -14,6 +16,7 @@ export interface ServiceDetail {
   title: string;
   shortTitle: string;
   text: string;
+  iconImage: string;
   heroImage: string;
   secondaryImage: string;
   intro: string;
@@ -29,6 +32,7 @@ export const servicesDetails: ServiceDetail[] = [
     title: "Industrial Paints – Protective Coatings",
     shortTitle: "Industrial Paints",
     text: "High-performance protective coating systems for demanding industrial environments.",
+    iconImage: siteIcons.services["industrial-paints"],
     heroImage: "/assets/coating-images/1.INDUSTRIAL PAINT.png",
     secondaryImage: "/assets/coating-images/industrial painting image.png",
     intro:
@@ -106,6 +110,7 @@ export const servicesDetails: ServiceDetail[] = [
     title: "Marine Paints & Coatings",
     shortTitle: "Marine Coatings",
     text: "Advanced protection for vessels and marine environments in the toughest conditions.",
+    iconImage: siteIcons.services["marine-paints"],
     heroImage: "/assets/coating-images/2.MARINE COATING.png",
     secondaryImage: "/assets/coating-images/marine painting.png",
     intro:
@@ -146,6 +151,7 @@ export const servicesDetails: ServiceDetail[] = [
     title: "Fireproof & Intumescent Coatings",
     shortTitle: "Intumescent Fireproofing",
     text: "Passive fire protection solutions that enhance safety and structural integrity.",
+    iconImage: siteIcons.services["fireproof-intumescent"],
     heroImage: "/assets/coating-images/3.INTUMESCENT FIREPROOFING.png",
     secondaryImage: "/assets/coating-images/fireproof painting.png",
     intro:
@@ -186,6 +192,7 @@ export const servicesDetails: ServiceDetail[] = [
     title: "Industrial & Commercial Floor Coatings",
     shortTitle: "Industrial Flooring",
     text: "Durable, high-performance flooring systems for industrial and commercial facilities.",
+    iconImage: siteIcons.services["floor-coatings"],
     heroImage: "/assets/coating-images/4.INDUSTRIAL FLOORING.png",
     secondaryImage: "/assets/coating-images/floor coating.png",
     intro:
@@ -229,6 +236,7 @@ export const servicesDetails: ServiceDetail[] = [
     title: "Blasting Equipment & Abrasives",
     shortTitle: "Blasting & Abrasives",
     text: "Premium blasting abrasives and equipment for superior surface preparation.",
+    iconImage: siteIcons.services["blasting-equipment"],
     heroImage: "/assets/coating-images/5.ABRASIVES.png",
     secondaryImage: "/assets/coating-images/6.BLASTING EQUIPMENT.png",
     intro:
@@ -281,6 +289,7 @@ export const servicesDetails: ServiceDetail[] = [
     title: "Paint Spray Equipment – Sales & Services",
     shortTitle: "Spray Equipment",
     text: "Professional spray equipment for precise and efficient coating application.",
+    iconImage: siteIcons.services["spray-equipment"],
     heroImage: "/assets/coating-images/7.SPRAYER EQUIPMENTS.png",
     secondaryImage: "/assets/coating-images/machine service.png",
     intro:
@@ -323,6 +332,7 @@ export const servicesDetails: ServiceDetail[] = [
     title: "Paint Blasting & Coating Application Services",
     shortTitle: "Coating Application",
     text: "Professional blasting, surface preparation and industrial coating application services.",
+    iconImage: siteIcons.services["coating-application"],
     heroImage: "/assets/coating-images/8.PAINTING SERVICES.png",
     secondaryImage: "/assets/coating-images/SERVICES.png",
     intro:
@@ -384,6 +394,7 @@ export const servicesDetails: ServiceDetail[] = [
     title: "Coating Inspection Services",
     shortTitle: "Coating Inspection",
     text: "Comprehensive inspection services to ensure coating quality, compliance and long-term performance.",
+    iconImage: siteIcons.services["coating-inspection"],
     heroImage: "/assets/coating-images/9.INSPECTION SERVICES.png",
     secondaryImage: "/assets/coating-images/machine service 2.png",
     intro:

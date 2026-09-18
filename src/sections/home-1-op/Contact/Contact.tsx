@@ -1,4 +1,4 @@
-import siteContent from "../../../data/siteContent";
+import siteContent, { siteIcons } from "../../../data/siteContent";
 
 const Contact = () => {
   const { contact, brand, cta, images } = siteContent;
@@ -37,7 +37,7 @@ const Contact = () => {
               <div className="col-lg-6">
                 <div className="contact-grid-wrap">
                   <div className="contact-grid-icon">
-                    <img src="/assets/img/icon/contact-icon1-1.svg" alt="" />
+                    <img src={siteIcons.contact.location} alt="Location" />
                   </div>
                   <div className="contact-grid-details">
                     <h4 className="contact-grid-title">Head Office</h4>
@@ -48,7 +48,7 @@ const Contact = () => {
               <div className="col-lg-6">
                 <div className="contact-grid-wrap">
                   <div className="contact-grid-icon">
-                    <img src="/assets/img/icon/contact-icon1-2.svg" alt="" />
+                    <img src={siteIcons.contact.phone} alt="Phone" />
                   </div>
                   <div className="contact-grid-details">
                     <h4 className="contact-grid-title">Phone Number</h4>
@@ -63,7 +63,7 @@ const Contact = () => {
               <div className="col-lg-6">
                 <div className="contact-grid-wrap">
                   <div className="contact-grid-icon">
-                    <img src="/assets/img/icon/contact-icon1-3.svg" alt="" />
+                    <img src={siteIcons.contact.email} alt="Email" />
                   </div>
                   <div className="contact-grid-details">
                     <h4 className="contact-grid-title">Email Address</h4>
@@ -79,7 +79,7 @@ const Contact = () => {
               <div className="col-lg-6">
                 <div className="contact-grid-wrap">
                   <div className="contact-grid-icon">
-                    <img src="/assets/img/icon/contact-icon1-4.svg" alt="" />
+                    <img src={siteIcons.contact.website} alt="Website" />
                   </div>
                   <div className="contact-grid-details">
                     <h4 className="contact-grid-title">Business Hours</h4>

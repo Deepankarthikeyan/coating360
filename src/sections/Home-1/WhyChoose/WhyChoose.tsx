@@ -1,13 +1,13 @@
  
-import siteContent from "../../../data/siteContent";
+import siteContent, { siteIcons } from "../../../data/siteContent";
 
 const whyIcons = [
-    "/assets/img/icon/why-icon1-1.svg",
-    "/assets/img/icon/why-icon1-2.svg",
-    "/assets/img/icon/why-icon1-3.svg",
-    "/assets/img/icon/why-icon1-4.svg",
-    "/assets/img/icon/why-icon1-5.svg",
-    "/assets/img/icon/why-icon1-6.svg",
+    siteIcons.services["industrial-paints"],
+    siteIcons.abrasives,
+    siteIcons.services["coating-application"],
+    siteIcons.services["coating-inspection"],
+    siteIcons.services["floor-coatings"],
+    siteIcons.services["spray-equipment"],
 ];
 
 const WhyChoose = () => {

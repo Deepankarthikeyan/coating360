@@ -6,6 +6,26 @@ export const navItems = [
   { label: "CONTACT", href: "#contact-sec" },
 ];
 
+export const siteIcons = {
+  contact: {
+    location: "/04_location.png",
+    phone: "/01_phone.png",
+    email: "/02_email.png",
+    website: "/03_website.png",
+  },
+  abrasives: "/09_abrasives.png",
+  services: {
+    "industrial-paints": "/05_industrial_paints.png",
+    "marine-paints": "/06_marine_coatings.png",
+    "fireproof-intumescent": "/07_intumescent_fireproofing.png",
+    "floor-coatings": "/08_industrial_flooring.png",
+    "blasting-equipment": "/10_blasting_equipments.png",
+    "spray-equipment": "/11_spray_equipments.png",
+    "coating-application": "/12_application_services.png",
+    "coating-inspection": "/13_coating_inspection.png",
+  },
+};
+
 export const siteContent = {
   brand: {
     name: "AGH Coating360",
@@ -117,6 +137,7 @@ export const siteContent = {
       title: "Industrial Paints",
       text: "High-performance protective coating systems for demanding industrial environments.",
       icon: "ri-paint-brush-fill",
+      iconImage: siteIcons.services["industrial-paints"],
     },
     {
       id: "02",
@@ -124,6 +145,7 @@ export const siteContent = {
       title: "Marine Coatings",
       text: "Advanced protection for vessels and marine environments in the toughest conditions.",
       icon: "ri-ship-fill",
+      iconImage: siteIcons.services["marine-paints"],
     },
     {
       id: "03",
@@ -131,6 +153,7 @@ export const siteContent = {
       title: "Intumescent Fireproofing",
       text: "Passive fire protection solutions that enhance safety and structural integrity.",
       icon: "ri-fire-fill",
+      iconImage: siteIcons.services["fireproof-intumescent"],
     },
     {
       id: "04",
@@ -138,6 +161,7 @@ export const siteContent = {
       title: "Industrial Flooring",
       text: "Durable, high-performance flooring systems for industrial and commercial facilities.",
       icon: "ri-layout-grid-fill",
+      iconImage: siteIcons.services["floor-coatings"],
     },
     {
       id: "05",
@@ -145,6 +169,7 @@ export const siteContent = {
       title: "Blasting & Abrasives",
       text: "Premium blasting abrasives and equipment for superior surface preparation.",
       icon: "ri-settings-3-fill",
+      iconImage: siteIcons.services["blasting-equipment"],
     },
     {
       id: "06",
@@ -152,6 +177,7 @@ export const siteContent = {
       title: "Spray Equipment",
       text: "Professional spray equipment for precise and efficient coating application.",
       icon: "ri-contrast-drop-2-fill",
+      iconImage: siteIcons.services["spray-equipment"],
     },
     {
       id: "07",
@@ -159,6 +185,7 @@ export const siteContent = {
       title: "Coating Application",
       text: "Professional blasting, surface preparation and industrial coating application services.",
       icon: "ri-brush-fill",
+      iconImage: siteIcons.services["coating-application"],
     },
     {
       id: "08",
@@ -166,6 +193,7 @@ export const siteContent = {
       title: "Coating Inspection",
       text: "Comprehensive inspection services to ensure coating quality, compliance and long-term performance.",
       icon: "ri-search-eye-fill",
+      iconImage: siteIcons.services["coating-inspection"],
     },
   ],
   whyChoose: {

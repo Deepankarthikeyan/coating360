@@ -4,17 +4,6 @@ import siteContent from "../../../data/siteContent";
 const Service = () => {
   const { services, brand } = siteContent;
 
-  const serviceIcons = [
-    "/assets/img/icon/service-icon1-1.png",
-    "/assets/img/icon/service-icon1-2.png",
-    "/assets/img/icon/service-icon1-3.png",
-    "/assets/img/icon/service-icon1-4.png",
-    "/assets/img/icon/service-icon1-5.png",
-    "/assets/img/icon/service-icon1-1.png",
-    "/assets/img/icon/service-icon1-2.png",
-    "/assets/img/icon/service-icon1-3.png",
-  ];
-
   return (
     <div className="service-area-1 space-top overflow-hidden" id="service-sec">
       <div className="container">
@@ -30,13 +19,13 @@ const Service = () => {
             </div>
           </div>
 
-          {services.map((service, index) => (
+          {services.map((service) => (
             <div className="col-xl-4 col-md-6" key={service.id}>
               <div className="service-card">
                 <div className="service-card-shadow-text">SERVICES - {service.id}</div>
                 <div className="service-card_content">
                   <div className="service-card_icon">
-                    <img src={serviceIcons[index]} alt="" loading="lazy" />
+                    <img src={service.iconImage} alt={service.title} loading="lazy" />
                   </div>
                   <h4 className="service-card_title">
                     <Link to={`/services/${service.slug}`}>{service.title}</Link>

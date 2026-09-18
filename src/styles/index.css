@@ -28,6 +28,48 @@
 	--border-color: #d7d7d7;
 }
 
+/* AGH brand palette: red and black only */
+.service-area-1 .service-card_icon:after,
+.service-card.style4 .service-card_icon:after {
+	display: none;
+}
+
+.service-area-1 .service-card_icon img,
+.service-card.style4 .service-card_icon img {
+	width: 72px;
+	height: 72px;
+}
+
+.contact-grid-wrap .contact-grid-icon {
+	background: transparent;
+	width: 72px;
+	height: 72px;
+	line-height: normal;
+}
+
+.contact-grid-wrap .contact-grid-icon img {
+	width: 72px;
+	height: 72px;
+	object-fit: contain;
+}
+
+.wcu-card-icon img {
+	width: 72px;
+	height: 72px;
+	object-fit: contain;
+}
+
+.about-grid-wrap .icon img {
+	width: 56px;
+	height: 56px;
+	object-fit: contain;
+}
+
+.checklist img {
+	width: 17px;
+	height: 12px;
+}
+
 .header-layout1 .sticky-wrapper {
 	position: fixed;
 	top: 0;

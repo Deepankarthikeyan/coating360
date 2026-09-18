@@ -1,17 +1,6 @@
 import { Link } from "react-router-dom";
 import siteContent from "../../../data/siteContent";
 
-const serviceIcons = [
-    "/assets/img/icon/service-icon1-1.png",
-    "/assets/img/icon/service-icon1-2.png",
-    "/assets/img/icon/service-icon1-3.png",
-    "/assets/img/icon/service-icon1-4.png",
-    "/assets/img/icon/service-icon1-5.png",
-    "/assets/img/icon/service-icon1-1.png",
-    "/assets/img/icon/service-icon1-2.png",
-    "/assets/img/icon/service-icon1-3.png",
-];
-
 const ServiceArea = () => {
     return (
         <div className="service-area-4 space-top overflow-hidden">
@@ -24,7 +13,7 @@ const ServiceArea = () => {
                             <p>{siteContent.brand.description}</p>
                         </div>
                     </div>
-                    {siteContent.services.map((service, index) => (
+                    {siteContent.services.map((service) => (
                         <div className="col-xl-4 col-md-6" key={service.id}>
                             <div className="service-card style3">
                                 <div className="service-card-shadow-text">
@@ -32,7 +21,7 @@ const ServiceArea = () => {
                                 </div>
                                 <div className="service-card_content">
                                     <div className="service-card_icon">
-                                        <img src={serviceIcons[index]} alt="" loading="lazy" />
+                                        <img src={service.iconImage} alt={service.title} loading="lazy" />
                                     </div>
                                     <h4 className="service-card_title"><Link to="/service-details">{service.title}</Link></h4>
                                     <p className="service-card_text">{service.text}</p>
