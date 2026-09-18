@@ -12,66 +12,26 @@ html {
   transition: color 0.25s ease, padding-left 0.25s ease;
 }
 
-/* AGH Coating360 logo sizing — unified site brand logo */
-.header-layout1 .site-brand-logo img,
-.header-layout1 .header-logo img,
-.header-layout1 .header-navbar-logo img {
-  height: 52px;
-  max-height: 52px;
-  width: auto;
-  max-width: min(280px, 100%);
-  object-fit: contain;
-  display: block;
-  border: 0;
+/* Logo sizing handled in src/styles/index.css */
+
+.mfp-close {
+  position: absolute;
+  top: -45px;
+  right: -5px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  border: 2px solid rgba(0, 0, 0, 0.7);
+  border-radius: 0%;
+  padding: 0;
+  text-align: center;
+  line-height: 38px;
 }
-
-.footer-layout1 .site-brand-logo img,
-.footer-layout1 .footer-logo img,
-.mobile-menu-wrapper .site-brand-logo img,
-.mobile-menu-wrapper .mobile-logo img {
-  height: 48px;
-  max-height: 48px;
-  width: auto;
-  max-width: min(260px, 100%);
-  object-fit: contain;
-  border: 0;
-}
-
-.footer-layout1 .site-brand-logo img,
-.footer-layout1 .footer-logo img {
-  background: #ffffff;
-  padding: 8px 12px;
-  border-radius: 4px;
-}
-
-.sidemenu-content .site-brand-logo img,
-.sidemenu-content .footer-logo img {
-  height: 52px;
-  max-height: 52px;
-  width: auto;
-  max-width: min(280px, 100%);
-  object-fit: contain;
-  border: 0;
-}
-
-@media (max-width: 1399px) {
-  .header-layout1 .site-brand-logo img,
-  .header-layout1 .header-logo img,
-  .header-layout1 .header-navbar-logo img {
-    height: 48px;
-    max-height: 48px;
-    max-width: min(250px, 100%);
-  }
-
-  .sidemenu-content .site-brand-logo img,
-  .sidemenu-content .footer-logo img {
-    height: 48px;
-    max-height: 48px;
-    max-width: min(250px, 100%);
-  }
-}
-
-/* Section alignment */
 .about-area-1 .about-thumb1 {
   position: relative;
 }
@@ -568,32 +528,6 @@ body .disable-scroll {
 
 .popdown {
   display: none;
-}
-
-.mfp-close {
-  position: absolute;
-  top: -45px;
-  right: -5px;
-    width: 260px;
-    height: 66px;
-  background-color: transparent;
-.sidemenu-content .footer-logo img {
-  width: 300px;
-  height: 78px;
-  max-width: 100%;
-  max-height: none;
-  object-fit: contain;
-}
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 28px;
-  border: 2px solid rgba(0, 0, 0, 0.7);
-  border-radius: 0%;
-  padding: 0;
-  text-align: center;
-  line-height: 38px;
 }
 
 @media (max-width: 1024px) {

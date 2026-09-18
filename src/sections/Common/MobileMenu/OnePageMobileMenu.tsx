@@ -20,7 +20,7 @@ const OnePageMobileMenu = ({ isMenuOpen, setIsMenuOpen }: OnePageMobileMenuProps
       <div className="mobile-menu-area">
         <div className="mobile-logo site-brand-logo">
           <a href="#hero" onClick={(event) => onNavClick(event, "#hero")}>
-            <img src={siteContent.brand.logo} alt={siteContent.brand.name} />
+            <img src={siteContent.brand.logo} alt={siteContent.brand.name} width={281} height={60} />
           </a>
           <button onClick={closeMenu} className="menu-toggle" aria-label="Close menu">
             <i className="ri-close-line"></i>

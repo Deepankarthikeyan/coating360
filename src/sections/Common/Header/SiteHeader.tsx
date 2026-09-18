@@ -4,6 +4,11 @@ import siteContent, { navItems } from "../../../data/siteContent";
 import OnePageMobileMenu from "../MobileMenu/OnePageMobileMenu";
 import { handleAnchorClick } from "../../../utils/smoothScroll";
 
+const brandLogoProps = {
+  width: 281,
+  height: 60,
+} as const;
+
 const SiteHeader = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -65,7 +70,7 @@ const SiteHeader = () => {
           <div className="widget widget-about footer-widget">
             <div className="footer-logo footer-img site-brand-logo">
               <a href="#hero" onClick={(event) => onAnchorClick(event, "#hero", () => setIsSideBarOpen(false))}>
-                <img src={brand.logo} alt={brand.name} />
+                <img src={brand.logo} alt={brand.name} {...brandLogoProps} />
               </a>
             </div>
             <p className="about-text mb-4">{brand.description}</p>
@@ -160,7 +165,7 @@ const SiteHeader = () => {
           <div className="menu-area">
             <div className="header-navbar-logo site-brand-logo">
               <a href="#hero" onClick={(event) => onAnchorClick(event, "#hero")}>
-                <img src={brand.logo} alt={brand.name} />
+                <img src={brand.logo} alt={brand.name} {...brandLogoProps} />
               </a>
             </div>
             <div className="logo-bg"></div>
@@ -169,7 +174,7 @@ const SiteHeader = () => {
                 <div className="col-auto d-xxl-none d-block">
                   <div className="header-logo site-brand-logo">
                     <a href="#hero" onClick={(event) => onAnchorClick(event, "#hero")}>
-                      <img src={brand.logo} alt={brand.name} />
+                      <img src={brand.logo} alt={brand.name} {...brandLogoProps} />
                     </a>
                   </div>
                 </div>

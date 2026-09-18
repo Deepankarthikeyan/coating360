@@ -26,58 +26,74 @@
 	--gray-color: #1d1d1d;
 	--white-color: #ffffff;
 	--border-color: #d7d7d7;
+	--brand-logo-height: 52px;
+	--brand-logo-max-width: 280px;
 }
 
 .home-one-page {
 	overflow: hidden;
 }
 
-/* Unified brand logo sizing */
+/* Unified COATING 360 PNG logo sizing */
+.site-brand-logo {
+	display: block;
+	max-width: 100%;
+}
+
+.site-brand-logo a {
+	display: block;
+	max-width: 100%;
+	line-height: 0;
+}
+
 .site-brand-logo img {
 	width: auto;
-	height: auto;
-	max-width: 100%;
+	height: var(--brand-logo-height);
+	max-height: var(--brand-logo-height);
+	max-width: min(var(--brand-logo-max-width), 100%);
 	object-fit: contain;
+	object-position: left center;
 	display: block;
 	border: 0;
 	background: transparent;
 }
 
-.header-layout1 .site-brand-logo img,
-.header-layout1 .header-logo img,
-.header-layout1 .header-navbar-logo img {
-	height: 52px;
-	max-height: 52px;
-	width: auto;
-	max-width: min(280px, 100%);
-	object-position: left center;
-}
-
-.sidemenu-content .site-brand-logo img,
-.sidemenu-content .footer-logo img {
-	height: 52px;
-	max-height: 52px;
-	width: auto;
-	max-width: min(280px, 100%);
-}
-
 .footer-layout1 .site-brand-logo img,
 .footer-layout1 .footer-logo img {
-	height: 48px;
-	max-height: 48px;
-	width: auto;
-	max-width: min(260px, 100%);
+	height: calc(var(--brand-logo-height) - 4px);
+	max-height: calc(var(--brand-logo-height) - 4px);
+	max-width: min(calc(var(--brand-logo-max-width) - 20px), 100%);
 	background: var(--white-color);
 	padding: 8px 12px;
 	border-radius: 4px;
+	box-sizing: content-box;
 }
 
-.mobile-menu-wrapper .site-brand-logo img,
+.mobile-menu-wrapper .mobile-logo {
+	gap: 12px;
+	padding: 12px 16px;
+	align-items: center;
+}
+
+.mobile-menu-wrapper .mobile-logo a {
+	flex: 1 1 auto;
+	min-width: 0;
+	max-width: calc(100% - 56px);
+}
+
 .mobile-menu-wrapper .mobile-logo img {
-	height: 48px;
-	max-height: 48px;
-	width: auto;
-	max-width: min(calc(100vw - 88px), 260px);
+	height: calc(var(--brand-logo-height) - 4px);
+	max-height: calc(var(--brand-logo-height) - 4px);
+	max-width: 100%;
+}
+
+.mobile-menu-wrapper .mobile-logo .menu-toggle {
+	flex: 0 0 auto;
+	position: static;
+	right: auto;
+	top: auto;
+	padding: 10px 12px;
+	border-left: 1px solid var(--theme-color);
 }
 
 /* Transparent PNG logos without header background panel */
@@ -90,14 +106,10 @@
 .mobile-menu-wrapper .mobile-logo img,
 .sidemenu-content .footer-logo img {
 	background: transparent;
-	border: 0;
 }
 
 .footer-layout1 .footer-logo img {
 	background: var(--white-color);
-	padding: 8px 12px;
-	border-radius: 4px;
-	border: 0;
 }
 
 /* AGH brand palette: red and black only */
@@ -883,6 +895,11 @@
 }
 
 @media (max-width: 991px) {
+	:root {
+		--brand-logo-height: 40px;
+		--brand-logo-max-width: min(calc(100vw - 96px), 220px);
+	}
+
 	.header-layout1 .sticky-wrapper {
 		position: fixed;
 	}
@@ -932,6 +949,21 @@
 		line-height: 1;
 		flex: 1 1 auto;
 		min-width: 0;
+		max-width: calc(100% - 56px);
+		overflow: hidden;
+	}
+
+	.header-layout1 .menu-area .header-logo a {
+		display: block;
+		max-width: 100%;
+		overflow: hidden;
+	}
+
+	.header-layout1 .menu-area .header-logo img {
+		width: auto;
+		height: var(--brand-logo-height);
+		max-height: var(--brand-logo-height);
+		max-width: 100%;
 	}
 
 	.header-layout1 .menu-bar {
@@ -997,6 +1029,11 @@
 }
 
 @media (max-width: 767px) {
+	:root {
+		--brand-logo-height: 36px;
+		--brand-logo-max-width: min(calc(100vw - 88px), 200px);
+	}
+
 	html,
 	body {
 		overflow-x: clip;
@@ -1030,14 +1067,8 @@
 		text-align: center !important;
 	}
 
-	.header-layout1 .header-logo img {
-		height: 44px;
-		max-height: 44px;
-		width: auto;
-		max-width: min(calc(100vw - 88px), 240px);
-		display: block;
-		object-fit: contain;
-		object-position: left center;
+	.header-layout1 .menu-area .header-logo {
+		max-width: calc(100% - 52px);
 	}
 
 	.header-layout1 .menu-bar .menu-toggle.icon-btn {
@@ -1442,8 +1473,29 @@
 }
 
 @media (max-width: 575px) {
+	:root {
+		--brand-logo-height: 30px;
+		--brand-logo-max-width: min(calc(100vw - 72px), 180px);
+	}
+
 	.container {
 		--bs-gutter-x: 24px;
+	}
+
+	.footer-layout1 .footer-top-1 {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.footer-layout1 .footer-logo {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.footer-layout1 .footer-logo img {
+		margin: 0 auto;
 	}
 
 	.hero-wrapper .hero-style1 {

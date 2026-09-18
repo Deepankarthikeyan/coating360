@@ -362,7 +362,7 @@ const MultiPageMobileMenu = ({ isMenuOpen, setIsMenuOpen }: any) => {
             <div className="mobile-menu-area">
                 <div className="mobile-logo">
                     <Link to="/home-1">
-                        <img src="/assets/img/logo.png" alt="AGH Coating360" />
+                        <img src="/coating360-logo.png" alt="AGH Coating360" width={281} height={60} />
                     </Link>
                     <button onClick={handleMobileMenuClose} className="menu-toggle">
                         <i className="ri-close-line"></i>

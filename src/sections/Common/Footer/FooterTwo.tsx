@@ -20,7 +20,7 @@ const FooterTwo = () => {
                     <div className="footer-top-1">
                         <div className="footer-logo site-brand-logo">
                             <a href="#hero" onClick={(event) => onAnchorClick(event, "#hero")}>
-                                <img src={brand.logo} alt={brand.name} />
+                                <img src={brand.logo} alt={brand.name} width={281} height={60} />
                             </a>
                         </div>
                         <div className="subscribe-box">
