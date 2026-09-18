@@ -20,76 +20,97 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
   }, [serviceSlug]);
 
   return (
-    <section className="contact-quote-section" id="quote" ref={formRef}>
-      <div className="contact-quote-inner">
-        <div className="contact-quote-split">
-          <div className="contact-quote-image">
-            <img src={imageSrc} alt={imageAlt} loading="lazy" />
+    <section className="premium-split-section" id="quote" ref={formRef}>
+      <div className="premium-split-layout">
+        <div className="premium-split-media">
+          <div className="premium-split-media-frame">
+            <img src={imageSrc} alt={imageAlt} loading="lazy" className="premium-split-image" />
           </div>
-          <div className="contact-quote-form-panel">
-          <div className="contact-form-wrap">
-            <div className="title-area">
-              <span className="sub-title text-theme">
-                Get Free Quote <i className="ri-arrow-right-down-line"></i>
-              </span>
-              <h2 className="sec-title">
-                Interested in {selectedService?.title ?? "our services"}?
-              </h2>
-              <p>{cta.text}</p>
-            </div>
-            <form onSubmit={(e) => e.preventDefault()} className="contact-form ajax-contact service-contact-form">
-              <div className="row gy-4">
-                <div className="col-md-6">
-                  <div className="form-group">
-                    <input type="text" className="form-control style-border" name="name" placeholder="Your Name" />
-                  </div>
+        </div>
+
+        <div className="premium-split-form">
+          <div className="premium-split-form-inner">
+            <span className="premium-split-eyebrow">Get Free Quote</span>
+            <h2 className="premium-split-title">
+              Interested in {selectedService?.title ?? "our services"}?
+            </h2>
+            <p className="premium-split-description">{cta.text}</p>
+
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="premium-enquiry-form service-contact-form"
+            >
+              <div className="premium-form-grid">
+                <div className="premium-form-field">
+                  <label className="premium-form-label" htmlFor="quote-name">Your Name</label>
+                  <input
+                    id="quote-name"
+                    type="text"
+                    className="premium-form-input"
+                    name="name"
+                    placeholder="Enter your full name"
+                  />
                 </div>
-                <div className="col-md-6">
-                  <div className="form-group">
-                    <input type="email" className="form-control style-border" name="email" placeholder="Email Address" />
-                  </div>
+
+                <div className="premium-form-field">
+                  <label className="premium-form-label" htmlFor="quote-email">Email Address</label>
+                  <input
+                    id="quote-email"
+                    type="email"
+                    className="premium-form-input"
+                    name="email"
+                    placeholder="Enter your email"
+                  />
                 </div>
-                <div className="col-md-6">
-                  <div className="form-group">
-                    <input type="tel" className="form-control style-border" name="number" placeholder="Phone Number" />
-                  </div>
+
+                <div className="premium-form-field">
+                  <label className="premium-form-label" htmlFor="quote-phone">Phone Number</label>
+                  <input
+                    id="quote-phone"
+                    type="tel"
+                    className="premium-form-input"
+                    name="number"
+                    placeholder="Enter your phone number"
+                  />
                 </div>
-                <div className="col-md-6">
-                  <div className="form-group">
-                    <select
-                      name="subject"
-                      className="form-select style-border"
-                      defaultValue={selectedService?.title ?? ""}
-                    >
-                      <option value="">Select Service</option>
-                      {servicesDetails.map((service) => (
-                        <option key={service.slug} value={service.title}>
-                          {service.shortTitle}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+
+                <div className="premium-form-field premium-form-field-full">
+                  <label className="premium-form-label" htmlFor="quote-service">Service</label>
+                  <select
+                    id="quote-service"
+                    name="subject"
+                    className="premium-form-input premium-form-select"
+                    defaultValue={selectedService?.title ?? ""}
+                  >
+                    <option value="">Select a service</option>
+                    {servicesDetails.map((service) => (
+                      <option key={service.slug} value={service.title}>
+                        {service.shortTitle}
+                      </option>
+                    ))}
+                  </select>
                 </div>
-                <div className="col-12">
-                  <div className="form-group">
-                    <textarea
-                      name="message"
-                      cols={30}
-                      rows={3}
-                      className="form-control style-border"
-                      placeholder="Tell us about your project requirements..."
-                    ></textarea>
-                  </div>
+
+                <div className="premium-form-field premium-form-field-full">
+                  <label className="premium-form-label" htmlFor="quote-message">Your Enquiry</label>
+                  <textarea
+                    id="quote-message"
+                    name="message"
+                    rows={4}
+                    className="premium-form-input premium-form-textarea"
+                    placeholder="Tell us about your project requirements..."
+                  ></textarea>
                 </div>
-                <div className="form-btn col-12">
-                  <button type="submit" className="btn w-100">
-                    Submit Now <i className="ri-arrow-right-up-line"></i>
+
+                <div className="premium-form-field premium-form-field-full">
+                  <button type="submit" className="premium-form-submit">
+                    Submit Enquiry
+                    <i className="ri-arrow-right-up-line" aria-hidden="true"></i>
                   </button>
                 </div>
               </div>
-              <p className="form-messages mb-0 mt-3"></p>
+              <p className="premium-form-message" role="status"></p>
             </form>
-          </div>
           </div>
         </div>
       </div>
