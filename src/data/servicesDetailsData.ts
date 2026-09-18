@@ -33,7 +33,7 @@ export const servicesDetails: ServiceDetail[] = [
     shortTitle: "Industrial Paints",
     text: "High-performance protective coating systems for demanding industrial environments.",
     iconImage: siteIcons.services["industrial-paints"],
-    heroImage: "/assets/coating-images/1.INDUSTRIAL PAINT.png",
+    heroImage: "/assets/coating-images/1.png",
     secondaryImage: "/assets/coating-images/industrial painting image.png",
     intro:
       "We supply a comprehensive range of industrial protective coating systems for new construction, maintenance, refurbishment and repair projects across demanding industrial environments. Our coating solutions are formulated and selected to provide reliable protection against atmospheric corrosion, chemical exposure, abrasion, moisture, marine environments and high-temperature service conditions.",
@@ -111,7 +111,7 @@ export const servicesDetails: ServiceDetail[] = [
     shortTitle: "Marine Coatings",
     text: "Advanced protection for vessels and marine environments in the toughest conditions.",
     iconImage: siteIcons.services["marine-paints"],
-    heroImage: "/assets/coating-images/2.MARINE COATING.png",
+    heroImage: "/assets/coating-images/2.png",
     secondaryImage: "/assets/coating-images/marine painting.png",
     intro:
       "Marine environments demand high-performance coating systems capable of handling severe corrosion conditions. AGH Coating360 provides marine paints and protective coating solutions for applications exposed to seawater, humidity, salt spray and aggressive marine environments.",
@@ -152,7 +152,7 @@ export const servicesDetails: ServiceDetail[] = [
     shortTitle: "Intumescent Fireproofing",
     text: "Passive fire protection solutions that enhance safety and structural integrity.",
     iconImage: siteIcons.services["fireproof-intumescent"],
-    heroImage: "/assets/coating-images/3.INTUMESCENT FIREPROOFING.png",
+    heroImage: "/assets/coating-images/3.png",
     secondaryImage: "/assets/coating-images/fireproof painting.png",
     intro:
       "Structural steel requires specialised protection when fire resistance is critical. AGH Coating360 provides fireproof and intumescent coating application services for structural steel and other suitable applications.",
@@ -193,7 +193,7 @@ export const servicesDetails: ServiceDetail[] = [
     shortTitle: "Industrial Flooring",
     text: "Durable, high-performance flooring systems for industrial and commercial facilities.",
     iconImage: siteIcons.services["floor-coatings"],
-    heroImage: "/assets/coating-images/4.INDUSTRIAL FLOORING.png",
+    heroImage: "/assets/coating-images/4.png",
     secondaryImage: "/assets/coating-images/floor coating.png",
     intro:
       "We provide complete industrial and commercial flooring solutions designed for demanding environments. Our floor coating systems can provide resistance to traffic, chemicals, abrasion, impact and industrial operating conditions.",
@@ -237,7 +237,7 @@ export const servicesDetails: ServiceDetail[] = [
     shortTitle: "Blasting & Abrasives",
     text: "Premium blasting abrasives and equipment for superior surface preparation.",
     iconImage: siteIcons.services["blasting-equipment"],
-    heroImage: "/assets/coating-images/5.ABRASIVES.png",
+    heroImage: "/assets/coating-images/5.png",
     secondaryImage: "/assets/coating-images/6.BLASTING EQUIPMENT.png",
     intro:
       "Effective surface preparation is the foundation of a high-performance coating system. AGH COATING360 supplies a comprehensive range of abrasive blasting equipment, blasting accessories and industrial abrasives for surface preparation across industrial, marine, infrastructure and maintenance applications.",
@@ -290,7 +290,7 @@ export const servicesDetails: ServiceDetail[] = [
     shortTitle: "Spray Equipment",
     text: "Professional spray equipment for precise and efficient coating application.",
     iconImage: siteIcons.services["spray-equipment"],
-    heroImage: "/assets/coating-images/7.SPRAYER EQUIPMENTS.png",
+    heroImage: "/assets/coating-images/6.png",
     secondaryImage: "/assets/coating-images/machine service.png",
     intro:
       "We supply and support professional paint spraying equipment for industrial and protective coating applications. Our services help contractors and industrial customers improve coating productivity, finish quality and application efficiency.",
@@ -333,7 +333,7 @@ export const servicesDetails: ServiceDetail[] = [
     shortTitle: "Coating Application",
     text: "Professional blasting, surface preparation and industrial coating application services.",
     iconImage: siteIcons.services["coating-application"],
-    heroImage: "/assets/coating-images/8.PAINTING SERVICES.png",
+    heroImage: "/assets/coating-images/7.png",
     secondaryImage: "/assets/coating-images/SERVICES.png",
     intro:
       "AGH COATING360 provides professional abrasive blasting, surface preparation and industrial coating application services for new construction, maintenance, refurbishment and asset protection projects. Our experienced application teams execute coating systems in accordance with project specifications, coating manufacturer recommendations and applicable international standards, with a strong focus on safety, quality and productivity.",
@@ -395,7 +395,7 @@ export const servicesDetails: ServiceDetail[] = [
     shortTitle: "Coating Inspection",
     text: "Comprehensive inspection services to ensure coating quality, compliance and long-term performance.",
     iconImage: siteIcons.services["coating-inspection"],
-    heroImage: "/assets/coating-images/9.INSPECTION SERVICES.png",
+    heroImage: "/assets/coating-images/8.png",
     secondaryImage: "/assets/coating-images/machine service 2.png",
     intro:
       "Quality inspection is an essential part of any protective coating project. AGH Coating360 provides coating inspection and quality control services to help ensure that coating work complies with project specifications and applicable standards.",
