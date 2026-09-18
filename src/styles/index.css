@@ -1097,22 +1097,6 @@
 		margin-top: var(--header-mobile-height);
 	}
 
-	.hero-wrapper {
-		padding-top: var(--header-mobile-height);
-	}
-
-	.hero-wrapper .hero-thumb {
-		position: relative;
-		max-width: 72%;
-		margin: 24px auto 0;
-	}
-
-	.hero-wrapper .hero-experience-wrap {
-		right: 2%;
-		bottom: 3%;
-		transform: scale(0.72);
-	}
-
 	.about-area-1 .about-content-wrap1,
 	.contact-area-1 .title-area {
 		margin-top: 24px;
@@ -1181,47 +1165,6 @@
 		text-align: center !important;
 	}
 
-	.hero-wrapper {
-		min-height: auto;
-		padding-bottom: 48px;
-	}
-
-	.hero-wrapper .hero-style1 {
-		text-align: center;
-		padding-top: 24px;
-	}
-
-	.hero-wrapper .hero-style1 .btn-group {
-		justify-content: center;
-	}
-
-	.hero-wrapper .hero-thumb {
-		max-width: 100%;
-		padding: 0 16px;
-	}
-
-	.hero-wrapper .hero-experience-wrap {
-		position: relative;
-		inset: auto;
-		width: calc(100% - 32px);
-		max-width: none;
-		margin: 24px auto 0;
-		padding: 28px 24px 24px;
-		transform: none;
-		display: block;
-	}
-
-	.hero-wrapper .hero-experience-wrap .hero-experience-counter {
-		font-size: 72px;
-	}
-
-	.hero-wrapper .hero-experience-wrap .media .link-btn {
-		word-break: break-word;
-	}
-
-	.hero-wrapper .hero-shape1-1,
-	.hero-wrapper .section-animation-shape1-1,
-	.hero-wrapper .section-animation-shape1-2,
 	.about-area-1 .section-animation-shape1-1 {
 		display: none;
 	}
@@ -1598,29 +1541,6 @@
 
 	.footer-layout1 .footer-logo img {
 		margin: 0 auto;
-	}
-
-	.hero-wrapper .hero-style1 {
-		padding-top: 16px;
-	}
-
-	.hero-wrapper .hero-title {
-		font-size: 34px;
-		line-height: 1.08;
-	}
-
-	.hero-wrapper .hero-text {
-		font-size: 14px;
-		line-height: 1.55;
-	}
-
-	.hero-wrapper .hero-experience-wrap {
-		width: calc(100% - 32px);
-		padding: 24px 20px 20px;
-	}
-
-	.hero-wrapper .hero-experience-wrap .hero-experience-counter {
-		font-size: 56px;
 	}
 
 	.about-area-1 .about-counter-wrap {
