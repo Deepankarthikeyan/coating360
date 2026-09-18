@@ -28,8 +28,8 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
             className="section-animation-shape1-1 shape-mockup animation-infinite background-image"
             style={{ backgroundImage: "url('/assets/img/shape/global-line-shape1.png')", top: "0px", left: "0px" }}
           ></div>
-          <div className="row gy-60 justify-content-lg-end justify-content-center">
-            <div className="col-xl-7">
+          <div className="row gy-40 gy-lg-60 justify-content-center">
+            <div className="col-12 col-lg-10 col-xl-8">
               <div className="contact-form-wrap">
                 <div className="title-area">
                   <span className="sub-title text-theme">

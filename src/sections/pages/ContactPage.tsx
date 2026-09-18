@@ -1,11 +1,11 @@
 import { useSearchParams } from "react-router-dom";
+import PageBreadcrumb from "../Common/Breadcrumb/PageBreadcrumb";
 import FooterTwo from "../Common/Footer/FooterTwo";
 import SubPageHeader from "../Common/Header/SubPageHeader";
 import QuoteContactForm from "../Common/QuoteContactForm/QuoteContactForm";
 import QuoteServiceBanner from "../Common/QuoteContactForm/QuoteServiceBanner";
 import ScrollTopButton from "../Common/Scroll/Scroll";
 import Wrapper from "../Common/Wrapper";
-import BreadcumbTen from "../Service-Details/BreadcumbTen/BreadcumbTen";
 
 const ContactPage = () => {
   const [searchParams] = useSearchParams();
@@ -13,9 +13,16 @@ const ContactPage = () => {
 
   return (
     <Wrapper>
-      <div style={{ overflow: "hidden" }}>
+      <div className="contact-page" style={{ overflow: "hidden" }}>
         <SubPageHeader />
-        <BreadcumbTen title="Contact Us" />
+        <PageBreadcrumb
+          title="Contact Us"
+          compact
+          items={[
+            { label: "HOME", to: "/" },
+            { label: "Contact Us" },
+          ]}
+        />
         <QuoteServiceBanner serviceSlug={serviceSlug} />
         <QuoteContactForm serviceSlug={serviceSlug} />
         <FooterTwo />
