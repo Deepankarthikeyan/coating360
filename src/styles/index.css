@@ -26,6 +26,8 @@
 	--gray-color: #1d1d1d;
 	--white-color: #ffffff;
 	--border-color: #d7d7d7;
+	--section-space: 52px;
+	--section-space-mobile: 36px;
 }
 
 /* Transparent PNG logos without header background panel */
@@ -170,6 +172,29 @@
 	transform: none;
 	margin-top: auto;
 	margin-right: 0;
+}
+
+/* Tighter vertical rhythm between stacked home sections */
+.about-area-1.space {
+	padding-bottom: calc(var(--section-space) - 16px);
+}
+
+.service-area-1.space-top,
+.process-area-1.space-top,
+.blog-area-1.space {
+	padding-top: calc(var(--section-space) - 16px);
+}
+
+.blog-area-1.space {
+	padding-bottom: calc(var(--section-space) - 16px);
+}
+
+.about-area-1.space + .service-area-1.space-top,
+.service-area-1 + .coating-cta-area,
+.coating-cta-area + .space-top,
+.space-top + .process-area-1.space-top,
+.process-area-1.space-top + .blog-area-1.space {
+	padding-top: calc(var(--section-space) * 0.5);
 }
 
 .service-popup-overlay {
@@ -854,8 +879,8 @@
 	}
 
 	.hero-wrapper .hero-style1 {
-		padding-top: 150px;
-		padding-bottom: 170px;
+		padding-top: 88px;
+		padding-bottom: 72px;
 	}
 }
 
@@ -928,6 +953,7 @@
 	.header-layout1 .header-button {
 		flex-shrink: 0;
 		gap: 8px 12px;
+		margin-right: 0 !important;
 	}
 
 	.header-layout1 .header-button .btn {
@@ -988,7 +1014,54 @@
 	}
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1400px) and (max-width: 1500px) {
+	.header-layout1 .header-navbar-logo {
+		display: block;
+	}
+
+	.header-layout1 .menu-area .logo-bg {
+		display: block;
+		width: 255px;
+	}
+
+	.header-layout1 .header-top .header-top-left {
+		padding-left: 255px;
+	}
+
+	.header-layout1 .header-top .header-top-right {
+		padding-right: 220px;
+	}
+
+	.header-layout1 .main-menu {
+		margin-left: 255px;
+	}
+
+	.header-layout1 .menu-area > .container {
+		padding-right: 12px;
+	}
+
+	.header-layout1 .header-button {
+		margin-right: 0 !important;
+	}
+
+	.header-layout1 .navbar-right-desc {
+		position: relative;
+		top: auto;
+		right: auto;
+		flex: 0 0 auto;
+		height: auto;
+		align-self: stretch;
+		max-width: 220px;
+		min-width: 200px;
+		padding: 0 18px;
+	}
+
+	.header-layout1 .navbar-right-desc .navbar-right-desc-details .link {
+		font-size: 18px;
+	}
+}
+
+@media (min-width: 1501px) {
 	.header-layout1 .header-navbar-logo {
 		display: block;
 	}
@@ -1048,7 +1121,7 @@
 
 @media (max-width: 991px) {
 	.service-area-1 {
-		padding-bottom: 80px;
+		padding-bottom: 40px;
 	}
 
 	.cta-area-1 {
@@ -1405,7 +1478,7 @@
 	}
 
 	.service-area-1 {
-		padding-bottom: 48px;
+		padding-bottom: 32px;
 	}
 
 	.service-area-1 .title-area {
