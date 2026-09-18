@@ -33,8 +33,9 @@ export const siteContent = {
     tagline: "Protecting What You Build",
     description:
       "Complete Solutions for Industrial and Marine Paints, Intumescent Fireproof Coatings, Industrial Flooring, Spray Equipment, Abrasives, Blasting Equipment, Industrial Application Services & Coating Inspection.",
-    logo: "/assets/coating-images/agh logo.png",
-    logoWhite: "/assets/coating-images/agh logo.png",
+    logo: "/agh-logo-transparent.png",
+    logoWhite: "/agh-logo-white-transparent.png",
+    favicon: "/favicon-32.png",
     website: "www.aghcoating360.com",
   },
   images: {

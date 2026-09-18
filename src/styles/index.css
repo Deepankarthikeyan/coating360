@@ -28,6 +28,23 @@
 	--border-color: #d7d7d7;
 }
 
+/* Transparent PNG logos without header background panel */
+.header-layout1 .menu-area .logo-bg {
+	display: none;
+}
+
+.header-layout1 .header-navbar-logo {
+	background: transparent;
+}
+
+.header-layout1 .header-logo img,
+.header-layout1 .header-navbar-logo img,
+.footer-layout1 .footer-logo img,
+.mobile-menu-wrapper .mobile-logo img,
+.sidemenu-content .footer-logo img {
+	background: transparent;
+}
+
 /* AGH brand palette: red and black only */
 .service-area-1 .service-card_icon:after,
 .service-card.style4 .service-card_icon:after {
