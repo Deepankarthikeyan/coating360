@@ -310,7 +310,7 @@ html {
 .coating-services-flyer + .coating-cta-area,
 .service-area-1 + .coating-cta-area {
   margin-top: 0;
-  padding-top: 8px;
+  padding-top: 0;
 }
 
 @media (max-width: 1399px) {

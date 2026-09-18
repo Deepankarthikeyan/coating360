@@ -45,9 +45,6 @@ const Service = () => {
                       </h4>
                       <p className="service-card_text">{service.text}</p>
                       <div className="btn-wrap">
-                        <div className="icon-btn">
-                          <i className="ri-arrow-right-up-line" />
-                        </div>
                         <button type="button" className="btn" onClick={() => openService(service.slug)}>
                           Explore Service <i className="ri-arrow-right-up-line" />
                         </button>
