@@ -38,7 +38,7 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
               <p>{cta.text}</p>
             </div>
             <form onSubmit={(e) => e.preventDefault()} className="contact-form ajax-contact service-contact-form">
-              <div className="row gy-4">
+              <div className="row gy-3">
                 <div className="col-md-6">
                   <div className="form-group">
                     <input type="text" className="form-control style-border" name="name" placeholder="Your Name" />
@@ -75,7 +75,7 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
                     <textarea
                       name="message"
                       cols={30}
-                      rows={3}
+                      rows={2}
                       className="form-control style-border"
                       placeholder="Tell us about your project requirements..."
                     ></textarea>
