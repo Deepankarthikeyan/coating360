@@ -1,6 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import siteContent from "../../../data/siteContent";
 import servicesDetails, { getServiceBySlug } from "../../../data/servicesDetailsData";
+import { submitContactForm } from "../../../utils/submitContactForm";
 
 interface QuoteContactFormProps {
   serviceSlug?: string;
@@ -9,6 +10,10 @@ interface QuoteContactFormProps {
 const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
   const { cta, images } = siteContent;
   const formRef = useRef<HTMLDivElement>(null);
+  const formElementRef = useRef<HTMLFormElement>(null);
+  const [statusMessage, setStatusMessage] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const selectedService = serviceSlug ? getServiceBySlug(serviceSlug) : undefined;
   const imageSrc = selectedService?.heroImage ?? images.contact;
   const imageAlt = selectedService?.title ?? "AGH Coating360 Services";
@@ -18,6 +23,37 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
       formRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, [serviceSlug]);
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setStatusMessage("");
+    setIsSuccess(false);
+    setIsSubmitting(true);
+
+    const formData = new FormData(event.currentTarget);
+    const name = String(formData.get("name") ?? "").trim();
+    const email = String(formData.get("email") ?? "").trim();
+    const number = String(formData.get("number") ?? "").trim();
+    const subject = String(formData.get("subject") ?? "").trim();
+    const message = String(formData.get("message") ?? "").trim();
+
+    if (!name || !email || !message) {
+      setStatusMessage("Please fill in your name, email, and enquiry message.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    const result = await submitContactForm({ name, email, number, subject, message });
+
+    setIsSuccess(result.ok);
+    setStatusMessage(result.message);
+
+    if (result.ok) {
+      formElementRef.current?.reset();
+    }
+
+    setIsSubmitting(false);
+  };
 
   return (
     <section className="premium-split-section" id="quote" ref={formRef}>
@@ -46,7 +82,8 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
             </div>
 
             <form
-              onSubmit={(e) => e.preventDefault()}
+              ref={formElementRef}
+              onSubmit={handleSubmit}
               className="premium-enquiry-form service-contact-form"
             >
               <div className="premium-form-grid">
@@ -58,6 +95,7 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
                     className="premium-form-input"
                     name="name"
                     placeholder="Enter your full name"
+                    required
                   />
                 </div>
 
@@ -69,6 +107,7 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
                     className="premium-form-input"
                     name="email"
                     placeholder="Enter your email"
+                    required
                   />
                 </div>
 
@@ -108,17 +147,25 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
                     rows={4}
                     className="premium-form-input premium-form-textarea"
                     placeholder="Tell us about your project requirements..."
+                    required
                   ></textarea>
                 </div>
 
                 <div className="premium-form-field premium-form-field-full">
-                  <button type="submit" className="premium-form-submit">
-                    Submit Enquiry
+                  <button type="submit" className="premium-form-submit" disabled={isSubmitting}>
+                    {isSubmitting ? "Sending..." : "Submit Enquiry"}
                     <i className="ri-arrow-right-up-line" aria-hidden="true"></i>
                   </button>
                 </div>
               </div>
-              <p className="premium-form-message" role="status"></p>
+              {statusMessage ? (
+                <p
+                  className={`premium-form-message${isSuccess ? " is-success" : " is-error"}`}
+                  role="status"
+                >
+                  {statusMessage}
+                </p>
+              ) : null}
             </form>
           </div>
         </div>

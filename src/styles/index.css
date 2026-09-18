@@ -628,9 +628,22 @@
 }
 
 .premium-form-message {
-	margin: 14px 0 0;
+	margin-top: 16px;
 	font-size: 14px;
-	color: #6b6b6b;
+	line-height: 1.5;
+}
+
+.premium-form-message.is-success {
+	color: #1b7f3b;
+}
+
+.premium-form-message.is-error {
+	color: var(--theme-color);
+}
+
+.premium-form-submit:disabled {
+	opacity: 0.7;
+	cursor: not-allowed;
 }
 
 .contact-page .premium-split-section {
