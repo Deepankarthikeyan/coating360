@@ -1,5 +1,3 @@
-import siteContent from "../data/siteContent";
-
 export type ContactFormPayload = {
   name: string;
   email: string;
@@ -13,25 +11,32 @@ export type ContactFormResult = {
   message: string;
 };
 
-export function submitContactForm(payload: ContactFormPayload): ContactFormResult {
-  const recipient = siteContent.contact.formRecipientEmail;
-  const subject = `New enquiry from ${siteContent.brand.name}${payload.subject ? ` - ${payload.subject}` : ""}`;
-  const body = [
-    `Name: ${payload.name}`,
-    `Email: ${payload.email}`,
-    `Phone: ${payload.number || "Not provided"}`,
-    `Service: ${payload.subject || "Not selected"}`,
-    "",
-    "Message:",
-    payload.message,
-  ].join("\n");
+const apiBase = import.meta.env.VITE_API_BASE_URL ?? "";
 
-  const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+export async function submitContactForm(payload: ContactFormPayload): Promise<ContactFormResult> {
+  try {
+    const response = await fetch(`${apiBase}/api/contact`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
 
-  window.location.href = mailtoUrl;
+    const data = (await response.json()) as ContactFormResult;
 
-  return {
-    ok: true,
-    message: `Your email app is opening to send the enquiry to ${recipient}. Please tap Send in your email app to complete it.`,
-  };
+    if (!response.ok) {
+      return {
+        ok: false,
+        message: data.message || "Sorry, we could not send your enquiry right now. Please try again later.",
+      };
+    }
+
+    return data;
+  } catch {
+    return {
+      ok: false,
+      message: "Network error. Please check your connection and try again.",
+    };
+  }
 }

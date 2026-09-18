@@ -237,7 +237,7 @@ export const servicesDetails: ServiceDetail[] = [
     shortTitle: "Blasting & Abrasives",
     text: "Premium blasting abrasives and equipment for superior surface preparation.",
     iconImage: siteIcons.services["blasting-equipment"],
-    heroImage: "/assets/coating-images/5.png",
+    heroImage: "/assets/coating-images/6.png",
     secondaryImage: "/assets/coating-images/6.BLASTING EQUIPMENT.png",
     intro:
       "Effective surface preparation is the foundation of a high-performance coating system. AGH COATING360 supplies a comprehensive range of abrasive blasting equipment, blasting accessories and industrial abrasives for surface preparation across industrial, marine, infrastructure and maintenance applications.",
@@ -290,7 +290,7 @@ export const servicesDetails: ServiceDetail[] = [
     shortTitle: "Spray Equipment",
     text: "Professional spray equipment for precise and efficient coating application.",
     iconImage: siteIcons.services["spray-equipment"],
-    heroImage: "/assets/coating-images/6.png",
+    heroImage: "/assets/coating-images/7.png",
     secondaryImage: "/assets/coating-images/machine service.png",
     intro:
       "We supply and support professional paint spraying equipment for industrial and protective coating applications. Our services help contractors and industrial customers improve coating productivity, finish quality and application efficiency.",
@@ -333,7 +333,7 @@ export const servicesDetails: ServiceDetail[] = [
     shortTitle: "Coating Application",
     text: "Professional blasting, surface preparation and industrial coating application services.",
     iconImage: siteIcons.services["coating-application"],
-    heroImage: "/assets/coating-images/7.png",
+    heroImage: "/assets/coating-images/8.png",
     secondaryImage: "/assets/coating-images/SERVICES.png",
     intro:
       "AGH COATING360 provides professional abrasive blasting, surface preparation and industrial coating application services for new construction, maintenance, refurbishment and asset protection projects. Our experienced application teams execute coating systems in accordance with project specifications, coating manufacturer recommendations and applicable international standards, with a strong focus on safety, quality and productivity.",
