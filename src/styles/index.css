@@ -119,6 +119,59 @@
 	color: var(--theme-color);
 }
 
+.service-area-1 .service-card.service-card--image-top {
+	padding: 0;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.service-area-1 .service-card.service-card--image-top:after,
+.service-area-1 .service-card.service-card--image-top .service-card-shadow-text {
+	display: none;
+}
+
+.service-area-1 .service-card.service-card--image-top .service-card-thumb {
+	width: 100%;
+	overflow: hidden;
+}
+
+.service-area-1 .service-card.service-card--image-top .service-card-thumb img {
+	width: 100%;
+	height: 220px;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.4s ease;
+}
+
+.service-area-1 .service-card.service-card--image-top:hover .service-card-thumb img {
+	transform: scale(1.05);
+}
+
+.service-area-1 .service-card.service-card--image-top .service-card_content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 24px 24px 28px;
+}
+
+.service-area-1 .service-card.service-card--image-top .service-card_title {
+	margin-bottom: 10px;
+}
+
+.service-area-1 .service-card.service-card--image-top .service-card_text {
+	flex: 1;
+	margin-bottom: 16px;
+}
+
+.service-area-1 .service-card.service-card--image-top .btn-wrap {
+	position: static;
+	transform: none;
+	margin-top: auto;
+	margin-right: 0;
+}
+
 .service-popup-overlay {
 	position: fixed;
 	inset: 0;
@@ -987,7 +1040,7 @@
 		--bs-gutter-x: 32px;
 	}
 
-	.service-area-1 .service-card {
+	.service-area-1 .service-card:not(.service-card--image-top) {
 		padding-left: 56px;
 		padding-right: 24px;
 	}
@@ -1367,13 +1420,33 @@
 		width: 100%;
 	}
 
-	.service-area-1 .service-card {
+	.service-area-1 .service-card.service-card--image-top {
+		padding: 0;
+		overflow: hidden;
+		text-align: center;
+	}
+
+	.service-area-1 .service-card.service-card--image-top .service-card-thumb img {
+		height: 180px;
+	}
+
+	.service-area-1 .service-card.service-card--image-top .service-card_content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 8px;
+		padding: 20px 20px 24px;
+		width: 100%;
+	}
+
+	.service-area-1 .service-card:not(.service-card--image-top) {
 		padding: 24px 20px 28px;
 		overflow: hidden;
 		text-align: center;
 	}
 
-	.service-area-1 .service-card_content {
+	.service-area-1 .service-card:not(.service-card--image-top) .service-card_content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -1383,7 +1456,7 @@
 		width: 100%;
 	}
 
-	.service-area-1 .service-card_icon {
+	.service-area-1 .service-card:not(.service-card--image-top) .service-card_icon {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -1392,39 +1465,45 @@
 		margin-left: auto;
 	}
 
-	.service-area-1 .service-card_icon img {
+	.service-area-1 .service-card:not(.service-card--image-top) .service-card_icon img {
 		width: 64px;
 		height: 64px;
 	}
 
-	.service-area-1 .service-card_title,
-	.service-area-1 .service-card_text {
+	.service-area-1 .service-card.service-card--image-top .service-card_title,
+	.service-area-1 .service-card.service-card--image-top .service-card_text,
+	.service-area-1 .service-card:not(.service-card--image-top) .service-card_title,
+	.service-area-1 .service-card:not(.service-card--image-top) .service-card_text {
 		text-align: center;
 		width: 100%;
 	}
 
-	.service-area-1 .service-card_title {
+	.service-area-1 .service-card.service-card--image-top .service-card_title,
+	.service-area-1 .service-card:not(.service-card--image-top) .service-card_title {
 		margin-top: 0;
 	}
 
-	.service-area-1 .service-card_text {
+	.service-area-1 .service-card.service-card--image-top .service-card_text,
+	.service-area-1 .service-card:not(.service-card--image-top) .service-card_text {
 		max-width: 300px;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
-	.service-area-1 .service-card_title .service-card-link {
+	.service-area-1 .service-card.service-card--image-top .service-card_title .service-card-link,
+	.service-area-1 .service-card:not(.service-card--image-top) .service-card_title .service-card-link {
 		text-align: center;
 		display: block;
 		width: 100%;
 	}
 
-	.service-area-1 .service-card-shadow-text,
-	.service-area-1 .service-card:after {
+	.service-area-1 .service-card:not(.service-card--image-top) .service-card-shadow-text,
+	.service-area-1 .service-card:not(.service-card--image-top):after {
 		display: none !important;
 	}
 
-	.service-area-1 .service-card .btn-wrap {
+	.service-area-1 .service-card.service-card--image-top .btn-wrap,
+	.service-area-1 .service-card:not(.service-card--image-top) .btn-wrap {
 		position: static;
 		transform: none;
 		margin-top: 16px;
@@ -1432,11 +1511,13 @@
 		justify-content: center;
 	}
 
-	.service-area-1 .service-card .btn-wrap .icon-btn {
+	.service-area-1 .service-card.service-card--image-top .btn-wrap .icon-btn,
+	.service-area-1 .service-card:not(.service-card--image-top) .btn-wrap .icon-btn {
 		display: none;
 	}
 
-	.service-area-1 .service-card .btn-wrap .btn {
+	.service-area-1 .service-card.service-card--image-top .btn-wrap .btn,
+	.service-area-1 .service-card:not(.service-card--image-top) .btn-wrap .btn {
 		position: static;
 		opacity: 1;
 		padding: 12px 18px;
@@ -1612,7 +1693,19 @@
 		font-size: 12px;
 	}
 
-	.service-area-1 .service-card {
+	.service-area-1 .service-card.service-card--image-top {
+		padding: 0;
+	}
+
+	.service-area-1 .service-card.service-card--image-top .service-card-thumb img {
+		height: 160px;
+	}
+
+	.service-area-1 .service-card.service-card--image-top .service-card_content {
+		padding: 18px 16px 22px;
+	}
+
+	.service-area-1 .service-card:not(.service-card--image-top) {
 		padding: 20px 16px 22px;
 	}
 

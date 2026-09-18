@@ -27,32 +27,36 @@ const Service = () => {
               </div>
             </div>
 
-            {services.map((service) => (
-              <div className="col-xl-4 col-md-6" key={service.id}>
-                <div className="service-card">
-                  <div className="service-card-shadow-text">SERVICES - {service.id}</div>
-                  <div className="service-card_content">
-                    <div className="service-card_icon">
-                      <img src={service.iconImage} alt={service.title} loading="lazy" />
+            {services.map((service) => {
+              const serviceDetail = getServiceBySlug(service.slug);
+              const cardImage = serviceDetail?.heroImage ?? service.iconImage;
+
+              return (
+                <div className="col-xl-4 col-md-6" key={service.id}>
+                  <div className="service-card service-card--image-top">
+                    <div className="service-card-thumb">
+                      <img src={cardImage} alt={service.title} loading="lazy" />
                     </div>
-                    <h4 className="service-card_title">
-                      <button type="button" className="service-card-link" onClick={() => openService(service.slug)}>
-                        {service.title}
-                      </button>
-                    </h4>
-                    <p className="service-card_text">{service.text}</p>
-                    <div className="btn-wrap">
-                      <div className="icon-btn">
-                        <i className="ri-arrow-right-up-line" />
+                    <div className="service-card_content">
+                      <h4 className="service-card_title">
+                        <button type="button" className="service-card-link" onClick={() => openService(service.slug)}>
+                          {service.title}
+                        </button>
+                      </h4>
+                      <p className="service-card_text">{service.text}</p>
+                      <div className="btn-wrap">
+                        <div className="icon-btn">
+                          <i className="ri-arrow-right-up-line" />
+                        </div>
+                        <button type="button" className="btn" onClick={() => openService(service.slug)}>
+                          Explore Service <i className="ri-arrow-right-up-line" />
+                        </button>
                       </div>
-                      <button type="button" className="btn" onClick={() => openService(service.slug)}>
-                        Explore Service <i className="ri-arrow-right-up-line" />
-                      </button>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
