@@ -14,7 +14,7 @@ import WhyChoose from "../Home-1/WhyChoose/WhyChoose";
 const HomeOne = () => {
 	return (
 		<Wrapper>
-			<div className="home-one-page" style={{ overflow: "hidden" }}>
+			<div className="home-one-page">
 				<SiteHeader />
 				<Hero />
 				<About />

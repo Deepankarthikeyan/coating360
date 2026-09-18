@@ -39,7 +39,7 @@ export const siteContent = {
     website: "www.aghcoating360.com",
   },
   images: {
-    heroBackground: "/assets/coating-images/industrial painting image.png",
+    heroBackground: "/assets/img/hero/hero_bg_1_1.png",
     heroSlides: [
       "/assets/coating-images/marine painting.png",
       "/assets/coating-images/fireproof painting.png",

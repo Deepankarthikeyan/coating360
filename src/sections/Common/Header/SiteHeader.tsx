@@ -122,7 +122,7 @@ const SiteHeader = () => {
 
       <OnePageMobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 
-      <header className="nav-header header-layout1">
+      <header className="nav-header header-layout1 header-decoration">
         <div className="header-top">
           <div className="container">
             <div className="row justify-content-center justify-content-lg-between align-items-center gy-2">
