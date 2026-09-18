@@ -41,7 +41,7 @@ const ServicePopup = ({ service, isOpen, onClose }: ServicePopupProps) => {
             className="btn btn-sm service-popup-contact-btn"
             onClick={onClose}
           >
-            Get Free Quote <i className="ri-arrow-right-up-line"></i>
+            Contact Us <i className="ri-arrow-right-up-line"></i>
           </Link>
         </div>
       </div>
