@@ -224,24 +224,39 @@
 
 .contact-quote-section {
 	width: 100%;
+	padding: 32px 24px 48px;
 	background: var(--white-color);
+}
+
+.contact-quote-inner {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 16px;
 }
 
 .contact-quote-split {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	gap: 24px;
 	width: 100%;
-	min-height: min(720px, calc(100vh - 220px));
+	align-items: stretch;
+}
+
+.contact-quote-image,
+.contact-quote-form-panel {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	min-height: 0;
+	border-radius: 4px;
+	overflow: hidden;
 }
 
 .contact-quote-image {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 100%;
-	min-height: 100%;
 	background: var(--smoke-color4);
-	overflow: hidden;
 }
 
 .contact-quote-image img {
@@ -255,15 +270,16 @@
 .contact-quote-form-panel {
 	display: flex;
 	align-items: center;
-	width: 100%;
-	padding: 48px 56px;
-	background: var(--white-color);
+	justify-content: center;
+	padding: 28px 32px;
+	background: var(--smoke-color4);
+	overflow-y: auto;
 }
 
 .contact-quote-form-panel .contact-form-wrap {
 	width: 100%;
-	max-width: 560px;
-	margin: 0 auto;
+	max-width: 100%;
+	margin: 0;
 }
 
 .contact-page .contact-quote-section {
@@ -290,18 +306,28 @@
 		font-size: 30px;
 	}
 
+	.contact-quote-section {
+		padding: 24px 20px 40px;
+	}
+
+	.contact-quote-inner {
+		padding: 0 12px;
+	}
+
 	.contact-quote-split {
 		grid-template-columns: 1fr;
-		min-height: 0;
+		gap: 20px;
 	}
 
 	.contact-quote-image {
-		min-height: 320px;
-		max-height: 45vh;
+		aspect-ratio: 4 / 3;
+		max-height: none;
 	}
 
 	.contact-quote-form-panel {
-		padding: 40px 32px;
+		aspect-ratio: auto;
+		min-height: 0;
+		padding: 32px 24px;
 	}
 }
 
@@ -320,13 +346,16 @@
 		display: flex;
 	}
 
+	.contact-quote-section {
+		padding: 20px 16px 36px;
+	}
+
 	.contact-quote-image {
-		min-height: 260px;
-		max-height: 40vh;
+		aspect-ratio: 4 / 3;
 	}
 
 	.contact-quote-form-panel {
-		padding: 32px 24px;
+		padding: 28px 20px;
 	}
 }
 
@@ -345,29 +374,46 @@
 		font-size: 12px;
 	}
 
+	.contact-quote-section {
+		padding: 16px 12px 32px;
+	}
+
+	.contact-quote-inner {
+		padding: 0 8px;
+	}
+
 	.contact-quote-image {
-		min-height: 220px;
-		max-height: 36vh;
+		aspect-ratio: 1 / 1;
 	}
 
 	.contact-quote-form-panel {
-		padding: 28px 20px;
+		padding: 24px 16px;
 	}
 }
 
 @media (min-width: 1400px) {
-	.contact-quote-form-panel {
-		padding: 56px 72px;
+	.contact-quote-inner {
+		max-width: 1320px;
+		padding: 0 24px;
+	}
+
+	.contact-quote-section {
+		padding: 40px 32px 56px;
+	}
+
+	.contact-quote-split {
+		gap: 32px;
 	}
 }
 
 @media (min-width: 1920px) {
-	.contact-quote-split {
-		min-height: min(800px, calc(100vh - 200px));
+	.contact-quote-inner {
+		max-width: 1400px;
+		padding: 0 32px;
 	}
 
-	.contact-quote-form-panel .contact-form-wrap {
-		max-width: 640px;
+	.contact-quote-section {
+		padding: 48px 40px 64px;
 	}
 }
 

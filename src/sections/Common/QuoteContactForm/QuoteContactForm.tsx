@@ -21,11 +21,12 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
 
   return (
     <section className="contact-quote-section" id="quote" ref={formRef}>
-      <div className="contact-quote-split">
-        <div className="contact-quote-image">
-          <img src={imageSrc} alt={imageAlt} loading="lazy" />
-        </div>
-        <div className="contact-quote-form-panel">
+      <div className="contact-quote-inner">
+        <div className="contact-quote-split">
+          <div className="contact-quote-image">
+            <img src={imageSrc} alt={imageAlt} loading="lazy" />
+          </div>
+          <div className="contact-quote-form-panel">
           <div className="contact-form-wrap">
             <div className="title-area">
               <span className="sub-title text-theme">
@@ -88,6 +89,7 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
               </div>
               <p className="form-messages mb-0 mt-3"></p>
             </form>
+          </div>
           </div>
         </div>
       </div>
