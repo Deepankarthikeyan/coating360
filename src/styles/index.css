@@ -28,6 +28,8 @@
 	--border-color: #d7d7d7;
 	--brand-logo-height: 52px;
 	--brand-logo-max-width: 280px;
+	--header-mobile-height: 72px;
+	--service-card-image-height: 220px;
 }
 
 .home-one-page {
@@ -226,7 +228,10 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	min-height: 180px;
+	height: var(--service-card-image-height);
+	min-height: var(--service-card-image-height);
+	max-height: var(--service-card-image-height);
+	flex-shrink: 0;
 	padding: 16px 18px;
 	overflow: hidden;
 	background: linear-gradient(180deg, #f7f4ef 0%, #faf8f5 100%);
@@ -234,8 +239,9 @@
 
 .service-area-1 .service-card.service-card--image-top .service-card-thumb img {
 	width: 100%;
-	height: auto;
-	max-height: 200px;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
 	object-fit: contain;
 	object-position: center;
 	display: block;
@@ -247,55 +253,44 @@
 }
 
 @media (min-width: 576px) {
-	.service-area-1 .service-card.service-card--image-top .service-card-thumb {
-		min-height: 190px;
-		padding: 18px 20px;
+	:root {
+		--service-card-image-height: 210px;
 	}
 
-	.service-area-1 .service-card.service-card--image-top .service-card-thumb img {
-		max-height: 210px;
+	.service-area-1 .service-card.service-card--image-top .service-card-thumb {
+		padding: 18px 20px;
 	}
 }
 
 @media (min-width: 768px) {
-	.service-area-1 .service-card.service-card--image-top .service-card-thumb {
-		min-height: 200px;
-	}
-
-	.service-area-1 .service-card.service-card--image-top .service-card-thumb img {
-		max-height: 220px;
+	:root {
+		--service-card-image-height: 220px;
 	}
 }
 
 @media (min-width: 992px) {
-	.service-area-1 .service-card.service-card--image-top .service-card-thumb {
-		min-height: 210px;
-		padding: 20px 22px;
+	:root {
+		--service-card-image-height: 230px;
 	}
 
-	.service-area-1 .service-card.service-card--image-top .service-card-thumb img {
-		max-height: 230px;
+	.service-area-1 .service-card.service-card--image-top .service-card-thumb {
+		padding: 20px 22px;
 	}
 }
 
 @media (min-width: 1200px) {
-	.service-area-1 .service-card.service-card--image-top .service-card-thumb {
-		min-height: 220px;
-	}
-
-	.service-area-1 .service-card.service-card--image-top .service-card-thumb img {
-		max-height: 240px;
+	:root {
+		--service-card-image-height: 240px;
 	}
 }
 
 @media (min-width: 1400px) {
-	.service-area-1 .service-card.service-card--image-top .service-card-thumb {
-		min-height: 230px;
-		padding: 22px 24px;
+	:root {
+		--service-card-image-height: 250px;
 	}
 
-	.service-area-1 .service-card.service-card--image-top .service-card-thumb img {
-		max-height: 250px;
+	.service-area-1 .service-card.service-card--image-top .service-card-thumb {
+		padding: 22px 24px;
 	}
 }
 
@@ -741,7 +736,7 @@
 @media (max-width: 991px) {
 	.breadcumb-wrapper.breadcumb-compact {
 		padding: 64px 0 16px;
-		margin-top: 80px;
+		margin-top: var(--header-mobile-height);
 	}
 
 	.breadcumb-wrapper.breadcumb-compact .breadcumb-title {
@@ -815,7 +810,7 @@
 
 @media (max-width: 575px) {
 	.breadcumb-wrapper.breadcumb-compact {
-		margin-top: 76px;
+		margin-top: var(--header-mobile-height);
 		padding: 48px 0 12px;
 	}
 
@@ -992,34 +987,50 @@
 
 @media (max-width: 991px) {
 	:root {
-		--brand-logo-height: 40px;
-		--brand-logo-max-width: min(calc(100vw - 96px), 220px);
+		--brand-logo-height: 38px;
+		--brand-logo-max-width: min(calc(100vw - 88px), 210px);
+		--header-mobile-height: 72px;
+		--service-card-image-height: 200px;
+	}
+
+	.header-decoration {
+		overflow: hidden;
+		max-width: 100%;
 	}
 
 	.header-layout1 .sticky-wrapper {
 		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 50;
+		min-height: var(--header-mobile-height);
+		background: var(--white-color);
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
 	}
 
-	.header-layout1 .header-navbar-logo {
-		display: none;
+	.header-layout1 .header-navbar-logo,
+	.header-layout1 .menu-area .logo-bg,
+	.header-layout1 .navbar-right-desc {
+		display: none !important;
 	}
 
 	.header-layout1 .header-top {
 		display: none;
 	}
 
-	.header-layout1 .sticky-wrapper {
-		min-height: 80px;
-	}
-
 	.header-layout1 .menu-area {
-		min-height: 80px;
+		position: relative;
+		min-height: var(--header-mobile-height);
+		height: var(--header-mobile-height);
 		display: flex;
 		align-items: center;
+		padding: 0;
 	}
 
 	.header-layout1 .menu-area > .container {
 		width: 100%;
+		max-width: 100%;
 		padding-left: 16px;
 		padding-right: 16px;
 	}
@@ -1030,22 +1041,20 @@
 		align-items: center;
 		justify-content: space-between;
 		width: 100%;
-		min-height: 80px;
+		min-height: var(--header-mobile-height);
 		margin: 0;
 		--bs-gutter-x: 0;
 	}
 
 	.header-layout1 .menu-area .header-logo {
-		padding-top: 0;
-		padding-bottom: 0;
-		padding-left: 0;
-		margin-left: 0;
+		padding: 0;
+		margin: 0;
 		display: flex;
 		align-items: center;
 		line-height: 1;
 		flex: 1 1 auto;
 		min-width: 0;
-		max-width: calc(100% - 56px);
+		max-width: calc(100% - 52px);
 		overflow: hidden;
 	}
 
@@ -1053,13 +1062,16 @@
 		display: block;
 		max-width: 100%;
 		overflow: hidden;
+		line-height: 0;
 	}
 
 	.header-layout1 .menu-area .header-logo img {
 		width: auto;
 		height: var(--brand-logo-height);
 		max-height: var(--brand-logo-height);
-		max-width: 100%;
+		max-width: min(var(--brand-logo-max-width), 100%);
+		object-fit: contain;
+		object-position: left center;
 	}
 
 	.header-layout1 .menu-bar {
@@ -1067,7 +1079,8 @@
 		align-items: center;
 		justify-content: flex-end;
 		flex: 0 0 auto;
-		margin-left: auto;
+		margin-left: 8px;
+		padding: 0;
 	}
 
 	.header-layout1 .menu-bar .navbar-right {
@@ -1078,10 +1091,18 @@
 	.header-layout1 .menu-bar .menu-toggle.icon-btn {
 		margin: 0;
 		flex-shrink: 0;
+		width: 44px;
+		height: 44px;
+		line-height: 44px;
+		padding: 0;
+	}
+
+	.breadcumb-wrapper.breadcumb-compact {
+		margin-top: var(--header-mobile-height);
 	}
 
 	.hero-wrapper {
-		padding-top: 80px;
+		padding-top: var(--header-mobile-height);
 	}
 
 	.hero-wrapper .hero-thumb {
@@ -1128,6 +1149,7 @@
 	:root {
 		--brand-logo-height: 36px;
 		--brand-logo-max-width: min(calc(100vw - 88px), 200px);
+		--service-card-image-height: 190px;
 	}
 
 	html,
@@ -1161,16 +1183,6 @@
 
 	.service-area-1 .title-area.text-left {
 		text-align: center !important;
-	}
-
-	.header-layout1 .menu-area .header-logo {
-		max-width: calc(100% - 52px);
-	}
-
-	.header-layout1 .menu-bar .menu-toggle.icon-btn {
-		width: 44px;
-		height: 44px;
-		line-height: 44px;
 	}
 
 	.hero-wrapper {
@@ -1340,16 +1352,6 @@
 		padding: 0;
 		overflow: hidden;
 		text-align: center;
-	}
-
-	.service-area-1 .service-card.service-card--image-top .service-card-thumb {
-		min-height: 160px;
-		padding: 14px 16px;
-	}
-
-	.service-area-1 .service-card.service-card--image-top .service-card-thumb img {
-		max-height: 170px;
-		height: auto;
 	}
 
 	.service-area-1 .service-card.service-card--image-top .service-card_content {
@@ -1578,6 +1580,8 @@
 	:root {
 		--brand-logo-height: 30px;
 		--brand-logo-max-width: min(calc(100vw - 72px), 180px);
+		--header-mobile-height: 68px;
+		--service-card-image-height: 180px;
 	}
 
 	.container {
@@ -1638,16 +1642,6 @@
 
 	.service-area-1 .service-card.service-card--image-top {
 		padding: 0;
-	}
-
-	.service-area-1 .service-card.service-card--image-top .service-card-thumb {
-		min-height: 140px;
-		padding: 12px 14px;
-	}
-
-	.service-area-1 .service-card.service-card--image-top .service-card-thumb img {
-		max-height: 150px;
-		height: auto;
 	}
 
 	.service-area-1 .service-card.service-card--image-top .service-card_content {
