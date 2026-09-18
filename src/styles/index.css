@@ -993,22 +993,24 @@
 		right: auto;
 		left: auto;
 		transform: none;
-		width: 100%;
-		max-width: none;
-		margin: 16px 0 0;
-		padding: 20px 20px 24px;
+		width: auto;
+		max-width: 220px;
+		margin: 12px auto 0;
+		padding: 12px 14px 14px;
 		text-align: center;
 		box-sizing: border-box;
+		border-width: 2px;
 	}
 
 	.about-area-1 .about-counter-wrap .about-counter-number {
-		font-size: 56px;
+		font-size: 32px;
 		line-height: 1;
+		margin-bottom: 2px;
 	}
 
 	.about-area-1 .about-counter-wrap .about-counter-text {
-		font-size: 18px;
-		line-height: 1.35;
+		font-size: 13px;
+		line-height: 1.25;
 		margin-bottom: 0;
 		word-break: normal;
 	}
@@ -1047,6 +1049,7 @@
 	.about-area-1 .about-grid-wrap {
 		flex-direction: column;
 		align-items: center;
+		gap: 12px;
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 100%;
@@ -1054,7 +1057,20 @@
 		text-align: center;
 	}
 
+	.about-area-1 .about-grid-wrap .icon {
+		width: 72px;
+		height: 72px;
+		line-height: 72px;
+		margin: 0 auto;
+	}
+
 	.about-area-1 .about-grid-wrap .about-grid-details {
+		text-align: center;
+		width: 100%;
+	}
+
+	.about-area-1 .about-grid-wrap .title,
+	.about-area-1 .about-grid-wrap .text {
 		text-align: center;
 	}
 
@@ -1079,34 +1095,60 @@
 	}
 
 	.service-area-1 .service-card {
-		padding: 22px 20px 24px;
+		padding: 24px 20px 28px;
 		overflow: hidden;
 		text-align: center;
 	}
 
+	.service-area-1 .service-card_content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 8px;
+		padding: 0;
+		width: 100%;
+	}
+
 	.service-area-1 .service-card_icon {
-		margin-left: auto;
-		margin-right: auto;
 		display: flex;
 		justify-content: center;
+		align-items: center;
+		margin: 0 auto 4px;
+		padding: 0;
+		margin-left: auto;
+	}
+
+	.service-area-1 .service-card_icon img {
+		width: 64px;
+		height: 64px;
 	}
 
 	.service-area-1 .service-card_title,
 	.service-area-1 .service-card_text {
 		text-align: center;
+		width: 100%;
+	}
+
+	.service-area-1 .service-card_title {
+		margin-top: 0;
+	}
+
+	.service-area-1 .service-card_text {
+		max-width: 300px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.service-area-1 .service-card_title .service-card-link {
 		text-align: center;
+		display: block;
+		width: 100%;
 	}
 
 	.service-area-1 .service-card-shadow-text,
 	.service-area-1 .service-card:after {
-		display: none;
-	}
-
-	.service-area-1 .service-card_content {
-		padding: 0;
+		display: none !important;
 	}
 
 	.service-area-1 .service-card .btn-wrap {
@@ -1282,6 +1324,19 @@
 
 	.hero-wrapper .hero-experience-wrap .hero-experience-counter {
 		font-size: 56px;
+	}
+
+	.about-area-1 .about-counter-wrap {
+		max-width: 200px;
+		padding: 10px 12px 12px;
+	}
+
+	.about-area-1 .about-counter-wrap .about-counter-number {
+		font-size: 28px;
+	}
+
+	.about-area-1 .about-counter-wrap .about-counter-text {
+		font-size: 12px;
 	}
 
 	.service-area-1 .service-card {
