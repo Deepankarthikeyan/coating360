@@ -12,42 +12,54 @@ html {
   transition: color 0.25s ease, padding-left 0.25s ease;
 }
 
-/* AGH Coating360 logo sizing — fits header-layout1 logo box */
+/* AGH Coating360 logo sizing — unified site brand logo */
+.header-layout1 .site-brand-logo img,
 .header-layout1 .header-logo img,
 .header-layout1 .header-navbar-logo img {
-  width: 310px;
-  height: 78px;
-  max-height: none;
-  max-width: 100%;
+  width: 240px;
+  max-width: min(240px, 100%);
+  height: 60px;
+  max-height: 60px;
   object-fit: contain;
   display: block;
+  border: 0;
 }
 
+.footer-layout1 .site-brand-logo img,
 .footer-layout1 .footer-logo img,
+.mobile-menu-wrapper .site-brand-logo img,
 .mobile-menu-wrapper .mobile-logo img {
   max-height: 56px;
   width: auto;
+  max-width: 100%;
   object-fit: contain;
+  border: 0;
 }
 
+.sidemenu-content .site-brand-logo img,
 .sidemenu-content .footer-logo img {
-  width: 300px;
-  height: 78px;
+  width: 240px;
   max-width: 100%;
-  max-height: none;
+  height: 60px;
+  max-height: 60px;
   object-fit: contain;
+  border: 0;
 }
 
 @media (max-width: 1399px) {
+  .header-layout1 .site-brand-logo img,
   .header-layout1 .header-logo img,
   .header-layout1 .header-navbar-logo img {
-    width: 260px;
-    height: 66px;
+    width: 220px;
+    height: 56px;
+    max-height: 56px;
   }
 
+  .sidemenu-content .site-brand-logo img,
   .sidemenu-content .footer-logo img {
-    width: 280px;
-    height: 72px;
+    width: 220px;
+    height: 56px;
+    max-height: 56px;
   }
 }
 
@@ -159,8 +171,9 @@ html {
 
 .hero-wrapper .hero-thumb img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: min(460px, 52vh);
+  object-fit: contain;
   object-position: center center;
 }
 

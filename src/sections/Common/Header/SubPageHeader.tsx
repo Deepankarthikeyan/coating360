@@ -57,7 +57,7 @@ const SubPageHeader = () => {
             <i className="ri-close-line"></i>
           </button>
           <div className="widget widget-about footer-widget">
-            <div className="footer-logo footer-img">
+            <div className="footer-logo footer-img site-brand-logo">
               <Link to="/" onClick={() => setIsSideBarOpen(false)}>
                 <img src={brand.logo} alt={brand.name} />
               </Link>
@@ -144,7 +144,7 @@ const SubPageHeader = () => {
 
         <div className={`sticky-wrapper ${isSticky ? "sticky" : ""}`}>
           <div className="menu-area">
-            <div className="header-navbar-logo">
+            <div className="header-navbar-logo site-brand-logo">
               <Link to="/">
                 <img src={brand.logo} alt={brand.name} />
               </Link>
@@ -153,7 +153,7 @@ const SubPageHeader = () => {
             <div className="container">
               <div className="row align-items-center justify-content-lg-start justify-content-between">
                 <div className="col-auto d-xxl-none d-block">
-                  <div className="header-logo">
+                  <div className="header-logo site-brand-logo">
                     <Link to="/">
                       <img src={brand.logo} alt={brand.name} />
                     </Link>

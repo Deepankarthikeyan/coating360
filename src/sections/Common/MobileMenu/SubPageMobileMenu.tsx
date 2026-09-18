@@ -12,7 +12,7 @@ const SubPageMobileMenu = ({ isMenuOpen, setIsMenuOpen }: SubPageMobileMenuProps
   return (
     <div className={`mobile-menu-wrapper ${isMenuOpen ? "body-visible" : ""}`}>
       <div className="mobile-menu-area">
-        <div className="mobile-logo">
+        <div className="mobile-logo site-brand-logo">
           <Link to="/" onClick={closeMenu}>
             <img src={siteContent.brand.logo} alt={siteContent.brand.name} />
           </Link>

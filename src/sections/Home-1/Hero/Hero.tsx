@@ -41,11 +41,20 @@ const Hero = () => {
       id="hero"
       style={{ backgroundImage: `url('${images.heroBackground}')` }}
     >
+      <div className="hero-carousel-nav" aria-label="Hero carousel navigation">
+        <button type="button" className="hero-carousel-btn hero-carousel-btn--prev" onClick={goToPrev} aria-label="Previous slide">
+          <i className="ri-arrow-left-line" />
+        </button>
+        <button type="button" className="hero-carousel-btn hero-carousel-btn--next" onClick={goToNext} aria-label="Next slide">
+          <i className="ri-arrow-right-line" />
+        </button>
+      </div>
+
       <Slider {...settings} ref={sliderRef} className="hero-slider1">
         {siteContent.heroSlides.map((slide, index) => (
           <div className="hero-slide" key={slide.title}>
             <div className={`container${index === 0 ? " larger-no-space" : ""}`}>
-              <div className="row">
+              <div className="row align-items-center">
                 <div className="col-lg-6">
                   <div className="hero-style1">
                     <h1
@@ -70,17 +79,19 @@ const Hero = () => {
                     </div>
                   </div>
                 </div>
+                <div className="col-lg-6">
+                  <div
+                    className={`hero-thumb text-center slideinright ${isActive(index) ? "slider-animated" : ""}`}
+                    style={{ animationDelay: "0.4s" }}
+                  >
+                    <img
+                      src={images.heroSlides[index]}
+                      alt={siteContent.brand.name}
+                      loading={index === 0 ? "eager" : "lazy"}
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-            <div
-              className={`hero-thumb text-center slideinright ${isActive(index) ? "slider-animated" : ""}`}
-              style={{ animationDelay: "0.4s" }}
-            >
-              <img
-                src={images.heroSlides[index]}
-                alt={siteContent.brand.name}
-                loading={index === 0 ? "eager" : "lazy"}
-              />
             </div>
           </div>
         ))}
@@ -88,14 +99,6 @@ const Hero = () => {
 
       <div className="slider-controller-wrap">
         <div className="slider-btn-wrap">
-          <div className="icon-box">
-            <button onClick={goToPrev} className="slick-arrow default" aria-label="Previous slide">
-              <i className="ri-arrow-left-down-line"></i>
-            </button>
-            <button onClick={goToNext} className="slick-arrow default" aria-label="Next slide">
-              <i className="ri-arrow-right-up-line"></i>
-            </button>
-          </div>
           <div className="slides-numbers">
             <span className="active">0{currentSlide + 1}</span> /
             <span className="total">0{totalSlides}</span>

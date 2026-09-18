@@ -18,7 +18,7 @@ const OnePageMobileMenu = ({ isMenuOpen, setIsMenuOpen }: OnePageMobileMenuProps
   return (
     <div className={`mobile-menu-wrapper ${isMenuOpen ? "body-visible" : ""}`}>
       <div className="mobile-menu-area">
-        <div className="mobile-logo">
+        <div className="mobile-logo site-brand-logo">
           <a href="#hero" onClick={(event) => onNavClick(event, "#hero")}>
             <img src={siteContent.brand.logo} alt={siteContent.brand.name} />
           </a>
