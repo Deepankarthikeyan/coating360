@@ -179,12 +179,23 @@
 	min-height: auto;
 }
 
-.quote-service-banner img {
+.quote-service-banner-section {
+	padding: 0;
+	background: var(--white-color);
+}
+
+.quote-service-banner-inner {
+	width: 100%;
+	max-width: 1320px;
+	margin: 0 auto;
+	padding: 0 12px;
+}
+
+.quote-service-banner-inner img {
 	width: 100%;
 	height: auto;
 	display: block;
 	object-fit: contain;
-	border-radius: 4px;
 }
 
 .header-layout1 .sticky-wrapper {
