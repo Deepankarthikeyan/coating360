@@ -30,11 +30,20 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
 
         <div className="premium-split-form">
           <div className="premium-split-form-inner">
-            <span className="premium-split-eyebrow">Get Free Quote</span>
-            <h2 className="premium-split-title">
-              Interested in {selectedService?.title ?? "our services"}?
-            </h2>
-            <p className="premium-split-description">{cta.text}</p>
+            <div className="premium-split-header">
+              <span className="premium-split-eyebrow">Get Free Quote</span>
+              <h2 className="premium-split-title">
+                {selectedService ? (
+                  <>
+                    Interested in
+                    <span className="premium-split-service-name">{selectedService.title}</span>
+                  </>
+                ) : (
+                  "Interested in our services?"
+                )}
+              </h2>
+              <p className="premium-split-description">{cta.text}</p>
+            </div>
 
             <form
               onSubmit={(e) => e.preventDefault()}
@@ -63,7 +72,7 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
                   />
                 </div>
 
-                <div className="premium-form-field">
+                <div className="premium-form-field premium-form-field-half">
                   <label className="premium-form-label" htmlFor="quote-phone">Phone Number</label>
                   <input
                     id="quote-phone"
@@ -74,7 +83,7 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
                   />
                 </div>
 
-                <div className="premium-form-field premium-form-field-full">
+                <div className="premium-form-field premium-form-field-half">
                   <label className="premium-form-label" htmlFor="quote-service">Service</label>
                   <select
                     id="quote-service"
