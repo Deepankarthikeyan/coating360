@@ -495,7 +495,7 @@
 @media (max-width: 991px) {
 	.breadcumb-wrapper.breadcumb-compact {
 		padding: 64px 0 16px;
-		margin-top: 74px;
+		margin-top: 80px;
 	}
 
 	.breadcumb-wrapper.breadcumb-compact .breadcumb-title {
@@ -777,17 +777,19 @@
 	}
 
 	.header-layout1 .sticky-wrapper {
-		min-height: 74px;
+		min-height: 80px;
 	}
 
 	.header-layout1 .menu-area {
-		min-height: 74px;
+		min-height: 80px;
 		display: flex;
 		align-items: center;
 	}
 
 	.header-layout1 .menu-area > .container {
 		width: 100%;
+		padding-left: 16px;
+		padding-right: 16px;
 	}
 
 	.header-layout1 .menu-area .container > .row {
@@ -796,16 +798,21 @@
 		align-items: center;
 		justify-content: space-between;
 		width: 100%;
-		min-height: 74px;
+		min-height: 80px;
 		margin: 0;
+		--bs-gutter-x: 0;
 	}
 
 	.header-layout1 .menu-area .header-logo {
 		padding-top: 0;
 		padding-bottom: 0;
+		padding-left: 0;
+		margin-left: 0;
 		display: flex;
 		align-items: center;
 		line-height: 1;
+		flex: 1 1 auto;
+		min-width: 0;
 	}
 
 	.header-layout1 .menu-bar {
@@ -827,7 +834,7 @@
 	}
 
 	.hero-wrapper {
-		padding-top: 74px;
+		padding-top: 80px;
 	}
 
 	.hero-wrapper .hero-thumb {
@@ -898,11 +905,13 @@
 	}
 
 	.header-layout1 .header-logo img {
-		width: 190px;
-		height: 48px;
-		max-width: calc(100vw - 96px);
+		width: 240px;
+		height: 60px;
+		max-width: calc(100vw - 88px);
 		max-height: none;
 		display: block;
+		object-fit: contain;
+		object-position: left center;
 	}
 
 	.header-layout1 .menu-bar .menu-toggle.icon-btn {
