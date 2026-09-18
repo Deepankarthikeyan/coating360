@@ -2,6 +2,7 @@ import { Suspense, lazy } from "react";
 import { Navigate, createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const HomeOne = lazy(() => import("./sections/pages/HomeOne"));
+const ServiceDetailsPage = lazy(() => import("./sections/pages/ServiceDetailsPage"));
 
 const PageLoader = () => (
   <div style={{ minHeight: "100vh", display: "grid", placeItems: "center" }}>
@@ -15,6 +16,7 @@ const withSuspense = (element: JSX.Element) => (
 
 const router = createBrowserRouter([
   { path: "/", element: withSuspense(<HomeOne />) },
+  { path: "/services/:slug", element: withSuspense(<ServiceDetailsPage />) },
   { path: "*", element: <Navigate to="/" replace /> },
 ]);
 

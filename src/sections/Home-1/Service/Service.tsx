@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import siteContent from "../../../data/siteContent";
 
 const Service = () => {
@@ -12,7 +13,6 @@ const Service = () => {
     "/assets/img/icon/service-icon1-1.png",
     "/assets/img/icon/service-icon1-2.png",
     "/assets/img/icon/service-icon1-3.png",
-    "/assets/img/icon/service-icon1-4.png",
   ];
 
   return (
@@ -38,15 +38,17 @@ const Service = () => {
                   <div className="service-card_icon">
                     <img src={serviceIcons[index]} alt="" loading="lazy" />
                   </div>
-                  <h4 className="service-card_title">{service.title}</h4>
+                  <h4 className="service-card_title">
+                    <Link to={`/services/${service.slug}`}>{service.title}</Link>
+                  </h4>
                   <p className="service-card_text">{service.text}</p>
                   <div className="btn-wrap">
                     <div className="icon-btn">
                       <i className="ri-arrow-right-up-line" />
                     </div>
-                    <a href="#contact-sec" className="btn">
+                    <Link to={`/services/${service.slug}`} className="btn">
                       Explore Service <i className="ri-arrow-right-up-line" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
