@@ -13,7 +13,6 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
   const formElementRef = useRef<HTMLFormElement>(null);
   const [statusMessage, setStatusMessage] = useState("");
   const [isSuccess, setIsSuccess] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const selectedService = serviceSlug ? getServiceBySlug(serviceSlug) : undefined;
   const imageSrc = selectedService?.heroImage ?? images.contact;
   const imageAlt = selectedService?.title ?? "AGH Coating360 Services";
@@ -24,11 +23,10 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
     }
   }, [serviceSlug]);
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStatusMessage("");
     setIsSuccess(false);
-    setIsSubmitting(true);
 
     const formData = new FormData(event.currentTarget);
     const name = String(formData.get("name") ?? "").trim();
@@ -39,20 +37,14 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
 
     if (!name || !email || !message) {
       setStatusMessage("Please fill in your name, email, and enquiry message.");
-      setIsSubmitting(false);
       return;
     }
 
-    const result = await submitContactForm({ name, email, number, subject, message });
+    const result = submitContactForm({ name, email, number, subject, message });
 
     setIsSuccess(result.ok);
     setStatusMessage(result.message);
-
-    if (result.ok) {
-      formElementRef.current?.reset();
-    }
-
-    setIsSubmitting(false);
+    formElementRef.current?.reset();
   };
 
   return (
@@ -152,8 +144,8 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
                 </div>
 
                 <div className="premium-form-field premium-form-field-full">
-                  <button type="submit" className="premium-form-submit" disabled={isSubmitting}>
-                    {isSubmitting ? "Sending..." : "Submit Enquiry"}
+                  <button type="submit" className="premium-form-submit">
+                    Submit Enquiry
                     <i className="ri-arrow-right-up-line" aria-hidden="true"></i>
                   </button>
                 </div>

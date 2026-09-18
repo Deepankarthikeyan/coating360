@@ -13,52 +13,25 @@ export type ContactFormResult = {
   message: string;
 };
 
-export async function submitContactForm(payload: ContactFormPayload): Promise<ContactFormResult> {
+export function submitContactForm(payload: ContactFormPayload): ContactFormResult {
   const recipient = siteContent.contact.formRecipientEmail;
+  const subject = `New enquiry from ${siteContent.brand.name}${payload.subject ? ` - ${payload.subject}` : ""}`;
+  const body = [
+    `Name: ${payload.name}`,
+    `Email: ${payload.email}`,
+    `Phone: ${payload.number || "Not provided"}`,
+    `Service: ${payload.subject || "Not selected"}`,
+    "",
+    "Message:",
+    payload.message,
+  ].join("\n");
 
-  try {
-    const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(recipient)}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        name: payload.name,
-        email: payload.email,
-        phone: payload.number ?? "",
-        service: payload.subject ?? "",
-        message: payload.message,
-        _subject: `New enquiry from ${siteContent.brand.name}`,
-        _template: "table",
-        _captcha: "false",
-      }),
-    });
+  const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    if (!response.ok) {
-      return {
-        ok: false,
-        message: "Unable to send your enquiry. Please try again or email us directly.",
-      };
-    }
+  window.location.href = mailtoUrl;
 
-    const result = (await response.json()) as { success?: string; message?: string };
-
-    if (result.success === "false") {
-      return {
-        ok: false,
-        message: result.message ?? "Unable to send your enquiry. Please try again.",
-      };
-    }
-
-    return {
-      ok: true,
-      message: "Thank you! Your enquiry has been sent successfully.",
-    };
-  } catch {
-    return {
-      ok: false,
-      message: "Network error. Please check your connection and try again.",
-    };
-  }
+  return {
+    ok: true,
+    message: `Your email app is opening to send the enquiry to ${recipient}. Please tap Send in your email app to complete it.`,
+  };
 }
