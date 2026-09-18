@@ -31,6 +31,15 @@ const QuoteContactForm = ({ serviceSlug }: QuoteContactFormProps) => {
           <div className="row gy-60 justify-content-lg-end justify-content-center">
             <div className="col-xl-7">
               <div className="contact-form-wrap">
+                {selectedService && (
+                  <div className="quote-service-banner mb-30">
+                    <img
+                      src={selectedService.heroImage}
+                      alt={selectedService.title}
+                      loading="lazy"
+                    />
+                  </div>
+                )}
                 <div className="title-area">
                   <span className="sub-title text-theme">
                     Get Free Quote <i className="ri-arrow-right-down-line"></i>
