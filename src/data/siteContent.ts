@@ -88,7 +88,7 @@ export const siteContent = {
   contact: {
     phones: ["9894586563", "9095067767"],
     salesEmail: "sales@aghcoating360.com",
-    serviceEmail: "service@coating360.com",
+    serviceEmail: "service@aghcoating360.com",
     formRecipientEmail: "mskumardesigner@gmail.com",
     address: {
       line1: "Door No: 1A, ST-14",
@@ -97,7 +97,7 @@ export const siteContent = {
       city: "Coimbatore-641111",
       full: "Door No: 1A, ST-14, Anaimalaiamman Kovil Street, L&T Bypass Road, Vellalore Post, Coimbatore-641111",
     },
-    hours: "Mon - Sat: 10:00am to 07:30pm",
+    hours: "Mon - Sat: 9:00 AM to 5:00 PM",
   },
   heroSlides: [
     {

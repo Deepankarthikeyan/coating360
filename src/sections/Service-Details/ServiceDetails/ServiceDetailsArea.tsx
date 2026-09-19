@@ -5,7 +5,33 @@ interface ServiceDetailsAreaProps {
   service: ServiceDetail;
 }
 
+const SectionTagRow = ({ row }: { row: string }) => {
+  const tags = row.split("|").map((tag) => tag.trim()).filter(Boolean);
+
+  return (
+    <div className="service-popup-tag-row">
+      {tags.map((tag, index) => (
+        <span className="service-popup-tag" key={`${tag}-${index}`}>
+          {tag}
+        </span>
+      ))}
+    </div>
+  );
+};
+
 const SectionList = ({ section }: { section: ServiceSection }) => {
+  const usesGroupedRows = section.items.some((item) => item.includes("|"));
+
+  if (usesGroupedRows) {
+    return (
+      <div className="service-popup-tags service-details-tag-list">
+        {section.items.map((item) => (
+          <SectionTagRow row={item} key={item} />
+        ))}
+      </div>
+    );
+  }
+
   if (section.items.length <= 6) {
     return (
       <div className="process-grid-list style2 service-details-top-extra-space">

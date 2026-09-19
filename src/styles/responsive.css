@@ -278,6 +278,12 @@ body.disable-scroll {
 		align-items: center;
 	}
 
+	.header-layout1 .header-navbar-logo img {
+		height: 118px;
+		max-height: 118px;
+		max-width: 235px;
+	}
+
 	.header-layout1 .menu-area .logo-bg {
 		top: 0;
 		height: 100%;
@@ -785,8 +791,14 @@ body.disable-scroll {
    WhatsApp float — keep clear of screen edges
    -------------------------------------------------------------------------- */
 
+.scroll-top {
+	right: clamp(12px, 3vw, 24px) !important;
+	bottom: clamp(86px, 12vw, 100px) !important;
+}
+
 .whatsapp-float {
-	left: clamp(12px, 3vw, 24px);
+	right: clamp(12px, 3vw, 24px);
+	left: auto;
 	bottom: clamp(12px, 3vw, 24px);
 }
 

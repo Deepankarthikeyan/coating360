@@ -14,7 +14,7 @@ const SubPageMobileMenu = ({ isMenuOpen, setIsMenuOpen }: SubPageMobileMenuProps
       <div className="mobile-menu-area">
         <div className="mobile-logo site-brand-logo">
           <Link to="/" onClick={closeMenu}>
-            <img src={siteContent.brand.footerLogo} alt={siteContent.brand.name} width={281} height={60} />
+            <img src={siteContent.brand.logo} alt={siteContent.brand.name} width={281} height={60} />
           </Link>
           <button onClick={closeMenu} className="menu-toggle" aria-label="Close menu">
             <i className="ri-close-line"></i>
