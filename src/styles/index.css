@@ -1142,11 +1142,11 @@
 	:root {
 		--brand-logo-height: 48px;
 		--brand-logo-max-width: min(calc(100vw - 80px), 260px);
-		--header-logo-height: 84px;
-		--header-logo-max-width: 165px;
-		--sidebar-logo-height: 96px;
-		--sidebar-logo-max-width: 190px;
-		--header-mobile-height: 80px;
+		--header-logo-height: 96px;
+		--header-logo-max-width: 190px;
+		--sidebar-logo-height: 104px;
+		--sidebar-logo-max-width: 210px;
+		--header-mobile-height: 92px;
 		--service-card-image-height: 200px;
 	}
 
@@ -1290,10 +1290,11 @@
 	:root {
 		--brand-logo-height: 46px;
 		--brand-logo-max-width: min(calc(100vw - 80px), 250px);
-		--header-logo-height: 76px;
-		--header-logo-max-width: 150px;
-		--sidebar-logo-height: 88px;
-		--sidebar-logo-max-width: 170px;
+		--header-logo-height: 92px;
+		--header-logo-max-width: 185px;
+		--sidebar-logo-height: 100px;
+		--sidebar-logo-max-width: 200px;
+		--header-mobile-height: 100px;
 		--service-card-image-height: 190px;
 	}
 
@@ -1684,11 +1685,11 @@
 	:root {
 		--brand-logo-height: 44px;
 		--brand-logo-max-width: min(calc(100vw - 72px), 240px);
-		--header-logo-height: 70px;
-		--header-logo-max-width: 140px;
-		--sidebar-logo-height: 82px;
-		--sidebar-logo-max-width: 160px;
-		--header-mobile-height: 76px;
+		--header-logo-height: 88px;
+		--header-logo-max-width: 175px;
+		--sidebar-logo-height: 96px;
+		--sidebar-logo-max-width: 190px;
+		--header-mobile-height: 96px;
 		--service-card-image-height: 180px;
 	}
 
