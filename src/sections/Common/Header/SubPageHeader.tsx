@@ -111,23 +111,7 @@ const SubPageHeader = () => {
       <header className="nav-header header-layout1">
         <div className="header-top">
           <div className="container">
-            <div className="row justify-content-center justify-content-lg-between align-items-center gy-2">
-              <div className="col-auto d-none d-lg-block">
-                <div className="header-top-left">
-                  <div className="header-links">
-                    <ul>
-                      <li>
-                        <div className="social-links">
-                          <a href="https://www.facebook.com/" aria-label="Facebook"><i className="ri-facebook-fill"></i></a>
-                          <a href="https://www.twitter.com/" aria-label="Twitter"><i className="ri-twitter-x-fill"></i></a>
-                          <a href="https://www.instagram.com/" aria-label="Instagram"><i className="ri-instagram-line"></i></a>
-                          <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i className="ri-linkedin-fill"></i></a>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+            <div className="row justify-content-center justify-content-lg-end align-items-center gy-2">
               <div className="col-auto">
                 <div className="header-top-right">
                   <div className="header-links ps-0">
