@@ -30,7 +30,8 @@ export async function onRequestPost(context) {
     const host = env.SMTP_HOST;
     const user = env.SMTP_USER;
     const pass = env.SMTP_PASS;
-    const recipient = env.CONTACT_RECIPIENT_EMAIL || "mskumardesigner@gmail.com";
+    const recipient = env.CONTACT_RECIPIENT_EMAIL || "team@aghcoating360.com";
+    const ccRecipient = env.CONTACT_CC_EMAIL || "mohan@aghcoating360.com";
 
     if (!host || !user || !pass) {
       return new Response(
@@ -63,6 +64,7 @@ export async function onRequestPost(context) {
     await transporter.sendMail({
       from: env.SMTP_FROM || user,
       to: recipient,
+      cc: ccRecipient,
       replyTo: email,
       subject: mailSubject,
       text: mailText,

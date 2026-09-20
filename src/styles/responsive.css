@@ -752,6 +752,27 @@ body.disable-scroll {
 		justify-content: center;
 		width: 100%;
 	}
+
+	.footer-layout1 .widget-area .row > [class*="col-"] {
+		display: flex;
+		justify-content: center;
+	}
+
+	.footer-layout1 .footer-widget,
+	.footer-layout1 .widget-contact {
+		width: 100%;
+		max-width: 100%;
+		text-align: center;
+	}
+
+	.footer-layout1 .widget-contact .contact-text,
+	.footer-layout1 .widget-contact .footer-text,
+	.footer-layout1 .footer-widget .footer-text {
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
 }
 
 /* --------------------------------------------------------------------------

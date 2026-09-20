@@ -89,7 +89,8 @@ export const siteContent = {
     phones: ["9894586563", "9095067767"],
     salesEmail: "sales@aghcoating360.com",
     serviceEmail: "service@aghcoating360.com",
-    formRecipientEmail: "mskumardesigner@gmail.com",
+    formRecipientEmail: "team@aghcoating360.com",
+    formCcEmail: "mohan@aghcoating360.com",
     address: {
       line1: "Door No: 1A, ST-14",
       line2: "Anaimalaiamman Kovil Street",
