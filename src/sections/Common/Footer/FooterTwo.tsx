@@ -29,10 +29,14 @@ const FooterTwo = () => {
                                 />
                             </a>
                         </div>
-                        <div className="subscribe-box">
+                        <div className="subscribe-box footer-top-right">
                             <p className="subscribe-box_text">
                                 {brand.tagline} — Products | Equipment | Application | Inspection | Complete Coating Solutions
                             </p>
+                            <div className="footer-hours-block">
+                                <h5 className="about-subtitle">WE ARE AVAILABLE</h5>
+                                <p className="footer-hours-text">{contact.hours}</p>
+                            </div>
                         </div>
                     </div>
                     <div className="widget-area">
@@ -42,11 +46,6 @@ const FooterTwo = () => {
                                     <h3 className="widget_title">About Company</h3>
                                     <p className="about-text">{brand.description}</p>
                                     <h4 className="about-year">{brand.shortName}</h4>
-                                    <h5 className="about-subtitle">WE ARE AVAILABLE</h5>
-                                    <p className="about-text">
-                                        <span className="text-theme">{contact.hours.split(":")[0]}:</span>
-                                        {contact.hours.split(":").slice(1).join(":")}
-                                    </p>
                                 </div>
                             </div>
                             <div className="col-md-6 col-xl-auto">
