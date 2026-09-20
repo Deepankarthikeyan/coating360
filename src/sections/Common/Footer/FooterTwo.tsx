@@ -29,14 +29,10 @@ const FooterTwo = () => {
                                 />
                             </a>
                         </div>
-                        <div className="subscribe-box footer-top-right">
+                        <div className="subscribe-box">
                             <p className="subscribe-box_text">
                                 {brand.tagline} — Products | Equipment | Application | Inspection | Complete Coating Solutions
                             </p>
-                            <div className="footer-hours-block">
-                                <h5 className="about-subtitle">WE ARE AVAILABLE</h5>
-                                <p className="footer-hours-text">{contact.hours}</p>
-                            </div>
                         </div>
                     </div>
                     <div className="widget-area">
@@ -95,6 +91,10 @@ const FooterTwo = () => {
                                         <a href="https://instagram.com/" aria-label="Instagram"><i className="ri-instagram-line"></i></a>
                                         <a href="https://facebook.com/" aria-label="Facebook"><i className="ri-facebook-fill"></i></a>
                                         <a href="https://linkedin.com/" aria-label="LinkedIn"><i className="ri-linkedin-fill"></i></a>
+                                    </div>
+                                    <div className="footer-hours-block">
+                                        <h5 className="about-subtitle">WE ARE AVAILABLE</h5>
+                                        <p className="footer-hours-text">{contact.hours}</p>
                                     </div>
                                 </div>
                             </div>
