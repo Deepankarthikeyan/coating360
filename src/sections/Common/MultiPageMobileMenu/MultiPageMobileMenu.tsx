@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import siteContent from "../../../data/siteContent";
 
 const MultiPageMobileMenu = ({ isMenuOpen, setIsMenuOpen }: any) => {
     const [isHomeMenuOpen, setIsHomeMenuOpen] = useState(false);
@@ -362,7 +363,7 @@ const MultiPageMobileMenu = ({ isMenuOpen, setIsMenuOpen }: any) => {
             <div className="mobile-menu-area">
                 <div className="mobile-logo">
                     <Link to="/home-1">
-                        <img src="/coating360-logo.png" alt="AGH Coating360" width={281} height={60} />
+                        <img src={siteContent.brand.headerLogo} alt="AGH Coating360" width={281} height={60} />
                     </Link>
                     <button onClick={handleMobileMenuClose} className="menu-toggle">
                         <i className="ri-close-line"></i>

@@ -1,7 +1,10 @@
 
 import { useEffect, useRef, useState } from "react"; 
 import { Link } from "react-router-dom";
+import siteContent from "../../../data/siteContent";
 import MultiPageMobileMenu from "../MultiPageMobileMenu/MultiPageMobileMenu"; 
+
+const headerLogo = siteContent.brand.headerLogo;
 const HeaderOne = () => {
     const [isSticky, setIsSticky] = useState(false);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -73,7 +76,7 @@ const HeaderOne = () => {
                     <div className="widget widget-about footer-widget">
                         <div className="footer-logo footer-img">
                             <Link to="/">
-                                <img src="/coating360-logo.png" alt="AGH Coating360" width={281} height={60} />
+                                <img src={headerLogo} alt="AGH Coating360" width={281} height={60} />
                             </Link>
                         </div>
                         <p className="about-text mb-4">
@@ -192,14 +195,14 @@ const HeaderOne = () => {
                 <div className={`sticky-wrapper ${isSticky ? 'sticky' : ''}`}>
                     <div className="menu-area">
                         <div className="header-navbar-logo">
-                            <Link to="/"><img src="/coating360-logo.png" alt="AGH Coating360" width={281} height={60} /></Link>
+                            <Link to="/"><img src={headerLogo} alt="AGH Coating360" width={281} height={60} /></Link>
                         </div>
                         <div className="logo-bg"></div>
                         <div className="container">
                             <div className="row align-items-center justify-content-lg-start justify-content-between">
                                 <div className="col-auto d-xxl-none d-block">
                                     <div className="header-logo">
-                                        <Link to="/"><img src="/coating360-logo.png" alt="AGH Coating360" width={281} height={60} /></Link>
+                                        <Link to="/"><img src={headerLogo} alt="AGH Coating360" width={281} height={60} /></Link>
                                     </div>
                                 </div>
                                 <div className="col-auto menu-bar ms-xxl-0">
