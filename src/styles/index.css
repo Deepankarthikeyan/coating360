@@ -1158,16 +1158,16 @@
 	:root {
 		--brand-logo-height: 48px;
 		--brand-logo-max-width: min(calc(100vw - 80px), 260px);
-		--header-logo-height: 96px;
+		--header-logo-height: 80px;
 		--header-logo-max-width: 190px;
 		--sidebar-logo-height: 104px;
 		--sidebar-logo-max-width: 210px;
-		--header-mobile-height: 92px;
+		--header-mobile-height: 96px;
 		--service-card-image-height: 200px;
 	}
 
 	.header-decoration {
-		overflow: hidden;
+		overflow-x: clip;
 		max-width: 100%;
 	}
 
@@ -1209,14 +1209,25 @@
 	}
 
 	.header-layout1 .menu-area .container > .row {
-		display: flex;
-		flex-wrap: nowrap;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 44px;
 		align-items: center;
-		justify-content: space-between;
+		column-gap: 12px;
 		width: 100%;
 		min-height: var(--header-mobile-height);
 		margin: 0;
 		--bs-gutter-x: 0;
+	}
+
+	.header-layout1 .menu-area .container > .row > .col-auto {
+		padding: 0;
+		width: auto;
+		max-width: none;
+	}
+
+	.header-layout1 .menu-area .container > .row > .d-lg-block,
+	.header-layout1 .menu-area .container > .row > .d-xl-block {
+		display: none !important;
 	}
 
 	.header-layout1 .menu-area .header-logo {
@@ -1225,14 +1236,14 @@
 		display: flex;
 		align-items: center;
 		line-height: 1;
-		flex: 1 1 auto;
 		min-width: 0;
-		max-width: calc(100% - 52px);
+		max-width: 100%;
 		overflow: hidden;
 	}
 
 	.header-layout1 .menu-area .header-logo a {
-		display: block;
+		display: flex;
+		align-items: center;
 		max-width: 100%;
 		overflow: hidden;
 		line-height: 0;
@@ -1241,7 +1252,7 @@
 	.header-layout1 .menu-area .header-logo img {
 		width: auto;
 		height: var(--header-logo-height);
-		max-height: var(--header-logo-height);
+		max-height: calc(var(--header-mobile-height) - 16px);
 		max-width: min(var(--header-logo-max-width), 100%);
 		object-fit: contain;
 		object-position: left center;
@@ -1250,24 +1261,30 @@
 	.header-layout1 .menu-bar {
 		display: flex;
 		align-items: center;
-		justify-content: flex-end;
-		flex: 0 0 auto;
-		margin-left: 8px;
+		justify-content: center;
+		margin-left: 0;
 		padding: 0;
 	}
 
 	.header-layout1 .menu-bar .navbar-right {
-		display: inline-flex;
+		display: flex;
 		align-items: center;
+		justify-content: center;
 	}
 
 	.header-layout1 .menu-bar .menu-toggle.icon-btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
 		margin: 0;
 		flex-shrink: 0;
 		width: 44px;
 		height: 44px;
-		line-height: 44px;
+		min-width: 44px;
+		min-height: 44px;
+		line-height: 1;
 		padding: 0;
+		box-sizing: border-box;
 	}
 
 	.breadcumb-wrapper.breadcumb-compact {
@@ -1306,11 +1323,11 @@
 	:root {
 		--brand-logo-height: 46px;
 		--brand-logo-max-width: min(calc(100vw - 80px), 250px);
-		--header-logo-height: 92px;
+		--header-logo-height: 84px;
 		--header-logo-max-width: 185px;
 		--sidebar-logo-height: 100px;
 		--sidebar-logo-max-width: 200px;
-		--header-mobile-height: 100px;
+		--header-mobile-height: 96px;
 		--service-card-image-height: 190px;
 	}
 
@@ -1701,11 +1718,11 @@
 	:root {
 		--brand-logo-height: 44px;
 		--brand-logo-max-width: min(calc(100vw - 72px), 240px);
-		--header-logo-height: 88px;
+		--header-logo-height: 76px;
 		--header-logo-max-width: 175px;
 		--sidebar-logo-height: 96px;
 		--sidebar-logo-max-width: 190px;
-		--header-mobile-height: 96px;
+		--header-mobile-height: 88px;
 		--service-card-image-height: 180px;
 	}
 

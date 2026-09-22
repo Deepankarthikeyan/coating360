@@ -356,50 +356,15 @@ body.disable-scroll {
 	}
 }
 
-/* Mobile header — vertically center logo and menu button */
+/* Mobile header — grid layout keeps logo and menu button aligned */
 @media (max-width: 991px) {
 	.header-layout1 .menu-area > .container {
 		flex: 1 1 auto;
 		display: flex;
 		align-items: center;
+		min-width: 0;
 		padding-left: 16px;
 		padding-right: 16px;
-	}
-
-	.header-layout1 .menu-area .header-logo {
-		display: flex;
-		align-items: center;
-		align-self: center;
-		min-height: var(--header-mobile-height);
-	}
-
-	.header-layout1 .menu-area .header-logo a {
-		display: flex;
-		align-items: center;
-	}
-
-	.header-layout1 .menu-bar {
-		align-self: center;
-		height: var(--header-mobile-height);
-	}
-
-	.header-layout1 .menu-bar .navbar-right {
-		height: 100%;
-	}
-
-	.header-layout1 .menu-bar .menu-toggle.icon-btn {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		align-self: center;
-		width: 44px;
-		height: 44px;
-		min-width: 44px;
-		min-height: 44px;
-		max-height: 44px;
-		line-height: 1;
-		padding: 0;
-		box-sizing: border-box;
 	}
 }
 
