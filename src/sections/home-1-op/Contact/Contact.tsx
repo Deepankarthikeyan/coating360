@@ -1,4 +1,5 @@
 import siteContent, { siteIcons } from "../../../data/siteContent";
+import { formatPhoneDisplay, formatPhoneTel } from "../../../utils/contactFormat";
 
 const Contact = () => {
   const { contact, brand, cta, images } = siteContent;
@@ -54,7 +55,7 @@ const Contact = () => {
                     <h4 className="contact-grid-title">Phone Number</h4>
                     {contact.phones.map((phone) => (
                       <p className="contact-grid-text" key={phone}>
-                        <a href={`tel:${phone}`}>{phone}</a>
+                        <a href={`tel:${formatPhoneTel(phone)}`}>{formatPhoneDisplay(phone)}</a>
                       </p>
                     ))}
                   </div>
