@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import siteContent from "../../../data/siteContent";
-import { formatPhoneDisplay, formatPhoneTel } from "../../../utils/contactFormat";
 
  
 
@@ -19,9 +18,9 @@ const ContactArea = () => {
                   <i className="ri-phone-line"></i>
                   <Link
                     className="contact-page-card_link"
-                    to={`tel:${formatPhoneTel(contact.phones[0])}`}
+                    to={`tel:${contact.phones[0]}`}
                   >
-                    {formatPhoneDisplay(contact.phones[0])}
+                    {contact.phones[0]}
                   </Link>
                 </div>
                 <div className="contact-page-card-text">
@@ -51,9 +50,9 @@ const ContactArea = () => {
                   <i className="ri-phone-line"></i>
                   <Link
                     className="contact-page-card_link"
-                    to={`tel:${formatPhoneTel(contact.phones[1])}`}
+                    to={`tel:${contact.phones[1]}`}
                   >
-                    {formatPhoneDisplay(contact.phones[1])}
+                    {contact.phones[1]}
                   </Link>
                 </div>
                 <div className="contact-page-card-text">

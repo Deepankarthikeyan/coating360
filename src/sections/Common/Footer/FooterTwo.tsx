@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import siteContent, { navItems } from "../../../data/siteContent";
 import { handleAnchorClick } from "../../../utils/smoothScroll";
-import { formatPhoneDisplay, formatPhoneTel } from "../../../utils/contactFormat";
 import type { MouseEvent } from "react";
 
 const FooterTwo = () => {
@@ -24,8 +23,8 @@ const FooterTwo = () => {
                                 <img
                                     src={brand.footerLogo}
                                     alt={brand.name}
-                                    width={320}
-                                    height={76}
+                                    width={281}
+                                    height={60}
                                     decoding="async"
                                 />
                             </a>
@@ -83,7 +82,7 @@ const FooterTwo = () => {
                                     <h3 className="widget_title">Phone Number</h3>
                                     {contact.phones.map((phone) => (
                                         <p className="footer-text" key={phone}>
-                                            <a href={`tel:${formatPhoneTel(phone)}`}>{formatPhoneDisplay(phone)}</a>
+                                            <a href={`tel:${phone}`}>{phone}</a>
                                         </p>
                                     ))}
                                     <h3 className="widget_title">Follow Us</h3>

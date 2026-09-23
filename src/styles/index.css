@@ -28,11 +28,11 @@
 	--border-color: #d7d7d7;
 	--brand-logo-height: 52px;
 	--brand-logo-max-width: 280px;
-	--header-logo-height: 72px;
-	--header-logo-max-width: 320px;
-	--sidebar-logo-height: 90px;
-	--sidebar-logo-max-width: 260px;
-	--header-mobile-height: 72px;
+	--header-logo-height: 100px;
+	--header-logo-max-width: 200px;
+	--sidebar-logo-height: 110px;
+	--sidebar-logo-max-width: 220px;
+	--header-mobile-height: 96px;
 	--service-card-image-height: 220px;
 }
 
@@ -138,17 +138,6 @@
 /* Transparent PNG logos without header background panel */
 .header-layout1 .header-navbar-logo {
 	background: transparent;
-	margin-top: -8px;
-	padding: 8px 0;
-}
-
-.header-layout1 .header-top {
-	padding: 2px 0;
-}
-
-.header-layout1 .menu-area .logo-bg {
-	top: 0;
-	height: 100%;
 }
 
 .header-layout1 .header-logo img,
@@ -1169,11 +1158,11 @@
 	:root {
 		--brand-logo-height: 48px;
 		--brand-logo-max-width: min(calc(100vw - 80px), 260px);
-		--header-logo-height: 60px;
-		--header-logo-max-width: 260px;
-		--sidebar-logo-height: 84px;
-		--sidebar-logo-max-width: 240px;
-		--header-mobile-height: 72px;
+		--header-logo-height: 80px;
+		--header-logo-max-width: 190px;
+		--sidebar-logo-height: 104px;
+		--sidebar-logo-max-width: 210px;
+		--header-mobile-height: 96px;
 		--service-card-image-height: 200px;
 	}
 
@@ -1334,8 +1323,8 @@
 	:root {
 		--brand-logo-height: 46px;
 		--brand-logo-max-width: min(calc(100vw - 80px), 250px);
-		--header-logo-height: 58px;
-		--header-logo-max-width: 250px;
+		--header-logo-height: 84px;
+		--header-logo-max-width: 185px;
 		--sidebar-logo-height: 100px;
 		--sidebar-logo-max-width: 200px;
 		--header-mobile-height: 96px;
@@ -1729,11 +1718,11 @@
 	:root {
 		--brand-logo-height: 44px;
 		--brand-logo-max-width: min(calc(100vw - 72px), 240px);
-		--header-logo-height: 54px;
-		--header-logo-max-width: 230px;
+		--header-logo-height: 76px;
+		--header-logo-max-width: 175px;
 		--sidebar-logo-height: 96px;
 		--sidebar-logo-max-width: 190px;
-		--header-mobile-height: 68px;
+		--header-mobile-height: 88px;
 		--service-card-image-height: 180px;
 	}
 
