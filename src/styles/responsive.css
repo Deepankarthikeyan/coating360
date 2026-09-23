@@ -158,7 +158,7 @@ body.disable-scroll {
 	.header-layout1 .menu-area {
 		display: flex;
 		align-items: stretch;
-		min-height: 80px;
+		min-height: 64px;
 	}
 
 	.header-layout1 .menu-area > .container {
@@ -195,7 +195,7 @@ body.disable-scroll {
 	.header-layout1 .main-menu > ul > li > a {
 		display: inline-flex;
 		align-items: center;
-		padding: 28px 14px;
+		padding: 20px 14px;
 		line-height: 1.2;
 		white-space: nowrap;
 	}
@@ -269,8 +269,8 @@ body.disable-scroll {
 		bottom: 0;
 		height: 100%;
 		margin-top: 0;
-		padding-top: 0;
-		padding-bottom: 0;
+		padding-top: 4px;
+		padding-bottom: 4px;
 	}
 
 	.header-layout1 .header-navbar-logo a {
@@ -279,9 +279,9 @@ body.disable-scroll {
 	}
 
 	.header-layout1 .header-navbar-logo img {
-		height: 118px;
-		max-height: 118px;
-		max-width: 235px;
+		height: 82px;
+		max-height: 82px;
+		max-width: 300px;
 	}
 
 	.header-layout1 .menu-area .logo-bg {
