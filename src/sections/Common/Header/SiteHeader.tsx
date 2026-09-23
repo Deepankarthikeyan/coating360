@@ -5,8 +5,8 @@ import OnePageMobileMenu from "../MobileMenu/OnePageMobileMenu";
 import { handleAnchorClick } from "../../../utils/smoothScroll";
 
 const brandLogoProps = {
-  width: 125,
-  height: 100,
+  width: 220,
+  height: 72,
 } as const;
 
 const SiteHeader = () => {
@@ -75,9 +75,9 @@ const SiteHeader = () => {
             </div>
             <p className="about-text mb-4">{brand.description}</p>
             <p className="footer-text">
-              <a href={`tel:${contact.phones[0]}`}>
+              <a href={`tel:${contact.primaryPhoneTel}`}>
                 <i className="ri-phone-line space-right-sidebar-icon"></i>
-                {contact.phones[0]}
+                {contact.primaryPhoneDisplay}
               </a>
             </p>
             <p className="contact-text">
@@ -208,7 +208,9 @@ const SiteHeader = () => {
               </div>
               <div className="navbar-right-desc-details">
                 <h6 className="title">Call us any time</h6>
-                <a className="link" href={`tel:${contact.phones[0]}`}>{contact.phones[0]}</a>
+                <a className="link" href={`tel:${contact.primaryPhoneTel}`}>
+                  {contact.primaryPhoneDisplay}
+                </a>
               </div>
             </div>
           </div>

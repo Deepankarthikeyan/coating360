@@ -23,8 +23,8 @@ const FooterTwo = () => {
                                 <img
                                     src={brand.footerLogo}
                                     alt={brand.name}
-                                    width={281}
-                                    height={60}
+                                    width={320}
+                                    height={76}
                                     decoding="async"
                                 />
                             </a>
@@ -80,9 +80,11 @@ const FooterTwo = () => {
                             <div className="col-md-6 col-xl-auto">
                                 <div className="widget footer-widget">
                                     <h3 className="widget_title">Phone Number</h3>
-                                    {contact.phones.map((phone) => (
+                                    {contact.phones.map((phone, index) => (
                                         <p className="footer-text" key={phone}>
-                                            <a href={`tel:${phone}`}>{phone}</a>
+                                            <a href={`tel:${index === 0 ? contact.primaryPhoneTel : phone}`}>
+                                                {index === 0 ? contact.primaryPhoneDisplay : phone}
+                                            </a>
                                         </p>
                                     ))}
                                     <h3 className="widget_title">Follow Us</h3>

@@ -88,6 +88,8 @@ export const siteContent = {
   },
   contact: {
     phones: ["9894586563", "9095067767"],
+    primaryPhoneDisplay: "+91 9894586563",
+    primaryPhoneTel: "+919894586563",
     salesEmail: "sales@aghcoating360.com",
     serviceEmail: "service@aghcoating360.com",
     formRecipientEmail: "team@aghcoating360.com",

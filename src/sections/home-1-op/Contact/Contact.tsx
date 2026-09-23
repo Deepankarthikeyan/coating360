@@ -52,9 +52,11 @@ const Contact = () => {
                   </div>
                   <div className="contact-grid-details">
                     <h4 className="contact-grid-title">Phone Number</h4>
-                    {contact.phones.map((phone) => (
+                    {contact.phones.map((phone, index) => (
                       <p className="contact-grid-text" key={phone}>
-                        <a href={`tel:${phone}`}>{phone}</a>
+                        <a href={`tel:${index === 0 ? contact.primaryPhoneTel : phone}`}>
+                          {index === 0 ? contact.primaryPhoneDisplay : phone}
+                        </a>
                       </p>
                     ))}
                   </div>
