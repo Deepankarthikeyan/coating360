@@ -140,8 +140,13 @@
 	background: transparent;
 	margin-top: -6px;
 	padding: 6px 0;
-	display: flex;
-	align-items: center;
+}
+
+/* Single logo: panel logo on xl+, in-row logo below xl (theme default) */
+@media (max-width: 1399px) {
+	.header-layout1 .header-navbar-logo {
+		display: none !important;
+	}
 }
 
 .header-layout1 .header-navbar-logo a,
