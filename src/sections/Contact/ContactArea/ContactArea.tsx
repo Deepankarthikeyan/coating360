@@ -18,7 +18,7 @@ const ContactArea = () => {
                   <i className="ri-phone-line"></i>
                   <Link
                     className="contact-page-card_link"
-                    to={`tel:${contact.phones[0]}`}
+                    to={`tel:${contact.phones[0].replace(/\s/g, "")}`}
                   >
                     {contact.phones[0]}
                   </Link>

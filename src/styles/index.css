@@ -135,6 +135,17 @@
 	border-left: 1px solid var(--theme-color);
 }
 
+/* Keep header phone callout on one line */
+.header-layout1 .navbar-right-desc {
+	flex-wrap: nowrap;
+	gap: 10px;
+}
+
+.header-layout1 .navbar-right-desc .navbar-right-desc-details .title,
+.header-layout1 .navbar-right-desc .navbar-right-desc-details .link {
+	white-space: nowrap;
+}
+
 /* Transparent PNG logos without header background panel */
 .header-layout1 .header-navbar-logo {
 	background: transparent;

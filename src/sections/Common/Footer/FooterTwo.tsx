@@ -82,7 +82,7 @@ const FooterTwo = () => {
                                     <h3 className="widget_title">Phone Number</h3>
                                     {contact.phones.map((phone) => (
                                         <p className="footer-text" key={phone}>
-                                            <a href={`tel:${phone}`}>{phone}</a>
+                                            <a href={`tel:${phone.replace(/\s/g, "")}`}>{phone}</a>
                                         </p>
                                     ))}
                                     <h3 className="widget_title">Follow Us</h3>

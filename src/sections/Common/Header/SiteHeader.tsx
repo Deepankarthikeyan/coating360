@@ -75,7 +75,7 @@ const SiteHeader = () => {
             </div>
             <p className="about-text mb-4">{brand.description}</p>
             <p className="footer-text">
-              <a href={`tel:${contact.phones[0]}`}>
+              <a href={`tel:${contact.phones[0].replace(/\s/g, "")}`}>
                 <i className="ri-phone-line space-right-sidebar-icon"></i>
                 {contact.phones[0]}
               </a>
@@ -208,7 +208,7 @@ const SiteHeader = () => {
               </div>
               <div className="navbar-right-desc-details">
                 <h6 className="title">Call us any time</h6>
-                <a className="link" href={`tel:${contact.phones[0]}`}>{contact.phones[0]}</a>
+                <a className="link" href={`tel:${contact.phones[0].replace(/\s/g, "")}`}>{contact.phones[0]}</a>
               </div>
             </div>
           </div>

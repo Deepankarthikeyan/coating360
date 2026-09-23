@@ -238,25 +238,37 @@ body.disable-scroll {
 	.header-layout1 .navbar-right-desc {
 		display: flex;
 		align-items: center;
+		flex-wrap: nowrap;
 		top: 0;
 		height: 100%;
-		max-width: min(280px, 28vw);
-		padding: 0 clamp(16px, 2vw, 32px);
+		max-width: min(340px, 34vw);
+		padding: 0 clamp(16px, 2vw, 28px);
 		box-sizing: border-box;
+	}
+
+	.header-layout1 .navbar-right-desc .icon-btn {
+		flex-shrink: 0;
 	}
 
 	.header-layout1 .navbar-right-desc .navbar-right-desc-details {
 		min-width: 0;
+		flex: 1 1 auto;
+	}
+
+	.header-layout1 .navbar-right-desc .navbar-right-desc-details .title {
+		white-space: nowrap;
+		margin-bottom: 2px;
 	}
 
 	.header-layout1 .navbar-right-desc .navbar-right-desc-details .link {
-		font-size: clamp(16px, 1.6vw, 24px);
-		line-height: 1.2;
-		word-break: break-word;
+		font-size: clamp(15px, 1.35vw, 22px);
+		line-height: 1.15;
+		white-space: nowrap;
+		word-break: normal;
 	}
 
 	.header-layout1 .menu-area > .container {
-		padding-right: min(300px, 30vw);
+		padding-right: min(350px, 35vw);
 	}
 }
 
@@ -298,7 +310,7 @@ body.disable-scroll {
 	}
 
 	.header-layout1 .menu-area > .container {
-		padding-right: min(320px, 30vw);
+		padding-right: min(360px, 34vw);
 	}
 }
 
@@ -331,19 +343,19 @@ body.disable-scroll {
 	}
 
 	.header-layout1 .menu-area > .container {
-		padding-right: min(260px, 32vw);
+		padding-right: min(300px, 34vw);
 	}
 }
 
 @media (min-width: 992px) and (max-width: 1366px) {
 	.header-layout1 .navbar-right-desc {
-		padding: 0 16px;
-		max-width: min(240px, 30vw);
+		padding: 0 14px;
+		max-width: min(300px, 34vw);
 	}
 
 	.header-layout1 .navbar-right-desc .icon-btn {
-		width: 44px;
-		height: 44px;
+		width: 42px;
+		height: 42px;
 		flex-shrink: 0;
 	}
 
@@ -352,7 +364,7 @@ body.disable-scroll {
 	}
 
 	.header-layout1 .navbar-right-desc .link {
-		font-size: 16px;
+		font-size: 15px;
 	}
 }
 
