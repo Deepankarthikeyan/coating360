@@ -5,8 +5,8 @@ import OnePageMobileMenu from "../MobileMenu/OnePageMobileMenu";
 import { handleAnchorClick } from "../../../utils/smoothScroll";
 
 const brandLogoProps = {
-  width: 240,
-  height: 70,
+  width: 320,
+  height: 62,
 } as const;
 
 const SiteHeader = () => {
