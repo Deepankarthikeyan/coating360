@@ -84,8 +84,8 @@ const HeaderOne = () => {
                         </p>
 
                         <p className="footer-text">
-                            <Link to="tel:9894586563">
-                                <i className="ri-phone-line space-right-sidebar-icon"></i>9894586563
+                            <Link to="tel:+919894586563">
+                                <i className="ri-phone-line space-right-sidebar-icon"></i>+91 9894586563
                             </Link>
                         </p>
                         <p className="contact-text">
@@ -313,7 +313,7 @@ const HeaderOne = () => {
                             </div>
                             <div className="navbar-right-desc-details">
                                 <h6 className="title">Call us any time</h6>
-                                <Link className="link" to="tel:9894586563">9894586563</Link>
+                                <Link className="link" to="tel:+919894586563">+91 9894586563</Link>
                             </div>
                         </div>
                     </div>

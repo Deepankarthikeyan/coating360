@@ -2,7 +2,8 @@ import { siteContent } from "../../../data/siteContent";
 
 const WhatsAppFloat = () => {
   const phone = siteContent.contact.phones[0];
-  const whatsappUrl = `https://wa.me/91${phone}`;
+  const phoneDigits = phone.replace(/\D/g, "");
+  const whatsappUrl = `https://wa.me/${phoneDigits}`;
 
   return (
     <a
