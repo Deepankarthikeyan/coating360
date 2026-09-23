@@ -64,9 +64,9 @@ const SubPageHeader = () => {
             </div>
             <p className="about-text mb-4">{brand.description}</p>
             <p className="footer-text">
-              <a href={`tel:${contact.primaryPhoneTel}`}>
+              <a href={`tel:${contact.phones[0]}`}>
                 <i className="ri-phone-line space-right-sidebar-icon"></i>
-                {contact.primaryPhoneDisplay}
+                {contact.phones[0]}
               </a>
             </p>
             <p className="contact-text">
@@ -183,9 +183,7 @@ const SubPageHeader = () => {
               </div>
               <div className="navbar-right-desc-details">
                 <h6 className="title">Call us any time</h6>
-                <a className="link" href={`tel:${contact.primaryPhoneTel}`}>
-                  {contact.primaryPhoneDisplay}
-                </a>
+                <a className="link" href={`tel:${contact.phones[0]}`}>{contact.phones[0]}</a>
               </div>
             </div>
           </div>
