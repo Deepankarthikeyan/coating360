@@ -39,6 +39,7 @@ const Hero = () => {
   const [totalSlides, setTotalSlides] = useState(0);
   const sliderRef = useRef<any>(null);
   const { images } = siteContent;
+  const activeSlideImage = siteContent.heroSlides[currentSlide]?.image ?? images.heroBackground;
 
   useEffect(() => {
     if (sliderRef.current) {
@@ -69,7 +70,9 @@ const Hero = () => {
     <div
       className="hero-wrapper hero-1 shape-mockup-wrap background-image"
       id="hero"
-      style={{ backgroundImage: `url('${images.heroBackground}')` }}
+      style={{
+        backgroundImage: `linear-gradient(rgba(8, 16, 27, 0.78), rgba(8, 16, 27, 0.62)), url('${activeSlideImage}')`,
+      }}
     >
       <Slider {...settings} ref={sliderRef} className="hero-slider1 hero-services-slider">
         {siteContent.heroSlides.map((slide, index) => (

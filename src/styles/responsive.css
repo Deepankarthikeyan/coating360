@@ -704,11 +704,17 @@ body.disable-scroll {
    About section
    -------------------------------------------------------------------------- */
 
-.about-area-1 .about-thumb1 img,
-.about-area-1 .about-img-1 img {
+.about-area-1 .about-img-1 > img {
+	display: block;
 	width: 100%;
-	height: auto;
-	object-fit: contain;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.about-area-1 .about-img-1 {
+	aspect-ratio: 4 / 5;
+	overflow: hidden;
 }
 
 .about-area-1 .about-counter-wrap {
@@ -738,10 +744,23 @@ body.disable-scroll {
    Why Choose Us
    -------------------------------------------------------------------------- */
 
-.wcu-thumb1-1 img {
+.home-one-page .wcu-thumb1-1 {
+	height: clamp(480px, 42vw, 620px);
+	overflow: hidden;
+}
+
+.home-one-page .wcu-thumb1-1 img {
+	display: block;
 	width: 100%;
-	height: auto;
-	object-fit: contain;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+@media (max-width: 767px) {
+	.home-one-page .wcu-thumb1-1 {
+		height: clamp(360px, 100vw, 480px);
+	}
 }
 
 @media (max-width: 1199px) {

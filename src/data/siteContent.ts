@@ -41,7 +41,7 @@ export const siteContent = {
     website: "www.aghcoating360.com",
   },
   images: {
-    heroBackground: "/assets/img/hero/hero_bg_1_1.png",
+    heroBackground: "/assets/coating-images/industrial painting.png",
     about: "/assets/coating-images/industrial painting.png",
     whyChoose: "/assets/coating-images/machine service.png",
     processBackground: "/assets/coating-images/floor coating (1).png",
@@ -100,47 +100,47 @@ export const siteContent = {
     {
       title: "Industrial Paints",
       text: "High-performance protective coating systems for demanding industrial environments.",
-      image: "/assets/coating-images/1.png",
+      image: "/assets/coating-images/industrial painting image.png",
     },
     {
       title: "Marine Coatings",
       text: "Advanced protection for vessels and marine environments in the toughest conditions.",
-      image: "/assets/coating-images/2.png",
+      image: "/assets/coating-images/marine painting.png",
     },
     {
       title: "Intumescent Fireproofing",
       text: "Passive fire protection solutions that enhance safety and structural integrity.",
-      image: "/assets/coating-images/3.png",
+      image: "/assets/coating-images/fireproof painting.png",
     },
     {
       title: "Industrial Flooring",
       text: "Durable, high-performance flooring systems for industrial and commercial facilities.",
-      image: "/assets/coating-images/4.png",
+      image: "/assets/coating-images/floor coating.png",
     },
     {
       title: "Abrasives",
       text: "Premium blasting abrasives for superior surface preparation and performance.",
-      image: "/assets/coating-images/5.png",
+      image: "/assets/coating-images/machine service.png",
     },
     {
       title: "Blasting Equipment",
       text: "Blast pots, hoses, nozzles, air preparation equipment and abrasive recovery systems.",
-      image: "/assets/coating-images/6.png",
+      image: "/assets/coating-images/machine service 2.png",
     },
     {
       title: "Spray Equipment",
       text: "Professional spray equipment for precise and efficient coating application.",
-      image: "/assets/coating-images/7.png",
+      image: "/assets/coating-images/machine service.png",
     },
     {
       title: "Coating Application",
       text: "Professional blasting, surface preparation and industrial coating application services.",
-      image: "/assets/coating-images/8.png",
+      image: "/assets/coating-images/industrial painting.png",
     },
     {
       title: "Coating Inspection",
       text: "Comprehensive inspection services to ensure coating quality, compliance and long-term performance.",
-      image: "/assets/coating-images/9.png",
+      image: "/assets/coating-images/machine service 2.png",
     },
   ],
   about: {
