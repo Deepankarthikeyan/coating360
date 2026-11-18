@@ -183,7 +183,6 @@ const HeaderOne = () => {
                                 <div className="header-top-right">
                                     <div className="header-links ps-0">
                                         <ul>
-                                            <li><i className="ri-time-line"></i>Mon - Sat: 10:00am to 07:30pm</li>
                                             <li><i className="ri-map-pin-line"></i><Link to="https://www.google.com/maps">Coimbatore-641111, Tamil Nadu</Link></li>
                                         </ul>
                                     </div>

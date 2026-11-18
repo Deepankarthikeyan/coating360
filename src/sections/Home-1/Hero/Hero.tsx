@@ -4,6 +4,36 @@ import Slider from "react-slick";
 import CountUp from "react-countup";
 import siteContent from "../../../data/siteContent";
 
+const HeroServiceSummary = () => (
+  <div
+    className="hero-experience-wrap"
+    style={{
+      backgroundImage: "url('/assets/img/hero/hero_experience_wrap_bg_1_1.png')",
+    }}
+  >
+    <span className="shadow-text">Coating Experience</span>
+    <div className="hero-experience-icon">
+      <img src="/assets/img/hero/hero_experience_wrap_icon_1_1.png" alt="" loading="lazy" />
+    </div>
+    <h2 className="hero-experience-counter">
+      <span className="counter-number">
+        <CountUp start={0} end={9} duration={4} />
+      </span>
+      +
+    </h2>
+    <p className="hero-experience-text">Service categories under one roof</p>
+    <div className="media">
+      <div className="icon">
+        <img src="/assets/img/hero/hero_experience_wrap_icon_1_2.png" alt="" loading="lazy" />
+      </div>
+      <a className="link-btn link-text" href="/contact">
+        Let&apos;s protect what you build{" "}
+        <img src="/assets/img/icon/long-arrow-right.png" alt="" loading="lazy" />
+      </a>
+    </div>
+  </div>
+);
+
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [totalSlides, setTotalSlides] = useState(0);
@@ -41,50 +71,54 @@ const Hero = () => {
       id="hero"
       style={{ backgroundImage: `url('${images.heroBackground}')` }}
     >
-      <Slider {...settings} ref={sliderRef} className="hero-slider1">
+      <Slider {...settings} ref={sliderRef} className="hero-slider1 hero-services-slider">
         {siteContent.heroSlides.map((slide, index) => (
-          <div className="hero-slide" key={slide.title}>
-            <div className={`container${index === 0 ? " larger-no-space" : ""}`}>
-              <div className="row">
-                <div className="col-lg-6">
-                  <div className="hero-style1">
+          <div
+            className="hero-slide hero-service-slide"
+            key={slide.title}
+          >
+            <div className="container">
+              <div className="row hero-service-layout">
+                <div className="col-lg-6 hero-service-image-column">
+                  <div
+                    className={`hero-thumb slideinleft ${isActive(index) ? "slider-animated" : ""}`}
+                    style={{ animationDelay: "0.2s" }}
+                  >
+                    <img src={slide.image} alt={slide.title} loading={index === 0 ? "eager" : "lazy"} />
+                  </div>
+                </div>
+                <div className="col-lg-6 hero-service-content-column">
+                  <div className="hero-style1 hero-service-content">
+                    <span className="hero-service-eyebrow">Our services that we provide</span>
                     <h1
-                      className={`hero-title text-white slider-custom-anim-left ${isActive(index) ? "slider-animated" : ""}`}
+                      className={`hero-title text-white slider-custom-anim-right ${isActive(index) ? "slider-animated" : ""}`}
                       style={{ animationDelay: "0.1s" }}
                     >
                       {slide.title}
                     </h1>
                     <p
-                      className={`hero-text text-white slider-custom-anim-left ${isActive(index) ? "slider-animated" : ""}`}
+                      className={`hero-text text-white slider-custom-anim-right ${isActive(index) ? "slider-animated" : ""}`}
                       style={{ animationDelay: "0.3s" }}
                     >
                       {slide.text}
                     </p>
                     <div
-                      className={`btn-group slider-custom-anim-left ${isActive(index) ? "slider-animated" : ""}`}
+                      className={`btn-group slider-custom-anim-right ${isActive(index) ? "slider-animated" : ""}`}
                       style={{ animationDelay: "0.5s" }}
                     >
-                      <a href="#about-sec" className="btn style2">
-                        Discover More <i className="ri-arrow-right-up-line"></i>
+                      <a href="#service-sec" className="btn style2">
+                        Explore Service <i className="ri-arrow-right-up-line"></i>
                       </a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div
-              className={`hero-thumb text-center slideinright ${isActive(index) ? "slider-animated" : ""}`}
-              style={{ animationDelay: "0.4s" }}
-            >
-              <img
-                src={images.heroSlides[index]}
-                alt={siteContent.brand.name}
-                loading={index === 0 ? "eager" : "lazy"}
-              />
-            </div>
           </div>
         ))}
       </Slider>
+
+      <HeroServiceSummary />
 
       <div className="slider-controller-wrap">
         <div className="slider-btn-wrap">
@@ -118,33 +152,6 @@ const Hero = () => {
         <img src="/assets/img/hero/hero_shape_1_1.png" alt="" loading="lazy" />
       </div>
 
-      <div
-        className="hero-experience-wrap"
-        style={{
-          backgroundImage: "url('/assets/img/hero/hero_experience_wrap_bg_1_1.png')",
-        }}
-      >
-        <span className="shadow-text">Coating Experience</span>
-        <div className="hero-experience-icon">
-          <img src="/assets/img/hero/hero_experience_wrap_icon_1_1.png" alt="" loading="lazy" />
-        </div>
-        <h2 className="hero-experience-counter">
-          <span className="counter-number">
-            <CountUp start={0} end={8} duration={4} />
-          </span>
-          +
-        </h2>
-        <p className="hero-experience-text">Core service categories under one roof</p>
-        <div className="media">
-          <div className="icon">
-            <img src="/assets/img/hero/hero_experience_wrap_icon_1_2.png" alt="" loading="lazy" />
-          </div>
-          <a className="link-btn link-text" href="/contact">
-            Let&apos;s protect what you build{" "}
-            <img src="/assets/img/icon/long-arrow-right.png" alt="" loading="lazy" />
-          </a>
-        </div>
-      </div>
     </div>
   );
 };

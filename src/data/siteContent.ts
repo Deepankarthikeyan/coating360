@@ -33,20 +33,15 @@ export const siteContent = {
     tagline: "Protecting What You Build",
     description:
       "Complete Solutions for Industrial and Marine Paints, Intumescent Fireproof Coatings, Industrial Flooring, Spray Equipment, Abrasives, Blasting Equipment, Industrial Application Services & Coating Inspection.",
-    logo: "/coating360-logo.png",
-    headerLogo: "/coating360-header-logo.png",
-    footerLogo: "/coating360-footer-logo.png",
-    logoWhite: "/coating360-footer-logo.png",
-    favicon: "/favicon-32.png",
+    logo: "/agh-coating360-logo.png",
+    headerLogo: "/agh-coating360-logo.png",
+    footerLogo: "/agh-coating360-logo-white.png",
+    logoWhite: "/agh-coating360-logo.png",
+    favicon: "/favicon-32.png?v=18",
     website: "www.aghcoating360.com",
   },
   images: {
     heroBackground: "/assets/img/hero/hero_bg_1_1.png",
-    heroSlides: [
-      "/assets/coating-images/marine painting.png",
-      "/assets/coating-images/fireproof painting.png",
-      "/assets/coating-images/floor coating.png",
-    ],
     about: "/assets/coating-images/industrial painting.png",
     whyChoose: "/assets/coating-images/machine service.png",
     processBackground: "/assets/coating-images/floor coating (1).png",
@@ -103,16 +98,49 @@ export const siteContent = {
   },
   heroSlides: [
     {
-      title: "AGH COATING360 — Protecting What You Build",
-      text: "Complete Solutions for Industrial and Marine Paints, Intumescent Fireproof Coatings, Industrial Flooring, Spray Equipment, Abrasives, Blasting Equipment, Industrial Application Services & Coating Inspection.",
+      title: "Industrial Paints",
+      text: "High-performance protective coating systems for demanding industrial environments.",
+      image: "/assets/coating-images/1.png",
     },
     {
-      title: "From Surface Preparation to Long-Term Protection",
-      text: "AGH COATING360 is an industrial coating and surface protection solutions company providing comprehensive products and professional services to the Industrial, Marine, Energy, Infrastructure and Construction sectors.",
+      title: "Marine Coatings",
+      text: "Advanced protection for vessels and marine environments in the toughest conditions.",
+      image: "/assets/coating-images/2.png",
     },
     {
-      title: "Your Complete Partner for Industrial Surface Protection",
-      text: "From surface preparation to final coating inspection, our experienced team delivers reliable, technically driven solutions designed to protect steel, concrete, equipment and critical infrastructure.",
+      title: "Intumescent Fireproofing",
+      text: "Passive fire protection solutions that enhance safety and structural integrity.",
+      image: "/assets/coating-images/3.png",
+    },
+    {
+      title: "Industrial Flooring",
+      text: "Durable, high-performance flooring systems for industrial and commercial facilities.",
+      image: "/assets/coating-images/4.png",
+    },
+    {
+      title: "Abrasives",
+      text: "Premium blasting abrasives for superior surface preparation and performance.",
+      image: "/assets/coating-images/5.png",
+    },
+    {
+      title: "Blasting Equipment",
+      text: "Blast pots, hoses, nozzles, air preparation equipment and abrasive recovery systems.",
+      image: "/assets/coating-images/6.png",
+    },
+    {
+      title: "Spray Equipment",
+      text: "Professional spray equipment for precise and efficient coating application.",
+      image: "/assets/coating-images/7.png",
+    },
+    {
+      title: "Coating Application",
+      text: "Professional blasting, surface preparation and industrial coating application services.",
+      image: "/assets/coating-images/8.png",
+    },
+    {
+      title: "Coating Inspection",
+      text: "Comprehensive inspection services to ensure coating quality, compliance and long-term performance.",
+      image: "/assets/coating-images/9.png",
     },
   ],
   about: {

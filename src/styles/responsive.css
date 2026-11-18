@@ -475,9 +475,7 @@ body.disable-scroll {
 }
 
 /* --------------------------------------------------------------------------
-   Hero / banner — Construz home-1 structure (theme styles in style.css)
-   Left text col | right absolute image | bottom-right slider controls
-   | overlapping experience card
+   Hero / banner — service slides with left image and right content
    -------------------------------------------------------------------------- */
 
 .hero-wrapper.hero-1 {
@@ -495,6 +493,14 @@ body.disable-scroll {
 }
 
 @media (min-width: 992px) {
+	.hero-wrapper.hero-1 {
+		margin-bottom: 557px;
+	}
+
+	.hero-wrapper.hero-1 .hero-experience-wrap {
+		transform: translateY(200px);
+	}
+
 	.hero-slider1 .hero-thumb {
 		position: absolute;
 		right: 0;
@@ -515,10 +521,20 @@ body.disable-scroll {
 	}
 }
 
+@media (min-width: 992px) and (max-width: 1199px) {
+	.hero-wrapper.hero-1 {
+		margin-bottom: 400px;
+	}
+}
+
 /* Fixed mobile header offset */
 @media (max-width: 991px) {
 	.hero-wrapper {
 		padding-top: var(--header-mobile-height);
+	}
+
+	.hero-wrapper.hero-1 .hero-experience-wrap {
+		margin-top: 200px;
 	}
 }
 
@@ -563,6 +579,119 @@ body.disable-scroll {
 		width: calc(100% - 32px);
 		padding: 24px 20px 20px;
 	}
+}
+
+.hero-service-slide > .container > .hero-service-layout {
+	min-height: 600px;
+	align-items: center;
+}
+
+.hero-service-image-column,
+.hero-service-content-column {
+	position: relative;
+	z-index: 4;
+}
+
+.hero-services-slider .hero-thumb {
+	position: relative;
+	top: auto;
+	right: auto;
+	width: 100%;
+	max-width: none;
+	height: clamp(260px, 33vw, 440px);
+	border: 0;
+	overflow: hidden;
+}
+
+.hero-services-slider .hero-thumb img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-height: 0;
+	object-fit: cover;
+	object-position: center;
+}
+
+.hero-services-slider .hero-style1 {
+	padding: 72px clamp(0px, 3vw, 48px);
+}
+
+.hero-service-eyebrow {
+	display: inline-block;
+	margin-bottom: 16px;
+	color: #ff9aa8;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	line-height: 1.4;
+	text-transform: uppercase;
+}
+
+.hero-service-content .hero-title {
+	max-width: 620px;
+}
+
+.hero-service-content .hero-text {
+	max-width: 540px;
+}
+
+.hero-wrapper.hero-1 .slider-controller-wrap {
+	z-index: 8;
+	background: transparent;
+}
+
+.hero-wrapper.hero-1 .slider-btn-wrap .icon-box .slick-arrow {
+	background: var(--white-color);
+}
+
+@media (max-width: 991px) {
+	.hero-service-slide > .container > .hero-service-layout {
+		min-height: 0;
+		row-gap: 8px;
+	}
+
+	.hero-services-slider .hero-thumb {
+		display: block;
+		height: clamp(190px, 55vw, 360px);
+	}
+
+	.hero-services-slider .hero-style1 {
+		padding: 24px 12px 72px;
+		text-align: left;
+	}
+
+	.hero-service-content .hero-text {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.hero-service-content .btn-group {
+		justify-content: flex-start;
+	}
+
+	.hero-wrapper.hero-1 .slider-controller-wrap {
+		display: none;
+	}
+}
+
+@media (max-width: 575px) {
+	.hero-service-slide > .container > .hero-service-layout {
+		row-gap: 0;
+	}
+
+	.hero-services-slider .hero-thumb {
+		height: clamp(180px, 62vw, 250px);
+	}
+
+	.hero-services-slider .hero-style1 {
+		padding: 20px 4px 72px;
+	}
+
+	.hero-service-eyebrow {
+		margin-bottom: 12px;
+		font-size: 11px;
+	}
+
 }
 
 /* --------------------------------------------------------------------------

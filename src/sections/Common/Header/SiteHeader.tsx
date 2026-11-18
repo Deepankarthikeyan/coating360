@@ -135,7 +135,6 @@ const SiteHeader = () => {
                 <div className="header-top-right">
                   <div className="header-links ps-0">
                     <ul>
-                      <li><i className="ri-time-line"></i> {contact.hours}</li>
                       <li><i className="ri-map-pin-line"></i> {contact.address.city}, Tamil Nadu</li>
                     </ul>
                   </div>
