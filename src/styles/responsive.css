@@ -6,7 +6,7 @@
 :root {
 	--section-spacing-desktop: 80px;
 	--section-spacing-tablet: 60px;
-	--section-spacing-mobile: 40px;
+	--section-spacing-mobile: 20px;
 	--section-space: var(--section-spacing-desktop);
 	--section-space-mobile: var(--section-spacing-tablet);
 	--container-inline-padding: clamp(20px, 3vw, 48px);
@@ -29,6 +29,7 @@
 	:root {
 		--section-space: var(--section-spacing-mobile);
 		--container-inline-padding: clamp(16px, 4vw, 20px);
+		--section-title-space: 36px;
 	}
 }
 
@@ -542,7 +543,11 @@ body.disable-scroll {
 @media (max-width: 767px) {
 	.hero-wrapper {
 		min-height: auto;
-		padding-bottom: 48px;
+		padding-bottom: 20px;
+	}
+
+	.hero-wrapper.hero-1 .hero-experience-wrap {
+		margin-top: 24px;
 	}
 
 	.hero-wrapper .hero-experience-wrap .hero-experience-counter {
@@ -860,6 +865,28 @@ body.disable-scroll {
 }
 
 @media (max-width: 767px) {
+	.home-one-page > .about-area-1,
+	.home-one-page > .service-area-1,
+	.home-one-page > .cta-area-1,
+	.home-one-page > .text-center.overflow-hidden.shape-mockup-wrap,
+	.home-one-page > .process-area-1,
+	.home-one-page > .blog-area-1 {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.home-one-page .title-area {
+		margin-bottom: 20px;
+	}
+
+	.home-one-page .row.gy-50 {
+		--bs-gutter-y: 20px;
+	}
+
+	.home-one-page .about-area-1 .checklist {
+		margin-bottom: 20px;
+	}
+
 	.footer-layout1 .footer-top-1,
 	.footer-layout1 .widget-area,
 	.footer-layout1 .copyright-wrap .row {
@@ -870,6 +897,36 @@ body.disable-scroll {
 
 	.footer-layout1 .footer-top-1 {
 		align-items: center;
+		gap: 6px;
+		padding-top: 16px;
+		padding-bottom: 6px;
+	}
+
+	.footer-layout1 .footer-top-1 .subscribe-box {
+		display: block;
+		flex: 0 1 auto;
+		min-width: 0;
+		margin-top: 0;
+	}
+
+	.footer-layout1 .widget-area {
+		padding: 12px 0 16px;
+	}
+
+	.footer-layout1 .widget-area .row {
+		--bs-gutter-y: 18px;
+	}
+
+	.footer-layout1 .footer-widget .widget_title {
+		margin-bottom: 18px;
+	}
+
+	.footer-layout1 .widget-about .about-text,
+	.footer-layout1 .widget-contact .contact-text,
+	.footer-layout1 .footer-widget .footer-text,
+	.footer-layout1 .footer-hours-text {
+		margin-bottom: 8px;
+		line-height: 1.5;
 	}
 
 	.footer-layout1 .footer-logo {
